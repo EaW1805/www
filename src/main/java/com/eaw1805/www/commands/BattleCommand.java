@@ -1,9 +1,9 @@
-package empire.webapp.commands;
+package com.eaw1805.www.commands;
 
-import empire.data.model.Nation;
-import empire.data.model.army.Rank;
-import empire.data.model.map.Region;
-import empire.data.model.map.Terrain;
+import com.eaw1805.data.model.Nation;
+import com.eaw1805.data.model.army.Rank;
+import com.eaw1805.data.model.map.Region;
+import com.eaw1805.data.model.map.Terrain;
 
 /**
  * POJO object for holding parameters for a tactical or naval battle.

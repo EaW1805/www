@@ -1,9 +1,9 @@
-package empire.webapp.shared.orders.army;
+package com.eaw1805.www.shared.orders.army;
 
-import empire.data.dto.web.army.BrigadeDTO;
-import empire.data.dto.web.army.CommanderDTO;
-import empire.data.dto.web.army.CorpDTO;
-import empire.webapp.shared.orders.Order;
+import com.eaw1805.data.dto.web.army.BrigadeDTO;
+import com.eaw1805.data.dto.web.army.CommanderDTO;
+import com.eaw1805.data.dto.web.army.CorpDTO;
+import com.eaw1805.www.shared.orders.Order;
 
 import java.util.HashMap;
 import java.util.Map;

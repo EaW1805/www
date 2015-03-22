@@ -1,7 +1,7 @@
-package empire.webapp.shared.stores.map;
+package com.eaw1805.www.shared.stores.map;
 
 import com.google.gwt.dom.client.Style;
-import empire.data.dto.common.SectorDTO;
+import com.eaw1805.data.dto.common.SectorDTO;
 import org.vaadin.gwtgraphics.client.Group;
 import org.vaadin.gwtgraphics.client.shape.Rectangle;
 

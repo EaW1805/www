@@ -1,8 +1,8 @@
-package empire.webapp.shared;
+package com.eaw1805.www.shared;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
-import empire.data.dto.web.movement.MovementDTO;
-import empire.data.dto.web.movement.PathDTO;
+import com.eaw1805.data.dto.web.movement.MovementDTO;
+import com.eaw1805.data.dto.web.movement.PathDTO;
 
 import java.io.Serializable;
 import java.util.List;

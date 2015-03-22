@@ -1,23 +1,23 @@
-package empire.webapp.shared.stores;
+package com.eaw1805.www.shared.stores;
 
 
-import empire.data.constants.OrderConstants;
-import empire.data.constants.RegionConstants;
-import empire.data.dto.common.BattleDTO;
-import empire.data.dto.common.NationDTO;
-import empire.data.dto.common.PositionDTO;
-import empire.data.dto.common.ProductionSiteDTO;
-import empire.data.dto.common.SectorDTO;
-import empire.data.dto.web.ClientOrderDTO;
-import empire.data.dto.web.OrderPositionDTO;
-import empire.webapp.client.events.economy.EcoEventManager;
-import empire.webapp.client.events.loading.LoadEventManager;
-import empire.webapp.client.views.popups.OrdersViewerPopup;
-import empire.webapp.client.widgets.ErrorPopup;
-import empire.webapp.shared.stores.economy.OrderStore;
-import empire.webapp.shared.stores.economy.ProductionSiteStore;
-import empire.webapp.shared.stores.economy.WarehouseStore;
-import empire.webapp.shared.stores.util.calculators.CostCalculators;
+import com.eaw1805.data.constants.OrderConstants;
+import com.eaw1805.data.constants.RegionConstants;
+import com.eaw1805.data.dto.common.BattleDTO;
+import com.eaw1805.data.dto.common.NationDTO;
+import com.eaw1805.data.dto.common.PositionDTO;
+import com.eaw1805.data.dto.common.ProductionSiteDTO;
+import com.eaw1805.data.dto.common.SectorDTO;
+import com.eaw1805.data.dto.web.ClientOrderDTO;
+import com.eaw1805.data.dto.web.OrderPositionDTO;
+import com.eaw1805.www.client.events.economy.EcoEventManager;
+import com.eaw1805.www.client.events.loading.LoadEventManager;
+import com.eaw1805.www.client.views.popups.OrdersViewerPopup;
+import com.eaw1805.www.client.widgets.ErrorPopup;
+import com.eaw1805.www.shared.stores.economy.OrderStore;
+import com.eaw1805.www.shared.stores.economy.ProductionSiteStore;
+import com.eaw1805.www.shared.stores.economy.WarehouseStore;
+import com.eaw1805.www.shared.stores.util.calculators.CostCalculators;
 
 import java.util.ArrayList;
 import java.util.Collection;

@@ -1,9 +1,9 @@
-package empire.webapp.shared.stores.util;
+package com.eaw1805.www.shared.stores.util;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.Window;
-import empire.data.constants.NationConstants;
-import empire.webapp.shared.stores.GameStore;
+import com.eaw1805.data.constants.NationConstants;
+import com.eaw1805.www.shared.stores.GameStore;
 
 import java.util.Date;
 import java.util.HashMap;

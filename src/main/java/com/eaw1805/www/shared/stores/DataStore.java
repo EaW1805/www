@@ -1,12 +1,12 @@
-package empire.webapp.shared.stores;
+package com.eaw1805.www.shared.stores;
 
-import empire.data.constants.NaturalResourcesConstants;
-import empire.data.constants.ProductionSiteConstants;
-import empire.data.dto.collections.DataCollection;
-import empire.data.dto.common.NationDTO;
-import empire.data.dto.common.NaturalResourceDTO;
-import empire.data.dto.common.ProductionSiteDTO;
-import empire.webapp.client.events.loading.LoadEventManager;
+import com.eaw1805.data.constants.NaturalResourcesConstants;
+import com.eaw1805.data.constants.ProductionSiteConstants;
+import com.eaw1805.data.dto.collections.DataCollection;
+import com.eaw1805.data.dto.common.NationDTO;
+import com.eaw1805.data.dto.common.NaturalResourceDTO;
+import com.eaw1805.data.dto.common.ProductionSiteDTO;
+import com.eaw1805.www.client.events.loading.LoadEventManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;

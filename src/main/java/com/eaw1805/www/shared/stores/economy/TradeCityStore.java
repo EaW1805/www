@@ -1,17 +1,17 @@
-package empire.webapp.shared.stores.economy;
+package com.eaw1805.www.shared.stores.economy;
 
-import empire.data.constants.GoodConstants;
-import empire.data.constants.NaturalResourcesConstants;
-import empire.data.constants.OrderConstants;
-import empire.data.dto.common.PositionDTO;
-import empire.data.dto.common.SectorDTO;
-import empire.data.dto.web.TradeUnitAbstractDTO;
-import empire.data.dto.web.economy.TradeCityDTO;
-import empire.webapp.client.views.popups.TradeCityGoodsPopup;
-import empire.webapp.client.widgets.ErrorPopup;
-import empire.webapp.shared.stores.GameStore;
-import empire.webapp.shared.stores.RegionStore;
-import empire.webapp.shared.stores.map.economic.TradeCitiesGoodsGroupStore;
+import com.eaw1805.data.constants.GoodConstants;
+import com.eaw1805.data.constants.NaturalResourcesConstants;
+import com.eaw1805.data.constants.OrderConstants;
+import com.eaw1805.data.dto.common.PositionDTO;
+import com.eaw1805.data.dto.common.SectorDTO;
+import com.eaw1805.data.dto.web.TradeUnitAbstractDTO;
+import com.eaw1805.data.dto.web.economy.TradeCityDTO;
+import com.eaw1805.www.client.views.popups.TradeCityGoodsPopup;
+import com.eaw1805.www.client.widgets.ErrorPopup;
+import com.eaw1805.www.shared.stores.GameStore;
+import com.eaw1805.www.shared.stores.RegionStore;
+import com.eaw1805.www.shared.stores.map.economic.TradeCitiesGoodsGroupStore;
 import org.vaadin.gwtgraphics.client.Group;
 
 import java.util.ArrayList;

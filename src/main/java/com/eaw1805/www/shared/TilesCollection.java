@@ -1,10 +1,10 @@
-package empire.webapp.shared;
+package com.eaw1805.www.shared;
 
-import empire.data.HibernateUtil;
-import empire.data.constants.RegionConstants;
-import empire.data.constants.TerrainConstants;
-import empire.data.dto.common.BattleDTO;
-import empire.data.dto.common.SectorDTO;
+import com.eaw1805.data.HibernateUtil;
+import com.eaw1805.data.constants.RegionConstants;
+import com.eaw1805.data.constants.TerrainConstants;
+import com.eaw1805.data.dto.common.BattleDTO;
+import com.eaw1805.data.dto.common.SectorDTO;
 
 import java.io.Serializable;
 import java.util.HashMap;

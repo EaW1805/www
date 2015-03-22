@@ -1,11 +1,11 @@
-package empire.webapp.shared.orders.army;
+package com.eaw1805.www.shared.orders.army;
 
-import empire.data.constants.ArmyConstants;
-import empire.data.dto.web.army.ArmyDTO;
-import empire.data.dto.web.army.CommanderDTO;
-import empire.data.dto.web.army.CorpDTO;
-import empire.webapp.client.events.units.UnitEventManager;
-import empire.webapp.shared.orders.Order;
+import com.eaw1805.data.constants.ArmyConstants;
+import com.eaw1805.data.dto.web.army.ArmyDTO;
+import com.eaw1805.data.dto.web.army.CommanderDTO;
+import com.eaw1805.data.dto.web.army.CorpDTO;
+import com.eaw1805.www.client.events.units.UnitEventManager;
+import com.eaw1805.www.shared.orders.Order;
 
 import java.util.Map;
 

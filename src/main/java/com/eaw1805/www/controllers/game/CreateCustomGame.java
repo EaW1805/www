@@ -1,26 +1,20 @@
 package com.eaw1805.www.controllers.game;
 
-
-import com.eaw1805.core.EmailManager;
 import com.eaw1805.data.HibernateUtil;
 import com.eaw1805.data.constants.ForumRoleConstants;
 import com.eaw1805.data.constants.GameConstants;
-import com.eaw1805.data.constants.NationConstants;
 import com.eaw1805.data.constants.RegionConstants;
 import com.eaw1805.data.managers.beans.ForumManagerBean;
 import com.eaw1805.data.managers.beans.PaymentHistoryManagerBean;
 import com.eaw1805.data.managers.beans.UserPermissionManagerBean;
-import com.eaw1805.data.model.Game;
-import com.eaw1805.data.model.Nation;
-import com.eaw1805.data.model.PaymentHistory;
-import com.eaw1805.data.model.User;
-import com.eaw1805.data.model.UserGame;
+import com.eaw1805.data.model.*;
 import com.eaw1805.data.model.forum.Forum;
 import com.eaw1805.data.model.forum.UserPermissions;
 import com.eaw1805.www.controllers.ExtendedController;
 import com.eaw1805.www.controllers.exception.InvalidPageException;
 import com.eaw1805.www.hibernate.ScenarioContextHolder;
-import org.apache.logging.log4j.LogManager; import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
 import org.quartz.CronExpression;
@@ -84,7 +78,7 @@ public class CreateCustomGame
             throw new InvalidPageException("Page not found");
         }
         if (user.getCreditFree() + user.getCreditBought() + user.getCreditTransferred() < 200) {
-            throw new InvalidPageException("Page not found");
+            throw new InvalidPageException("Not enough credits");
         }
 
         final HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
@@ -218,7 +212,8 @@ public class CreateCustomGame
             if (nationsUser.getUserId() != 2
                     && nationsUser.getUserId() != user.getUserId()) {
                 try {
-                    EmailManager.getInstance().sendInvitationNotification(nationsUser, user, entry);
+                    sendInvitationNotification(nationsUser, user, entry);
+
                 } catch (Exception e) {
                     LOGGER.error("Failed to send invitation notification email", e);
                 }
@@ -492,7 +487,8 @@ public class CreateCustomGame
         for (UserGame userGame : userGames) {
             if (userGame.getUserId() != 2) { //if not admin
                 try {
-                    EmailManager.getInstance().sendGameLaunchNotification(game, getUserManager().getByID(userGame.getUserId()));
+                    sendGameLaunchNotification(game, getUserManager().getByID(userGame.getUserId()));
+
                 } catch (Exception e) {
                     LOGGER.error("Failed to send launch notification email", e);
                 }
@@ -575,7 +571,8 @@ public class CreateCustomGame
         for (UserGame userGame : userGames) {
             if (userGame.getUserId() != 2) { //if not admin
                 try {
-                    EmailManager.getInstance().sendGameCancellationNotification(game, getUserManager().getByID(userGame.getUserId()));
+                    sendGameCancellationNotification(game, getUserManager().getByID(userGame.getUserId()));
+
                 } catch (Exception e) {
                     LOGGER.error("Failed to send cancellation notification email", e);
                 }

@@ -1,15 +1,15 @@
-package empire.webapp.shared.stores.util.calculators;
+package com.eaw1805.www.shared.stores.util.calculators;
 
-import empire.data.constants.NationConstants;
-import empire.data.dto.web.army.ArmyDTO;
-import empire.data.dto.web.army.BattalionDTO;
-import empire.data.dto.web.army.BrigadeDTO;
-import empire.data.dto.web.army.CorpDTO;
-import empire.data.dto.web.fleet.FleetDTO;
-import empire.data.dto.web.fleet.ShipDTO;
-import empire.webapp.shared.stores.GameStore;
-import empire.webapp.shared.stores.util.ArmyUnitInfoDTO;
-import empire.webapp.shared.stores.util.NavyUnitInfoDTO;
+import com.eaw1805.data.constants.NationConstants;
+import com.eaw1805.data.dto.web.army.ArmyDTO;
+import com.eaw1805.data.dto.web.army.BattalionDTO;
+import com.eaw1805.data.dto.web.army.BrigadeDTO;
+import com.eaw1805.data.dto.web.army.CorpDTO;
+import com.eaw1805.data.dto.web.fleet.FleetDTO;
+import com.eaw1805.data.dto.web.fleet.ShipDTO;
+import com.eaw1805.www.shared.stores.GameStore;
+import com.eaw1805.www.shared.stores.util.ArmyUnitInfoDTO;
+import com.eaw1805.www.shared.stores.util.NavyUnitInfoDTO;
 
 import java.util.List;
 

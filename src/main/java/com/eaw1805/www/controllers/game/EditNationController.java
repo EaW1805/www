@@ -38,7 +38,6 @@ import java.util.Map;
 public class EditNationController
         extends ExtendedController {
 
-
     /**
      * a log4j logger to print messages.
      */

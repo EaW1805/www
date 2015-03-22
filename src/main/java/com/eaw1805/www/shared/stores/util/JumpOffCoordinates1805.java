@@ -1,7 +1,7 @@
-package empire.webapp.shared.stores.util;
+package com.eaw1805.www.shared.stores.util;
 
-import empire.data.constants.RegionConstants;
-import empire.data.dto.common.SectorDTO;
+import com.eaw1805.data.constants.RegionConstants;
+import com.eaw1805.data.dto.common.SectorDTO;
 
 import java.util.ArrayList;
 import java.util.List;

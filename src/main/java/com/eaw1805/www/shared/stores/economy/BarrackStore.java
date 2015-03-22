@@ -1,16 +1,16 @@
-package empire.webapp.shared.stores.economy;
+package com.eaw1805.www.shared.stores.economy;
 
-import empire.data.constants.ArmyConstants;
-import empire.data.constants.OrderConstants;
-import empire.data.dto.common.PositionDTO;
-import empire.data.dto.web.army.BarrackDTO;
-import empire.data.dto.web.economy.TradeCityDTO;
-import empire.webapp.client.events.units.UnitEventManager;
-import empire.webapp.client.widgets.ErrorPopup;
-import empire.webapp.shared.orders.economy.ChangeBarrackNameOrder;
-import empire.webapp.shared.stores.GameStore;
-import empire.webapp.shared.stores.InfoPanelsStore;
-import empire.webapp.shared.stores.util.calculators.CostCalculators;
+import com.eaw1805.data.constants.ArmyConstants;
+import com.eaw1805.data.constants.OrderConstants;
+import com.eaw1805.data.dto.common.PositionDTO;
+import com.eaw1805.data.dto.web.army.BarrackDTO;
+import com.eaw1805.data.dto.web.economy.TradeCityDTO;
+import com.eaw1805.www.client.events.units.UnitEventManager;
+import com.eaw1805.www.client.widgets.ErrorPopup;
+import com.eaw1805.www.shared.orders.economy.ChangeBarrackNameOrder;
+import com.eaw1805.www.shared.stores.GameStore;
+import com.eaw1805.www.shared.stores.InfoPanelsStore;
+import com.eaw1805.www.shared.stores.util.calculators.CostCalculators;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package empire.webapp.shared.stores.map.units;
+package com.eaw1805.www.shared.stores.map.units;
 
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -7,17 +7,17 @@ import com.google.gwt.event.dom.client.MouseOutEvent;
 import com.google.gwt.event.dom.client.MouseOutHandler;
 import com.google.gwt.event.dom.client.MouseOverEvent;
 import com.google.gwt.event.dom.client.MouseOverHandler;
-import empire.data.constants.ArmyConstants;
-import empire.data.dto.common.PositionDTO;
-import empire.data.dto.common.SectorDTO;
-import empire.data.dto.web.movement.PathDTO;
-import empire.webapp.client.events.movement.MovementEventManager;
-import empire.webapp.client.events.movement.StartAllyMoveEvent;
-import empire.webapp.client.events.movement.StartAllyMoveHandler;
-import empire.webapp.client.events.movement.StopAllyMoveEvent;
-import empire.webapp.client.events.movement.StopAllyMoveHandler;
-import empire.webapp.shared.stores.map.MapStore;
-import empire.webapp.shared.stores.units.AlliedUnitsStore;
+import com.eaw1805.data.constants.ArmyConstants;
+import com.eaw1805.data.dto.common.PositionDTO;
+import com.eaw1805.data.dto.common.SectorDTO;
+import com.eaw1805.data.dto.web.movement.PathDTO;
+import com.eaw1805.www.client.events.movement.MovementEventManager;
+import com.eaw1805.www.client.events.movement.StartAllyMoveEvent;
+import com.eaw1805.www.client.events.movement.StartAllyMoveHandler;
+import com.eaw1805.www.client.events.movement.StopAllyMoveEvent;
+import com.eaw1805.www.client.events.movement.StopAllyMoveHandler;
+import com.eaw1805.www.shared.stores.map.MapStore;
+import com.eaw1805.www.shared.stores.units.AlliedUnitsStore;
 import org.vaadin.gwtgraphics.client.Group;
 import org.vaadin.gwtgraphics.client.Image;
 

@@ -1,7 +1,7 @@
-package empire.webapp.shared.orders.navy;
+package com.eaw1805.www.shared.orders.navy;
 
-import empire.data.dto.web.fleet.FleetDTO;
-import empire.webapp.shared.orders.Order;
+import com.eaw1805.data.dto.web.fleet.FleetDTO;
+import com.eaw1805.www.shared.orders.Order;
 
 import java.util.Map;
 

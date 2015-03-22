@@ -8,7 +8,6 @@ import com.eaw1805.data.cache.Cachable;
 import com.eaw1805.data.cache.ClientCachable;
 import com.eaw1805.data.cache.EvictCache;
 import com.eaw1805.data.cache.GameCachable;
-import com.eaw1805.core.EmailManager;
 import com.eaw1805.data.HibernateUtil;
 import com.eaw1805.data.constants.AchievementConstants;
 import com.eaw1805.data.constants.ArmyConstants;
@@ -118,6 +117,8 @@ import com.eaw1805.www.shared.ArmiesAndCommanders;
 import com.eaw1805.www.shared.ForeignUnits;
 import com.eaw1805.www.shared.TilesCollection;
 import com.eaw1805.www.shared.stores.support.Taxation;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
@@ -155,12 +156,12 @@ import java.util.Set;
 @SuppressWarnings({"serial", "restriction"})
 public class EmpireRpcServiceImpl
         extends RemoteServiceServlet
-        implements EmpireRpcService, OrderConstants, ArmyConstants, empire.data.constants.RegionConstants, GoodConstants, RelationConstants {
+        implements EmpireRpcService, OrderConstants, ArmyConstants, RegionConstants, GoodConstants, RelationConstants {
 
     /**
      * a log4j logger to print messages.
      */
-    private static final org.apache.log4j.Logger LOGGER = org.apache.log4j.LogManager.getLogger(EmpireRpcServiceImpl.class);
+    private static final Logger LOGGER = LogManager.getLogger(EmpireRpcServiceImpl.class);
 
     @RequestMapping(method = RequestMethod.GET, value = "/cache/scenario/{scenarioIdStr}/game/{gameIdStr}/nation/{nationIdStr}")
     protected ModelAndView handle(@PathVariable final String scenarioIdStr,
@@ -2517,7 +2518,7 @@ public class EmpireRpcServiceImpl
                     messageManager.add(msg);
 
                     // send notification via mail
-                    sendEmailNotification(msg);
+                    sendMessageNotification(msg);
 
                     break;
 
@@ -2706,17 +2707,6 @@ public class EmpireRpcServiceImpl
             }
         }
         return out;
-    }
-
-    /**
-     * Send Email Notification to the receiver of the message.
-     *
-     * @param message the input message.
-     */
-    @EawAsync
-    private void sendEmailNotification(final Message message) {
-        // Send out mail
-        EmailManager.getInstance().sendMessageNotification(message);
     }
 
     /**

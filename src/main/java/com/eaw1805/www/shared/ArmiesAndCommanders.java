@@ -1,10 +1,10 @@
-package empire.webapp.shared;
+package com.eaw1805.www.shared;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
-import empire.data.dto.web.army.ArmyDTO;
-import empire.data.dto.web.army.BattalionDTO;
-import empire.data.dto.web.army.CommanderDTO;
-import empire.data.dto.web.army.CorpDTO;
+import com.eaw1805.data.dto.web.army.ArmyDTO;
+import com.eaw1805.data.dto.web.army.BattalionDTO;
+import com.eaw1805.data.dto.web.army.CommanderDTO;
+import com.eaw1805.data.dto.web.army.CorpDTO;
 
 import java.io.Serializable;
 import java.util.Collection;

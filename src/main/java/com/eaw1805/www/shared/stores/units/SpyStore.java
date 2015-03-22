@@ -1,18 +1,18 @@
-package empire.webapp.shared.stores.units;
+package com.eaw1805.www.shared.stores.units;
 
-import empire.data.constants.ArmyConstants;
-import empire.data.constants.OrderConstants;
-import empire.data.dto.common.PositionDTO;
-import empire.data.dto.common.SectorDTO;
-import empire.data.dto.web.army.SpyDTO;
-import empire.webapp.client.events.loading.LoadEventManager;
-import empire.webapp.client.events.units.UnitEventManager;
-import empire.webapp.client.widgets.ErrorPopup;
-import empire.webapp.shared.orders.army.ChangeSpyNameOrder;
-import empire.webapp.shared.stores.GameStore;
-import empire.webapp.shared.stores.MovementStore;
-import empire.webapp.shared.stores.economy.OrderStore;
-import empire.webapp.shared.stores.util.calculators.CostCalculators;
+import com.eaw1805.data.constants.ArmyConstants;
+import com.eaw1805.data.constants.OrderConstants;
+import com.eaw1805.data.dto.common.PositionDTO;
+import com.eaw1805.data.dto.common.SectorDTO;
+import com.eaw1805.data.dto.web.army.SpyDTO;
+import com.eaw1805.www.client.events.loading.LoadEventManager;
+import com.eaw1805.www.client.events.units.UnitEventManager;
+import com.eaw1805.www.client.widgets.ErrorPopup;
+import com.eaw1805.www.shared.orders.army.ChangeSpyNameOrder;
+import com.eaw1805.www.shared.stores.GameStore;
+import com.eaw1805.www.shared.stores.MovementStore;
+import com.eaw1805.www.shared.stores.economy.OrderStore;
+import com.eaw1805.www.shared.stores.util.calculators.CostCalculators;
 
 import java.util.ArrayList;
 import java.util.HashMap;

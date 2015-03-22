@@ -1,4 +1,4 @@
-package empire.webapp.shared.stores.support;
+package com.eaw1805.www.shared.stores.support;
 
 /**
  * @author tsakygr

@@ -1,13 +1,13 @@
-package empire.webapp.shared.stores.map.economic;
+package com.eaw1805.www.shared.stores.map.economic;
 
 import com.google.gwt.user.client.Window;
-import empire.data.constants.GoodConstants;
-import empire.data.constants.RegionConstants;
-import empire.data.constants.TradeCalculations;
-import empire.data.constants.TradeConstants;
-import empire.data.dto.web.economy.TradeCityDTO;
-import empire.webapp.shared.stores.economy.WarehouseStore;
-import empire.webapp.shared.stores.map.MapStore;
+import com.eaw1805.data.constants.GoodConstants;
+import com.eaw1805.data.constants.RegionConstants;
+import com.eaw1805.data.constants.TradeCalculations;
+import com.eaw1805.data.constants.TradeConstants;
+import com.eaw1805.data.dto.web.economy.TradeCityDTO;
+import com.eaw1805.www.shared.stores.economy.WarehouseStore;
+import com.eaw1805.www.shared.stores.map.MapStore;
 import org.vaadin.gwtgraphics.client.Group;
 import org.vaadin.gwtgraphics.client.Image;
 import org.vaadin.gwtgraphics.client.shape.Text;

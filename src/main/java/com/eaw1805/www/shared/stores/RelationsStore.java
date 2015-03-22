@@ -1,17 +1,17 @@
-package empire.webapp.shared.stores;
+package com.eaw1805.www.shared.stores;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import empire.data.constants.OrderConstants;
-import empire.data.constants.RelationConstants;
-import empire.data.dto.web.OrderCostDTO;
-import empire.data.dto.web.RelationDTO;
-import empire.webapp.client.events.loading.LoadEventManager;
-import empire.webapp.client.remote.EmpireRpcService;
-import empire.webapp.client.remote.EmpireRpcServiceAsync;
-import empire.webapp.client.views.SpyRelationsView;
-import empire.webapp.client.widgets.ErrorPopup;
-import empire.webapp.shared.stores.economy.OrderStore;
+import com.eaw1805.data.constants.OrderConstants;
+import com.eaw1805.data.constants.RelationConstants;
+import com.eaw1805.data.dto.web.OrderCostDTO;
+import com.eaw1805.data.dto.web.RelationDTO;
+import com.eaw1805.www.client.events.loading.LoadEventManager;
+import com.eaw1805.www.client.remote.EmpireRpcService;
+import com.eaw1805.www.client.remote.EmpireRpcServiceAsync;
+import com.eaw1805.www.client.views.SpyRelationsView;
+import com.eaw1805.www.client.widgets.ErrorPopup;
+import com.eaw1805.www.shared.stores.economy.OrderStore;
 
 import java.util.ArrayList;
 import java.util.HashMap;

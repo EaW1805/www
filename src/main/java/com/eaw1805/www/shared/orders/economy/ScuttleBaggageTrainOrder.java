@@ -1,6 +1,6 @@
-package empire.webapp.shared.orders.economy;
+package com.eaw1805.www.shared.orders.economy;
 
-import empire.data.dto.web.economy.BaggageTrainDTO;
+import com.eaw1805.data.dto.web.economy.BaggageTrainDTO;
 
 import java.util.Map;
 

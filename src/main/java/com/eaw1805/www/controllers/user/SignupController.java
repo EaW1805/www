@@ -1,6 +1,5 @@
 package com.eaw1805.www.controllers.user;
 
-import com.eaw1805.core.EmailManager;
 import com.eaw1805.data.HibernateUtil;
 import com.eaw1805.data.constants.GameConstants;
 import com.eaw1805.data.constants.NationConstants;
@@ -149,7 +148,18 @@ public class SignupController
         }
 
         // Send out mail
-        sendWelcome(user);
+        try {
+            // Send out mail
+            sendWelcome(user);
+
+        } catch (final MessagingException e) {
+            LOGGER.error(e);
+            LOGGER.error("Signup Form: Failed to send email");
+
+        } catch ( UnsupportedEncodingException e) {
+            LOGGER.error(e);
+            LOGGER.error("Signup Form: Failed to send email");
+        }
 
         LOGGER.info("Signup Form: welcome sent to new user [" + user.getEmail() + "]");
 
@@ -164,26 +174,6 @@ public class SignupController
 
         LOGGER.info("Signup Form: creating new solo game to new user [" + user.getUsername() + "]");
         return "redirect:welcome";
-    }
-
-    /**
-     * Send Email Notification to the receiver of the message.
-     *
-     * @param thisUser the new User.
-     */
-    @EawAsync
-    private void sendWelcome(final User thisUser) {
-        // Send out mail
-        try {
-            EmailManager.getInstance().sendWelcome(thisUser);
-
-        } catch (final MessagingException e) {
-            LOGGER.error(e);
-            LOGGER.error("Signup Form: Failed to send email");
-        } catch ( UnsupportedEncodingException e) {
-            LOGGER.error(e);
-            LOGGER.error("Signup Form: Failed to send email");
-        }
     }
 
     /**

@@ -1,4 +1,4 @@
-package empire.webapp.commands;
+package com.eaw1805.www.commands;
 
 /**
  * Created by IntelliJ IDEA.

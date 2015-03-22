@@ -1,9 +1,9 @@
-package empire.webapp.shared.stores.support;
+package com.eaw1805.www.shared.stores.support;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
-import empire.data.constants.GoodConstants;
-import empire.data.constants.OrderConstants;
-import empire.data.dto.web.OrderCostDTO;
+import com.eaw1805.data.constants.GoodConstants;
+import com.eaw1805.data.constants.OrderConstants;
+import com.eaw1805.data.dto.web.OrderCostDTO;
 
 import java.io.Serializable;
 

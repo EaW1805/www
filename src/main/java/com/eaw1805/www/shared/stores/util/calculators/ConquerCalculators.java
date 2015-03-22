@@ -1,12 +1,12 @@
-package empire.webapp.shared.stores.util.calculators;
+package com.eaw1805.www.shared.stores.util.calculators;
 
-import empire.data.HibernateUtil;
-import empire.data.constants.RegionConstants;
-import empire.data.dto.web.army.ArmyDTO;
-import empire.data.dto.web.army.BattalionDTO;
-import empire.data.dto.web.army.BrigadeDTO;
-import empire.data.dto.web.army.CorpDTO;
-import empire.webapp.shared.stores.GameStore;
+import com.eaw1805.data.HibernateUtil;
+import com.eaw1805.data.constants.RegionConstants;
+import com.eaw1805.data.dto.web.army.ArmyDTO;
+import com.eaw1805.data.dto.web.army.BattalionDTO;
+import com.eaw1805.data.dto.web.army.BrigadeDTO;
+import com.eaw1805.data.dto.web.army.CorpDTO;
+import com.eaw1805.www.shared.stores.GameStore;
 
 import java.util.ArrayList;
 import java.util.List;

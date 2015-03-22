@@ -1,6 +1,5 @@
 package com.eaw1805.www.controllers.payments;
 
-import com.eaw1805.core.EmailManager;
 import com.eaw1805.data.managers.beans.PaypalTransactionManagerBean;
 import com.eaw1805.data.model.User;
 import com.eaw1805.data.model.paypal.PaypalTransaction;
@@ -171,22 +170,10 @@ public class RequestReceipt
         // update db
         paypalTransactionManager.update(thisTrans);
 
-        // Try to send out the contact form
-        sendPaymentReceiptRequest(thisUser, thisTrans);
-
-        return "redirect:/receipt/sent";
-    }
-
-    /**
-     * Send an e-mail.
-     *
-     * @param thisUser The new user.
-     */
-    @EawAsync
-    private void sendPaymentReceiptRequest(final User thisUser, final PaypalTransaction thisTrans) {
         // Send out mail
         try {
-            EmailManager.getInstance().sendPaymentReceiptRequest(thisUser, thisTrans);
+            // Try to send out the contact form
+            sendPaymentReceiptRequest(thisUser, thisTrans);
 
         } catch (final MessagingException e) {
             LOGGER.error(e);
@@ -196,6 +183,8 @@ public class RequestReceipt
             LOGGER.error(e);
             LOGGER.error("Receipt Form: Failed to send email");
         }
+
+        return "redirect:/receipt/sent";
     }
 
 }

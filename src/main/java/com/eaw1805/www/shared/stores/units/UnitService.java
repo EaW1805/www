@@ -1,8 +1,8 @@
-package empire.webapp.shared.stores.units;
+package com.eaw1805.www.shared.stores.units;
 
-import empire.data.constants.ArmyConstants;
-import empire.data.dto.common.PositionDTO;
-import empire.data.dto.web.army.CommanderDTO;
+import com.eaw1805.data.constants.ArmyConstants;
+import com.eaw1805.data.dto.common.PositionDTO;
+import com.eaw1805.data.dto.web.army.CommanderDTO;
 
 /**
  * A class that provides basic access to some important

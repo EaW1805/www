@@ -1,4 +1,4 @@
-package empire.webapp.shared.stores.util;
+package com.eaw1805.www.shared.stores.util;
 
 public interface BasicHandler {
     void run();

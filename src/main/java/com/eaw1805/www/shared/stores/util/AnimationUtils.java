@@ -1,4 +1,4 @@
-package empire.webapp.shared.stores.util;
+package com.eaw1805.www.shared.stores.util;
 
 import com.google.gwt.user.client.ui.Widget;
 import org.adamtacy.client.ui.effects.events.EffectCompletedEvent;

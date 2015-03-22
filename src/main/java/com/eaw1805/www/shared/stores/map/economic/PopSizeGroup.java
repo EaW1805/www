@@ -1,10 +1,10 @@
-package empire.webapp.shared.stores.map.economic;
+package com.eaw1805.www.shared.stores.map.economic;
 
-import empire.data.constants.TerrainConstants;
-import empire.data.dto.common.SectorDTO;
-import empire.webapp.client.widgets.MapImage;
-import empire.webapp.shared.stores.map.MapStore;
-import empire.webapp.shared.stores.support.MapConstants;
+import com.eaw1805.data.constants.TerrainConstants;
+import com.eaw1805.data.dto.common.SectorDTO;
+import com.eaw1805.www.client.widgets.MapImage;
+import com.eaw1805.www.shared.stores.map.MapStore;
+import com.eaw1805.www.shared.stores.support.MapConstants;
 import org.vaadin.gwtgraphics.client.Group;
 
 public class PopSizeGroup

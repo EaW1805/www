@@ -1,6 +1,5 @@
 package com.eaw1805.www.controllers.user;
 
-import com.eaw1805.core.EmailManager;
 import com.eaw1805.data.model.User;
 import com.eaw1805.www.controllers.BaseController;
 import com.eaw1805.www.controllers.cache.async.EawAsync;
@@ -141,20 +140,9 @@ public class ForgotPasswordController
         userManager.update(thatUser);
 
         // Send out mail
-        sendPassword(thatUser, newPassword);
-
-        LOGGER.info("Password Form: sent to user [" + thatUser.getEmail() + "]");
-        return "redirect:sent_password";
-    }
-
-    /**
-     * Send Email Notification to the receiver of the message.
-     */
-    @EawAsync
-    private void sendPassword(final User thisUser, final String newPassword) {
-        // Send out mail
         try {
-            EmailManager.getInstance().sendPassword(thisUser, newPassword);
+            // Send out mail
+            sendPassword(thatUser, newPassword);
 
         } catch (final MessagingException e) {
             LOGGER.error(e);
@@ -164,6 +152,10 @@ public class ForgotPasswordController
             LOGGER.error(e);
             LOGGER.error("Password Form: Failed to send email");
         }
+
+
+        LOGGER.info("Password Form: sent to user [" + thatUser.getEmail() + "]");
+        return "redirect:sent_password";
     }
 
     private void validateSpecial(final Errors errors, final String value, final String field) {

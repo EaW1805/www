@@ -1,20 +1,20 @@
-package empire.webapp.shared.stores.map;
+package com.eaw1805.www.shared.stores.map;
 
-import empire.data.constants.RegionConstants;
-import empire.data.dto.common.SectorDTO;
-import empire.webapp.client.events.loading.LoadEventManager;
-import empire.webapp.client.events.loading.ProSiteLoadedEvent;
-import empire.webapp.client.events.loading.ProSiteLoadedHandler;
-import empire.webapp.client.events.loading.RegionLoadedEvent;
-import empire.webapp.client.events.loading.RegionLoadedHandler;
-import empire.webapp.client.events.loading.SectorsLoadedEvent;
-import empire.webapp.client.events.loading.SectorsLoadedHandler;
-import empire.webapp.shared.stores.GameStore;
-import empire.webapp.shared.stores.RegionStore;
-import empire.webapp.shared.stores.economy.ProductionSiteStore;
-import empire.webapp.shared.stores.map.economic.IncDecPopGroup;
-import empire.webapp.shared.stores.map.economic.PopSizeGroup;
-import empire.webapp.shared.stores.map.economic.PrSitesGroup;
+import com.eaw1805.data.constants.RegionConstants;
+import com.eaw1805.data.dto.common.SectorDTO;
+import com.eaw1805.www.client.events.loading.LoadEventManager;
+import com.eaw1805.www.client.events.loading.ProSiteLoadedEvent;
+import com.eaw1805.www.client.events.loading.ProSiteLoadedHandler;
+import com.eaw1805.www.client.events.loading.RegionLoadedEvent;
+import com.eaw1805.www.client.events.loading.RegionLoadedHandler;
+import com.eaw1805.www.client.events.loading.SectorsLoadedEvent;
+import com.eaw1805.www.client.events.loading.SectorsLoadedHandler;
+import com.eaw1805.www.shared.stores.GameStore;
+import com.eaw1805.www.shared.stores.RegionStore;
+import com.eaw1805.www.shared.stores.economy.ProductionSiteStore;
+import com.eaw1805.www.shared.stores.map.economic.IncDecPopGroup;
+import com.eaw1805.www.shared.stores.map.economic.PopSizeGroup;
+import com.eaw1805.www.shared.stores.map.economic.PrSitesGroup;
 import org.vaadin.gwtgraphics.client.Group;
 
 import java.util.HashMap;

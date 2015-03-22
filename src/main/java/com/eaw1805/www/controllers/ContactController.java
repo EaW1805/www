@@ -1,6 +1,5 @@
 package com.eaw1805.www.controllers;
 
-import com.eaw1805.core.EmailManager;
 import com.eaw1805.data.managers.beans.EngineProcessManagerBean;
 import com.eaw1805.data.model.EngineProcess;
 import com.eaw1805.data.model.Message;
@@ -8,7 +7,8 @@ import com.eaw1805.data.model.User;
 import com.eaw1805.www.controllers.cache.async.EawAsync;
 import com.eaw1805.www.controllers.site.ArticleManager;
 import com.eaw1805.www.hibernate.ScenarioContextHolder;
-import org.apache.logging.log4j.LogManager; import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,9 +19,22 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.activation.DataHandler;
+import javax.activation.FileDataSource;
+import javax.mail.Address;
+import javax.mail.Authenticator;
 import javax.mail.MessagingException;
+import javax.mail.Multipart;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
+import java.util.Properties;
 
 /**
  * Display contact & support page.
@@ -143,29 +156,11 @@ public class ContactController
         }
 
         // Try to send out the contact form
-        sendContact(message.getSender().getEmail(),
-                message.getSender().getFullname(),
-                message.getSubject(),
-                message.getBodyMessage());
-
-
-        return "redirect:contact/sent";
-    }
-
-    /**
-     * Send an e-mail.
-     *
-     * @param sender   Sender email.
-     * @param fullName Sender's full name.
-     * @param subject  the subject of the e-mail.
-     * @param text     the body of the e-mail.
-     */
-    @EawAsync
-    public void sendContact(final String sender, final String fullName, final String subject, final String text) {
-        // Send out mail
         try {
-            EmailManager.getInstance().sendContact(sender, fullName, subject, text);
-
+            sendContact(message.getSender().getEmail(),
+                    message.getSender().getFullname(),
+                    message.getSubject(),
+                    message.getBodyMessage());
         } catch (final MessagingException e) {
             LOGGER.error(e);
             LOGGER.error("Contact Form: Failed to send email");
@@ -174,6 +169,8 @@ public class ContactController
             LOGGER.error(e);
             LOGGER.error("Contact Form: Failed to send email");
         }
+
+        return "redirect:contact/sent";
     }
 
     /**

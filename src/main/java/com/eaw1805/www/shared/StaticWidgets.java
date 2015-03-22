@@ -1,7 +1,7 @@
-package empire.webapp.shared;
+package com.eaw1805.www.shared;
 
 
-import empire.webapp.client.widgets.ImageButton;
+import com.eaw1805.www.client.widgets.ImageButton;
 
 public class StaticWidgets {
     public static ImageButton BUILD_IMAGE_TILE_ACTIONS_POPUP = new ImageButton("http://static.eaw1805.com/images/buttons/ButBuildProdSiteOff.png");
@@ -22,6 +22,5 @@ public class StaticWidgets {
     public static ImageButton RELATION_IMAGE_OPTIONS = new ImageButton("http://static.eaw1805.com/images/layout/buttons/ButPoliticsOff.png");
     public static ImageButton EMBARK_IMAGE_OPTIONS = new ImageButton("http://static.eaw1805.com/images/layout/buttons/ButEmbarkDisembarkOff.png");
     public static ImageButton SPYREPORT_IMAGE_OPTIONS = new ImageButton("http://static.eaw1805.com/images/layout/buttons/ButSpyReportsOff.png");
-
 
 }

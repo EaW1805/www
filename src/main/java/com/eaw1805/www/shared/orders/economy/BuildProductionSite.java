@@ -1,6 +1,6 @@
-package empire.webapp.shared.orders.economy;
+package com.eaw1805.www.shared.orders.economy;
 
-import empire.webapp.shared.orders.Order;
+import com.eaw1805.www.shared.orders.Order;
 
 public class BuildProductionSite implements Order {
 

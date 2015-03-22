@@ -1,6 +1,5 @@
 package com.eaw1805.www.controllers.user;
 
-import com.eaw1805.core.EmailManager;
 import com.eaw1805.data.model.Message;
 import com.eaw1805.data.model.User;
 import com.eaw1805.www.controllers.BaseController;
@@ -47,17 +46,6 @@ public class InboxController
      * Instance of AntisamManager class.
      */
     protected transient AntisamyManager antisamyManager;
-
-    /**
-     * Send Email Notification to the receiver of the message.
-     *
-     * @param message the input message.
-     */
-    @EawAsync
-    private void sendEmailNotification(final Message message) {
-        // Send out mail
-        EmailManager.getInstance().sendMessageNotification(message);
-    }
 
     @ModelAttribute(MODEL_JSTL_KEY)
     public Message getCommandObject() {
@@ -129,7 +117,8 @@ public class InboxController
                             messageManager.getRootMessage(thisUser.getUserId(), endUser.getUserId(), message.getSubject());
                     message.setRootId(thisMessage.getMessageId());
                 }
-                sendEmailNotification(message);
+
+                sendMessageNotification(message);
             }
         } else {
             result.rejectValue("subject", "required.subject");

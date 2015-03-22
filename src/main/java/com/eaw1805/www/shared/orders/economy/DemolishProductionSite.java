@@ -1,4 +1,4 @@
-package empire.webapp.shared.orders.economy;
+package com.eaw1805.www.shared.orders.economy;
 
 public class DemolishProductionSite {
 

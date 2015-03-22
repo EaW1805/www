@@ -5,6 +5,8 @@ import com.eaw1805.data.dto.web.OrderDTO;
 import com.eaw1805.data.dto.web.RelationDTO;
 import com.eaw1805.www.controllers.remote.hotspot.AbstractChangesProcessor;
 import com.eaw1805.www.controllers.remote.hotspot.ChangesProcessor;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -19,7 +21,7 @@ public class PoliticsApplyChangesProcessor
     /**
      * a log4j logger to print messages.
      */
-    private static final org.apache.log4j.Logger LOGGER = org.apache.log4j.LogManager.getLogger(PoliticsApplyChangesProcessor.class);
+    private static final Logger LOGGER = LogManager.getLogger(PoliticsApplyChangesProcessor.class);
 
     /**
      * The order types that this processor is handling.

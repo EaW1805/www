@@ -1,4 +1,4 @@
-package empire.webapp.shared.stores;
+package com.eaw1805.www.shared.stores;
 
 
 import com.allen_sauer.gwt.voices.client.Sound;
@@ -7,18 +7,18 @@ import com.allen_sauer.gwt.voices.client.handler.PlaybackCompleteEvent;
 import com.allen_sauer.gwt.voices.client.handler.SoundHandler;
 import com.allen_sauer.gwt.voices.client.handler.SoundLoadStateChangeEvent;
 import com.google.gwt.user.client.Timer;
-import empire.data.constants.ArmyConstants;
-import empire.data.dto.web.army.BarrackDTO;
-import empire.webapp.client.views.BarrackShipYardView;
-import empire.webapp.client.views.TaxationView;
-import empire.webapp.client.views.TradePanelView;
-import empire.webapp.client.views.military.deployment.UnloadTroopsView;
-import empire.webapp.client.widgets.ErrorPopup;
-import empire.webapp.client.widgets.WindowPanelEAW;
-import empire.webapp.shared.stores.economy.ProductionSiteStore;
-import empire.webapp.shared.stores.units.ArmyStore;
-import empire.webapp.shared.stores.util.ArmyUnitInfoDTO;
-import empire.webapp.shared.stores.util.calculators.MiscCalculators;
+import com.eaw1805.data.constants.ArmyConstants;
+import com.eaw1805.data.dto.web.army.BarrackDTO;
+import com.eaw1805.www.client.views.BarrackShipYardView;
+import com.eaw1805.www.client.views.TaxationView;
+import com.eaw1805.www.client.views.TradePanelView;
+import com.eaw1805.www.client.views.military.deployment.UnloadTroopsView;
+import com.eaw1805.www.client.widgets.ErrorPopup;
+import com.eaw1805.www.client.widgets.WindowPanelEAW;
+import com.eaw1805.www.shared.stores.economy.ProductionSiteStore;
+import com.eaw1805.www.shared.stores.units.ArmyStore;
+import com.eaw1805.www.shared.stores.util.ArmyUnitInfoDTO;
+import com.eaw1805.www.shared.stores.util.calculators.MiscCalculators;
 
 public final class SoundStore implements ArmyConstants {
 

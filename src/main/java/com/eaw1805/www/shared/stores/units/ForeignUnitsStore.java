@@ -1,20 +1,20 @@
-package empire.webapp.shared.stores.units;
+package com.eaw1805.www.shared.stores.units;
 
-import empire.data.constants.ArmyConstants;
-import empire.data.constants.RelationConstants;
-import empire.data.dto.common.SectorDTO;
-import empire.data.dto.web.army.ArmyDTO;
-import empire.data.dto.web.army.BrigadeDTO;
-import empire.data.dto.web.army.CommanderDTO;
-import empire.data.dto.web.army.CorpDTO;
-import empire.data.dto.web.army.SpyDTO;
-import empire.data.dto.web.economy.BaggageTrainDTO;
-import empire.data.dto.web.fleet.FleetDTO;
-import empire.data.dto.web.fleet.ShipDTO;
-import empire.webapp.client.events.loading.LoadEventManager;
-import empire.webapp.client.widgets.ErrorPopup;
-import empire.webapp.shared.ForeignUnits;
-import empire.webapp.shared.stores.RelationsStore;
+import com.eaw1805.data.constants.ArmyConstants;
+import com.eaw1805.data.constants.RelationConstants;
+import com.eaw1805.data.dto.common.SectorDTO;
+import com.eaw1805.data.dto.web.army.ArmyDTO;
+import com.eaw1805.data.dto.web.army.BrigadeDTO;
+import com.eaw1805.data.dto.web.army.CommanderDTO;
+import com.eaw1805.data.dto.web.army.CorpDTO;
+import com.eaw1805.data.dto.web.army.SpyDTO;
+import com.eaw1805.data.dto.web.economy.BaggageTrainDTO;
+import com.eaw1805.data.dto.web.fleet.FleetDTO;
+import com.eaw1805.data.dto.web.fleet.ShipDTO;
+import com.eaw1805.www.client.events.loading.LoadEventManager;
+import com.eaw1805.www.client.widgets.ErrorPopup;
+import com.eaw1805.www.shared.ForeignUnits;
+import com.eaw1805.www.shared.stores.RelationsStore;
 
 import java.util.ArrayList;
 import java.util.HashMap;

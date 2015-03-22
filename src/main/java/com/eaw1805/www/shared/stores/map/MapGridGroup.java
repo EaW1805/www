@@ -1,11 +1,11 @@
-package empire.webapp.shared.stores.map;
+package com.eaw1805.www.shared.stores.map;
 
-import empire.data.HibernateUtil;
-import empire.data.constants.RegionConstants;
-import empire.data.constants.StyleConstants;
-import empire.webapp.client.widgets.MapLine;
-import empire.webapp.shared.stores.GameStore;
-import empire.webapp.shared.stores.support.MapConstants;
+import com.eaw1805.data.HibernateUtil;
+import com.eaw1805.data.constants.RegionConstants;
+import com.eaw1805.data.constants.StyleConstants;
+import com.eaw1805.www.client.widgets.MapLine;
+import com.eaw1805.www.shared.stores.GameStore;
+import com.eaw1805.www.shared.stores.support.MapConstants;
 import org.vaadin.gwtgraphics.client.Group;
 
 public class MapGridGroup extends Group implements MapConstants,

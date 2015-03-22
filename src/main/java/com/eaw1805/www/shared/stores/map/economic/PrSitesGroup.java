@@ -1,14 +1,14 @@
-package empire.webapp.shared.stores.map.economic;
+package com.eaw1805.www.shared.stores.map.economic;
 
-import empire.data.constants.ProductionSiteConstants;
-import empire.data.dto.common.SectorDTO;
-import empire.webapp.client.events.economy.EcoEventManager;
-import empire.webapp.client.events.economy.PrSiteChangeEvent;
-import empire.webapp.client.events.economy.PrSiteChangeHandler;
-import empire.webapp.client.widgets.MapImage;
-import empire.webapp.shared.stores.economy.ProductionSiteStore;
-import empire.webapp.shared.stores.map.MapStore;
-import empire.webapp.shared.stores.support.MapConstants;
+import com.eaw1805.data.constants.ProductionSiteConstants;
+import com.eaw1805.data.dto.common.SectorDTO;
+import com.eaw1805.www.client.events.economy.EcoEventManager;
+import com.eaw1805.www.client.events.economy.PrSiteChangeEvent;
+import com.eaw1805.www.client.events.economy.PrSiteChangeHandler;
+import com.eaw1805.www.client.widgets.MapImage;
+import com.eaw1805.www.shared.stores.economy.ProductionSiteStore;
+import com.eaw1805.www.shared.stores.map.MapStore;
+import com.eaw1805.www.shared.stores.support.MapConstants;
 import org.vaadin.gwtgraphics.client.Group;
 
 import java.util.Map;

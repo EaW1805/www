@@ -1,6 +1,5 @@
 package com.eaw1805.www.controllers.game.forms;
 
-import com.eaw1805.core.WebsiteCacheManager;
 import com.eaw1805.data.HibernateUtil;
 import com.eaw1805.data.constants.*;
 import com.eaw1805.data.managers.beans.*;
@@ -28,7 +27,9 @@ import java.util.Map;
  * of edit vps form for a spesific user.
  */
 @Controller
-public class EditVP extends BaseController {
+public class EditVP
+        extends BaseController
+        implements CacheConstants {
 
     @RequestMapping(method = RequestMethod.GET, value = "/scenario/{scenarioId}/game/{gameId}/nation/{nationId}/vps")
     public String showPage(@PathVariable("scenarioId") String scenarioId,
@@ -154,20 +155,20 @@ public class EditVP extends BaseController {
 
         //finally evict related caches
         //Clear the cache with the given Name.
-        if (redisTemplate.hasKey(WebsiteCacheManager.CACHE_NAME)) {
-            redisTemplate.delete(WebsiteCacheManager.CACHE_NAME);
+        if (redisTemplate.hasKey(CACHE_NAME)) {
+            redisTemplate.delete(CACHE_NAME);
         }
         //Clear the cache with the given Name.
         if (redisTemplate.hasKey("longGameCache")) {
             redisTemplate.delete("longGameCache");
         }
         //Clear the cache with the given Name.
-        if (redisTemplate.hasKey(WebsiteCacheManager.USER_CACHE_NAME)) {
-            redisTemplate.delete(WebsiteCacheManager.USER_CACHE_NAME);
+        if (redisTemplate.hasKey(USER_CACHE_NAME)) {
+            redisTemplate.delete(USER_CACHE_NAME);
         }
         //then clear the game cache
-        if (redisTemplate.hasKey(WebsiteCacheManager.GAME_CACHE_NAME + "-" + news.getGame().getGameId())) {
-            redisTemplate.delete(WebsiteCacheManager.GAME_CACHE_NAME + "-" + news.getGame().getGameId());
+        if (redisTemplate.hasKey(GAME_CACHE_NAME + "-" + news.getGame().getGameId())) {
+            redisTemplate.delete(GAME_CACHE_NAME + "-" + news.getGame().getGameId());
         }
         //redirect back to form page.
         return "redirect:/scenario/" + scenarioId + "/game/" + gameId + "/nation/" + nationId + "/vps";
@@ -237,20 +238,20 @@ public class EditVP extends BaseController {
 
         //finally evict related caches
         //Clear the cache with the given Name.
-        if (redisTemplate.hasKey(WebsiteCacheManager.CACHE_NAME)) {
-            redisTemplate.delete(WebsiteCacheManager.CACHE_NAME);
+        if (redisTemplate.hasKey(CACHE_NAME)) {
+            redisTemplate.delete(CACHE_NAME);
         }
         //Clear the cache with the given Name.
         if (redisTemplate.hasKey("longGameCache")) {
             redisTemplate.delete("longGameCache");
         }
         //Clear the cache with the given Name.
-        if (redisTemplate.hasKey(WebsiteCacheManager.USER_CACHE_NAME)) {
-            redisTemplate.delete(WebsiteCacheManager.USER_CACHE_NAME);
+        if (redisTemplate.hasKey(USER_CACHE_NAME)) {
+            redisTemplate.delete(USER_CACHE_NAME);
         }
         //then clear the game cache
-        if (redisTemplate.hasKey(WebsiteCacheManager.GAME_CACHE_NAME + "-" + thisNewsEntry.getGame().getGameId())) {
-            redisTemplate.delete(WebsiteCacheManager.GAME_CACHE_NAME + "-" + thisNewsEntry.getGame().getGameId());
+        if (redisTemplate.hasKey(GAME_CACHE_NAME + "-" + thisNewsEntry.getGame().getGameId())) {
+            redisTemplate.delete(GAME_CACHE_NAME + "-" + thisNewsEntry.getGame().getGameId());
         }
 
         //redirect back to form page.

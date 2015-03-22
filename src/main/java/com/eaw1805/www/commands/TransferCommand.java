@@ -1,6 +1,6 @@
-package empire.webapp.commands;
+package com.eaw1805.www.commands;
 
-import empire.data.model.User;
+import com.eaw1805.data.model.User;
 
 /**
  * Implementation of the Transfer Command.

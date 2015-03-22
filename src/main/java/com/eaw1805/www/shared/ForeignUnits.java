@@ -1,11 +1,11 @@
-package empire.webapp.shared;
+package com.eaw1805.www.shared;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
-import empire.data.dto.web.army.ArmyDTO;
-import empire.data.dto.web.army.CommanderDTO;
-import empire.data.dto.web.army.SpyDTO;
-import empire.data.dto.web.economy.BaggageTrainDTO;
-import empire.data.dto.web.fleet.FleetDTO;
+import com.eaw1805.data.dto.web.army.ArmyDTO;
+import com.eaw1805.data.dto.web.army.CommanderDTO;
+import com.eaw1805.data.dto.web.army.SpyDTO;
+import com.eaw1805.data.dto.web.economy.BaggageTrainDTO;
+import com.eaw1805.data.dto.web.fleet.FleetDTO;
 
 import java.io.Serializable;
 import java.util.HashMap;

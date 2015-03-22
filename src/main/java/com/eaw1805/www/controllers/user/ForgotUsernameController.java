@@ -1,12 +1,11 @@
 package com.eaw1805.www.controllers.user;
 
-import com.eaw1805.core.EmailManager;
 import com.eaw1805.data.model.User;
 import com.eaw1805.www.controllers.BaseController;
-import com.eaw1805.www.controllers.cache.async.EawAsync;
 import com.eaw1805.www.controllers.site.ArticleManager;
 import com.eaw1805.www.hibernate.ScenarioContextHolder;
-import org.apache.logging.log4j.LogManager; import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -115,20 +114,9 @@ public class ForgotUsernameController
         }
 
         // Send out mail
-        sendUsername(thatUser.get(0));
-
-        LOGGER.info("Username Form: sent to user [" + thatUser.get(0) + "]");
-        return "redirect:sent_username";
-    }
-
-    /**
-     * Send Email Notification to the receiver of the message.
-     */
-    @EawAsync
-    private void sendUsername(final User thisUser) {
-        // Send out mail
         try {
-            EmailManager.getInstance().sendUsername(thisUser);
+            // Send out mail
+            sendUsername(thatUser.get(0));
 
         } catch (final MessagingException e) {
             LOGGER.error(e);
@@ -138,6 +126,9 @@ public class ForgotUsernameController
             LOGGER.error(e);
             LOGGER.error("Username Form: Failed to send email");
         }
+
+        LOGGER.info("Username Form: sent to user [" + thatUser.get(0) + "]");
+        return "redirect:sent_username";
     }
 
 }

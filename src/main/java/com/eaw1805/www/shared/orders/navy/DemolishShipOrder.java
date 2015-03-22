@@ -1,6 +1,6 @@
-package empire.webapp.shared.orders.navy;
+package com.eaw1805.www.shared.orders.navy;
 
-import empire.webapp.shared.orders.Order;
+import com.eaw1805.www.shared.orders.Order;
 
 public class DemolishShipOrder implements Order {
 

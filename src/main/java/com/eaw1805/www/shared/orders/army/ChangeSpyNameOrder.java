@@ -1,7 +1,7 @@
-package empire.webapp.shared.orders.army;
+package com.eaw1805.www.shared.orders.army;
 
-import empire.data.dto.web.army.SpyDTO;
-import empire.webapp.shared.orders.Order;
+import com.eaw1805.data.dto.web.army.SpyDTO;
+import com.eaw1805.www.shared.orders.Order;
 
 import java.util.Map;
 

@@ -1,4 +1,4 @@
-package empire.webapp.shared.orders;
+package com.eaw1805.www.shared.orders;
 
 
 public interface Order {

@@ -1,6 +1,6 @@
-package empire.webapp.commands;
+package com.eaw1805.www.commands;
 
-import empire.data.model.Nation;
+import com.eaw1805.data.model.Nation;
 
 import java.io.Serializable;
 import java.util.List;

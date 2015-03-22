@@ -4,7 +4,7 @@ import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.HttpMethod;
 import com.gargoylesoftware.htmlunit.TextPage;
 import com.gargoylesoftware.htmlunit.WebClient;
-import com.gargoylesoftware.htmlunit.WebRequest;
+import com.gargoylesoftware.htmlunit.WebRequestSettings;
 import com.gargoylesoftware.htmlunit.html.DomElement;
 import com.gargoylesoftware.htmlunit.html.HtmlElement;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
@@ -120,7 +120,7 @@ public class ArticleManager {
      * Default Constructor.
      */
     public ArticleManager() {
-        webClient = new WebClient(BrowserVersion.FIREFOX_3_6);
+        webClient = new WebClient(BrowserVersion.FIREFOX_3);
 //        webClient.setJavaScriptEnabled(true);
     }
 
@@ -145,7 +145,7 @@ public class ArticleManager {
 
         LOGGER.info("Posting request to RECAPTCHA [" + url.toString() + "]");
         try {
-            final WebRequest webreq = new WebRequest(new URL(url.toString()), HttpMethod.POST);
+            final WebRequestSettings webreq = new WebRequestSettings(new URL(url.toString()), HttpMethod.POST);
             final TextPage page = webClient.getPage(webreq);
 
             webClient.closeAllWindows();
@@ -230,8 +230,8 @@ public class ArticleManager {
 
             final List<String> articles = new ArrayList<String>();
             for (final DomElement htmlElement : element.getChildElements()) {
-                for (DomElement htmlElement1 : htmlElement.getChildElements()) {
-                    final DomElement article = htmlElement1.getChildElements().iterator().next();
+                for (DomElement htmlElement1 : htmlElement.getAllHtmlChildElements()) {
+                    final DomElement article = htmlElement1.getAllHtmlChildElements().iterator().next();
 
                     articles.add(article.asXml().replaceAll(URL_DIRECT + "site/", URL_STATIC + "site/").replaceAll("src=\"/site/", "src=\"" + URL_STATIC + "site/"));
                 }

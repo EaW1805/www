@@ -1,7 +1,7 @@
-package empire.webapp.editors;
+package com.eaw1805.www.editors;
 
-import empire.data.managers.beans.TerrainManagerBean;
-import empire.data.model.map.Terrain;
+import com.eaw1805.data.managers.beans.TerrainManagerBean;
+import com.eaw1805.data.model.map.Terrain;
 
 import java.beans.PropertyEditorSupport;
 

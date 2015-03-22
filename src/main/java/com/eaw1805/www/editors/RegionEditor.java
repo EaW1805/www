@@ -1,7 +1,7 @@
-package empire.webapp.editors;
+package com.eaw1805.www.editors;
 
-import empire.data.managers.beans.RegionManagerBean;
-import empire.data.model.map.Region;
+import com.eaw1805.data.managers.beans.RegionManagerBean;
+import com.eaw1805.data.model.map.Region;
 
 import java.beans.PropertyEditorSupport;
 

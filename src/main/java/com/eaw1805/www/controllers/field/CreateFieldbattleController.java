@@ -45,7 +45,9 @@ import java.util.List;
 import java.util.Set;
 
 @Controller
-public class CreateFieldbattleController extends ExtendedController implements RegionConstants {
+public class CreateFieldbattleController
+        extends ExtendedController
+        implements RegionConstants {
 
     /**
      * a log4j logger to print messages.

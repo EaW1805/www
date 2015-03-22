@@ -1,11 +1,13 @@
 package com.eaw1805.www.controllers.antisamy;
 
-import org.apache.logging.log4j.LogManager; import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.owasp.validator.html.AntiSamy;
 import org.owasp.validator.html.CleanResults;
 import org.owasp.validator.html.Policy;
 import org.owasp.validator.html.PolicyException;
 
+import java.io.IOException;
 import java.net.URL;
 
 /**
@@ -68,10 +70,14 @@ public class AntisamyManager {
         final URL urlWithoutImg = getClass().getResource("/empire/webapp/resources/antisamy/" + POLICY_FILE_WITHOUT_IMG);
 
         try {
-            policyImg = Policy.getInstance(urlWithImg);
-            policyNoImg = Policy.getInstance(urlWithoutImg);
+            policyImg = Policy.getInstance(urlWithImg.openStream());
+            policyNoImg = Policy.getInstance(urlWithoutImg.openStream());
+
+        } catch (final IOException e) {
+            LOGGER.fatal(e, e);
+
         } catch (final PolicyException e) {
-            LOGGER.fatal(e);
+            LOGGER.fatal(e, e);
         }
 
         antiSamy = new AntiSamy();
@@ -86,7 +92,7 @@ public class AntisamyManager {
     public String scanWithImgTag(final String dirtyInput) {
 
         try {
-            final CleanResults cleanResult = antiSamy.scan(dirtyInput, policyImg, AntiSamy.SAX);
+            final CleanResults cleanResult = antiSamy.scan(dirtyInput, policyImg);
             return cleanResult.getCleanHTML();
         } catch (Exception e) {
             return dirtyInput;
@@ -101,7 +107,7 @@ public class AntisamyManager {
      */
     public String scanWithOutImgTag(final String dirtyInput) {
         try {
-            final CleanResults cleanResult = antiSamy.scan(dirtyInput, policyNoImg, AntiSamy.SAX);
+            final CleanResults cleanResult = antiSamy.scan(dirtyInput, policyNoImg);
             return cleanResult.getCleanHTML();
         } catch (Exception e) {
             return dirtyInput;

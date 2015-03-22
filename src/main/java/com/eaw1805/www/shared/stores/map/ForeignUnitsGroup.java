@@ -1,20 +1,20 @@
-package empire.webapp.shared.stores.map;
+package com.eaw1805.www.shared.stores.map;
 
-import empire.data.dto.web.army.ArmyDTO;
-import empire.data.dto.web.army.BrigadeDTO;
-import empire.data.dto.web.army.CommanderDTO;
-import empire.data.dto.web.army.CorpDTO;
-import empire.data.dto.web.army.SpyDTO;
-import empire.data.dto.web.economy.BaggageTrainDTO;
-import empire.data.dto.web.fleet.FleetDTO;
-import empire.data.dto.web.fleet.ShipDTO;
-import empire.webapp.client.events.loading.ForeignUnitsLoadedEvent;
-import empire.webapp.client.events.loading.ForeignUnitsLoadedHandler;
-import empire.webapp.client.events.loading.LoadEventManager;
-import empire.webapp.shared.stores.map.units.MapArmyGroup;
-import empire.webapp.shared.stores.map.units.MapBtrainGroup;
-import empire.webapp.shared.stores.map.units.MapFleetGroup;
-import empire.webapp.shared.stores.map.units.MapSpyCommGroup;
+import com.eaw1805.data.dto.web.army.ArmyDTO;
+import com.eaw1805.data.dto.web.army.BrigadeDTO;
+import com.eaw1805.data.dto.web.army.CommanderDTO;
+import com.eaw1805.data.dto.web.army.CorpDTO;
+import com.eaw1805.data.dto.web.army.SpyDTO;
+import com.eaw1805.data.dto.web.economy.BaggageTrainDTO;
+import com.eaw1805.data.dto.web.fleet.FleetDTO;
+import com.eaw1805.data.dto.web.fleet.ShipDTO;
+import com.eaw1805.www.client.events.loading.ForeignUnitsLoadedEvent;
+import com.eaw1805.www.client.events.loading.ForeignUnitsLoadedHandler;
+import com.eaw1805.www.client.events.loading.LoadEventManager;
+import com.eaw1805.www.shared.stores.map.units.MapArmyGroup;
+import com.eaw1805.www.shared.stores.map.units.MapBtrainGroup;
+import com.eaw1805.www.shared.stores.map.units.MapFleetGroup;
+import com.eaw1805.www.shared.stores.map.units.MapSpyCommGroup;
 import org.vaadin.gwtgraphics.client.Group;
 
 import java.util.ArrayList;

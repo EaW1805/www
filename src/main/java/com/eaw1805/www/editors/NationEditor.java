@@ -1,7 +1,7 @@
-package empire.webapp.editors;
+package com.eaw1805.www.editors;
 
-import empire.data.managers.beans.NationManagerBean;
-import empire.data.model.Nation;
+import com.eaw1805.data.managers.beans.NationManagerBean;
+import com.eaw1805.data.model.Nation;
 
 import java.beans.PropertyEditorSupport;
 

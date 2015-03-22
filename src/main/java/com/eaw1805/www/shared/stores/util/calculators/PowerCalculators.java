@@ -1,10 +1,10 @@
-package empire.webapp.shared.stores.util.calculators;
+package com.eaw1805.www.shared.stores.util.calculators;
 
-import empire.data.dto.web.army.ArmyDTO;
-import empire.data.dto.web.army.BrigadeDTO;
-import empire.data.dto.web.army.CorpDTO;
-import empire.data.dto.web.fleet.FleetDTO;
-import empire.data.dto.web.fleet.ShipDTO;
+import com.eaw1805.data.dto.web.army.ArmyDTO;
+import com.eaw1805.data.dto.web.army.BrigadeDTO;
+import com.eaw1805.data.dto.web.army.CorpDTO;
+import com.eaw1805.data.dto.web.fleet.FleetDTO;
+import com.eaw1805.data.dto.web.fleet.ShipDTO;
 
 import java.util.List;
 
