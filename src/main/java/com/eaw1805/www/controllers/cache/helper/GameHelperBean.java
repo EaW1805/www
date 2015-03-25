@@ -953,6 +953,14 @@ public class GameHelperBean {
             }
         });
 
+        // Make sure list is sorted by game ID
+        Collections.sort(endedList, new Comparator<Game>() {
+
+            public int compare(Game g1, Game g2) {
+                return Integer.compare(g1.getGameId(), g2.getGameId());
+            }
+        });
+
         // Prepare data to pass to jsp
         refData.put("gameToFree", gameToFree);
         refData.put("gameToDead", gameToDead);
