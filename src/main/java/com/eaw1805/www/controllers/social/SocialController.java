@@ -426,21 +426,21 @@ public class SocialController {
             } else {
                 facebookStatus = SocialDTO.NO_LIKE;
 
-                final List<FqlResult> results =
-                        facebook.fqlOperations().query("SELECT uid FROM page_fan WHERE uid="
-                                + fbConnection.getKey().getProviderUserId() + " AND page_id=471451736199884",
-                                new FqlResultMapper<FqlResult>() {
-                                    @Override
-                                    public FqlResult mapObject(final FqlResult fqlResult) {
-                                        return fqlResult;
-                                    }
-                                });
-                if (results != null && !results.isEmpty()) {
-                    if (results.get(0).getInteger("uid") != null
-                            && results.get(0).getString("uid").equals(fbConnection.getKey().getProviderUserId())) {
-                        facebookStatus = SocialDTO.LIKED;
-                    }
-                }
+//                final List<FqlResult> results =
+//                        facebook.fqlOperations().query("SELECT uid FROM page_fan WHERE uid="
+//                                + fbConnection.getKey().getProviderUserId() + " AND page_id=471451736199884",
+//                                new FqlResultMapper<FqlResult>() {
+//                                    @Override
+//                                    public FqlResult mapObject(final FqlResult fqlResult) {
+//                                        return fqlResult;
+//                                    }
+//                                });
+//                if (results != null && !results.isEmpty()) {
+//                    if (results.get(0).getInteger("uid") != null
+//                            && results.get(0).getString("uid").equals(fbConnection.getKey().getProviderUserId())) {
+//                        facebookStatus = SocialDTO.LIKED;
+//                    }
+//                }
                 //TODO: Check if shared(from User object)
             }
         }

@@ -218,8 +218,8 @@ public class ArticleManager {
 
             final List<String> articles = new ArrayList<String>();
             for (final DomElement htmlElement : element.getChildElements()) {
-                for (DomElement htmlElement1 : htmlElement.getAllHtmlChildElements()) {
-                    final DomElement article = htmlElement1.getAllHtmlChildElements().iterator().next();
+                for (DomElement htmlElement1 : htmlElement.getChildElements()) {
+                    final DomElement article = htmlElement1.getChildElements().iterator().next();
 
                     articles.add(article.asXml().replaceAll(URL_DIRECT + "site/", URL_STATIC + "site/").replaceAll("src=\"/site/", "src=\"" + URL_STATIC + "site/"));
                 }
