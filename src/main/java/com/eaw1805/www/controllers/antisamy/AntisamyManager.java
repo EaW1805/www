@@ -66,8 +66,8 @@ public class AntisamyManager {
      * Default Constructor.
      */
     public AntisamyManager() {
-        final URL urlWithImg = getClass().getResource("/empire/webapp/resources/antisamy/" + POLICY_FILE_WITH_IMG);
-        final URL urlWithoutImg = getClass().getResource("/empire/webapp/resources/antisamy/" + POLICY_FILE_WITHOUT_IMG);
+        final URL urlWithImg = getClass().getResource("/com.eaw1805.www.resources/antisamy/" + POLICY_FILE_WITH_IMG);
+        final URL urlWithoutImg = getClass().getResource("/com.eaw1805.www.resources/antisamy/" + POLICY_FILE_WITHOUT_IMG);
 
         try {
             policyImg = Policy.getInstance(urlWithImg.openStream());

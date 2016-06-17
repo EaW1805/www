@@ -1,0 +1,494 @@
+/** Add css rules here for your application. */
+
+/** Rules that will aply to the body of our Basic Html Page */
+@font-face {
+    font-family: empireFont;
+    src: url("http://static.eaw1805.com/style/empireFont.otf");
+}
+
+@font-face {
+    font-family: empireClearFont;
+    src: url("http://static.eaw1805.com/style/VivaldiItalic.ttf");
+}
+
+@font-face{
+    font-family: lucidaHandWriting;
+    src: url("http://static.eaw1805.com/style/LucidaHandwritingItalic.ttf");
+}
+
+.body {
+    background-color: black;
+    cursor: default;
+}
+
+.textAreaNoBorder {
+    border: none;
+}
+
+.textAreaBorderRadius {
+    border-radius: 6px 6px 6px 6px;
+}
+
+.myRichTextToolbar {
+    margin: 0;
+    padding: 5px;
+}
+
+/** Example rules used by the template application (remove for your app) */
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #777777;
+    margin: 40px 0 70px;
+    text-align: center;
+}
+
+.sendButton {
+    display: block;
+    font-size: 16pt;
+}
+
+/** Most GWT widgets already have a style name defined */
+.gwt-DialogBox {
+    width: 400px;
+}
+
+.dialogVPanel {
+    margin: 5px;
+}
+
+.serverResponseLabelError {
+    color: red;
+    font-style: normal;
+}
+
+.MainPanelDiv {
+    width: 100%;
+    height: 100%;
+}
+
+.MainPanelDivOnLogin {
+    position: center;
+    margin: auto auto;
+    width: 900px;
+    height: 670px;
+}
+
+/** Set ids using widget.getElement().setId("idOfElement") */
+#closeButton {
+    margin: 15px 6px 6px;
+}
+
+.gwtTitleLabel {
+    vertical-align: top;
+    text-align: center;
+    font-size: 40px;
+    font-family: empireFont;
+}
+
+.gwtArmiesPanel {
+    border-right: 2px solid black;
+}
+
+.LoginPanel {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.disablePointerEvents, .disablePointerEvents-svg {
+    pointer-events:none;
+}
+
+.LoginLabel {
+    background-color: maroon;
+    border: 1px solid black;
+}
+
+.gwt-TabPanel {
+    margin-top: 4px;
+}
+
+.gwt-TabPanelBottom {
+    background-color: #E8E8E8;
+}
+
+.gwt-TabBar {
+    padding-top: 2px;
+    border-bottom: 4px solid black;
+    background-color: #fff;
+}
+
+.gwt-TabBarItem {
+    padding: 4px;
+    cursor: pointer;
+    background-color: rgba(169, 93, 93, 1);
+    border-bottom: 2px solid white;
+    margin-right: 2px;
+}
+
+.gwt-TabBarItem-selected {
+    padding: 4px;
+    font-weight: bold;
+    cursor: default;
+    opacity: 1;
+    background-color: #6b3939;
+    border-bottom: 2px solid black;
+    margin-right: 2px;
+}
+
+.noScrollBars {
+    overflow: hidden !important;
+    cursor: crosshair;
+}
+
+.noScrollBarsMove {
+    overflow: hidden !important;
+    cursor: move;
+}
+
+.cursorMove {
+    cursor: move;
+}
+
+.borderSelected {
+    border: 2px solid #000000;
+}
+
+.borderCommander {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 1px;
+}
+
+.blackText {
+    color: black;
+}
+
+.pointer, .pointer-svg {
+    cursor: pointer;
+}
+
+.pointerSelected {
+    cursor: pointer;
+    border: 1px solid red;
+}
+
+.clearFont {
+    font-family: Georgia serif;
+    font-size: 15px;
+}
+
+.clearFontMedium {
+    font-family: Georgia serif;
+    font-size: 14px;
+}
+
+.clearFontMedSmall {
+    font-family: Georgia serif;
+    font-size: 12px;
+}
+
+.clearFontMedMini {
+    font-family: Georgia serif;
+    font-size: 10px;
+}
+
+.clearFontExtreme {
+    font-family: Georgia serif;
+    font-size: 60px;
+    font-weight:900;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.clearFontVerySmall {
+    font-family: Georgia serif;
+    font-size: 11px;
+}
+
+.clearFontMini {
+    font-family: Georgia serif;
+    font-size: 9px;
+}
+
+.textRight {
+    text-align: right;
+}
+
+.textUnderline {
+    text-decoration: underline;
+}
+
+.infoFontSimple {
+    font-family: Georgia serif;
+    font-size: 15px;
+    background-color: orange;
+}
+
+.sectorPanelBG {
+    opacity: 0.4;
+    filter: alpha(opacity = 40); /* For IE8 and earlier */
+}
+
+.panelHover {
+    font-family: Georgia serif;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: brown;
+}
+
+.scrollbarContainer {
+    background-color: #c9aa67;
+}
+
+.panelOut {
+    font-family: Georgia serif;
+    font-size: 15px;
+}
+
+.datePanel {
+    font-family: empireClearFont;
+    font-size: 13px;
+}
+
+.clearFontSmall {
+    font-family: Georgia serif;
+    font-size: 12px;
+}
+
+.clearFont-large {
+    font-family: Georgia serif;
+    font-size: 25px;
+}
+
+.clearFontMedLarge {
+    font-family: Georgia serif;
+    font-size: 20px;
+}
+
+.clearFont19 {
+    font-family: Georgia serif;
+    font-size: 19px;
+}
+
+.ShipPicPanel-new {
+    border: 2px ridge gray;
+    vertical-align: top;
+    text-align: left;
+    cursor: pointer;
+}
+
+.ShipPicPanel-new:hover {
+    border: 2px ridge gray;
+    vertical-align: top;
+    text-align: left;
+    cursor: pointer;
+    background-color: orange;
+}
+
+.ShipPicPanel-selected {
+    border: 2px ridge gray;
+    vertical-align: top;
+    text-align: left;
+    cursor: pointer;
+    background-color: orange;
+}
+
+.outSetBorder {
+    border: 2px outset black;
+    cursor: pointer;
+}
+
+.outSetBorder:hover {
+    border: 2px outset black;
+    background-color: orange;
+    cursor: pointer;
+}
+
+.inSetBorder {
+    border: 2px inset black;
+    background-color: orange;
+    cursor: pointer;
+}
+
+.minimizeButton {
+    vertical-alignment: top;
+    text-align: center;
+}
+
+.militaryPaneBorders {
+    border: 2px inset green;
+}
+
+.clearFontMiniTitle {
+    font-family: Georgia serif;
+    font-size: 17px;
+}
+
+.clearFontMiniTitleJustified {
+    font-family: Georgia serif;
+    font-size: 15px;
+    text-align: justify;
+}
+
+.movementWindow {
+    padding: 4px;
+    font-weight: bold;
+    font-family: Georgia serif;
+    font-size: 15px;
+    cursor: default;
+    opacity: 1;
+    border: 2px solid black;
+    margin-right: 2px;
+    background-color: rgba(37, 77, 150, 1.0);
+}
+
+.XLabel {
+    font-size: 26px;
+    vertical-align: top;
+}
+
+.globalInfoPanel {
+    background-color: rgba(139, 169, 93, 0.7);
+    border: 1px solid black;
+    font-size: x-small;
+}
+
+.outSetBorder:Disabled {
+    border: 2px outset black;
+    background-color: gray;
+    cursor: pointer;
+}
+
+.redCostText {
+    color: red;
+    font-family: empireClearFont;
+    font-size: 15px;
+}
+
+.orderCheck {
+    /* Fallback for web browsers that don't support RGBa */
+    background-color: rgb(0, 0, 0);
+    /* RGBa with 0.6 opacity */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* For IE 5.5 - 7*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = #99000000, endColorstr = #99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+
+.orderConflicted {
+    /* Fallback for web browsers that don't support RGBa */
+    background-color: rgb(50, 50, 0);
+    /* RGBa with 0.6 opacity */
+    background-color: rgba(50, 50, 0, 0.6);
+    /* For IE 5.5 - 7*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = #99000000, endColorstr = #99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+
+.orderCheckWarehouse {
+    /* Fallback for web browsers that don't support RGBa */
+    background-color: rgb(0, 50, 50);
+    /* RGBa with 0.6 opacity */
+    background-color: rgba(0, 50, 50, 0.6);
+    /* For IE 5.5 - 7*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = #99000000, endColorstr = #99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+
+.greenCostText {
+    color: green;
+    font-family: empireClearFont;
+    font-size: 15px;
+}
+
+.redText {
+    color: red;
+}
+
+.orangeText {
+    color: orange;
+}
+
+.greenText {
+    color: green;
+}
+
+.grayText {
+    color: #585858;
+}
+
+.lightGreenText {
+    color: #00FF66;
+}
+
+.whiteText {
+    color: white;
+}
+
+.noScrollBarsBlackEmbossed {
+    /*background-color: black;*/
+    overflow: hidden !important;
+    cursor: pointer;
+}
+
+.expandLabel {
+    font-size: 20px;
+    vertical-align: top;
+    border: 1px solid;
+}
+
+.disLabel {
+    background-color: gray;
+    border: 1px solid black;
+}
+
+.clearFontDual {
+    font-family: Georgia serif;
+    font-size: 20px;
+}
+
+.clearFontDual:Hover {
+    font-family: Georgia serif;
+    font-size: 20px;
+    color: red;
+    background-color: 17726 d;
+}
+
+.noSpace {
+    border-collapse: collapse !important;
+    border-spacing: 0pt 0pt !important;
+    border-style: none !important;
+    border-width: 0px none !important;
+    padding: 0px 0px 0px 0px !important;
+    background-color: blue;
+    border-spacing: 0;
+    margin: 0;
+}
+
+.transparentTextBox {
+    background: transparent;
+}
+
+.fieldBattle-setup-area-svg {
+    stroke-dasharray: 9, 5;
+}
+
+.fieldBattle-fireLine-svg {
+    stroke-dasharray: 5, 3, 9, 2;
+    pointer-events:none;
+}
+
+.quoteText {
+    font-family: lucidaHandWriting;
+    font-size: 14px;
+}
+
+.quotePersonText {
+    font-family: lucidaHandWriting;
+    font-size: 12px;
+}

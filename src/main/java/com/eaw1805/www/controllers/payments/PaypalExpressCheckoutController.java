@@ -341,7 +341,7 @@ public class PaypalExpressCheckoutController
      * @param thisUser The new user.
      */
     @EawAsync
-    private void sendPaymentReceipt(final User thisUser, final int amount, final String transactionId) {
+    protected void sendPaymentReceipt(final User thisUser, final int amount, final String transactionId) {
         // Send out mail
         try {
             EmailManager.getInstance().sendPaymentReceipt(thisUser, amount, transactionId);

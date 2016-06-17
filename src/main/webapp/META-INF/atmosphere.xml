@@ -1,0 +1,6 @@
+<!--<atmosphere-handlers>-->
+<!--&lt;!&ndash; Jersey &ndash;&gt;-->
+<!--<atmosphere-handler support-session="false" context-root="/chat/*"-->
+<!--class-name="com.eaw1805.www.websockets.ChatHandler">-->
+<!--</atmosphere-handler>-->
+<!--</atmosphere-handlers>-->

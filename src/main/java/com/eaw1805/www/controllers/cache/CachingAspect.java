@@ -40,7 +40,7 @@ public class CachingAspect {
      */
     @Pointcut("@annotation( thisCachename )")
     @SuppressWarnings("unused")
-    private void cache(final empire.data.cache.Cachable thisCachename) {
+    private void cache(final com.eaw1805.data.cache.Cachable thisCachename) {
         // do nothing
     }
 
@@ -51,7 +51,7 @@ public class CachingAspect {
      * @return the result of the given function
      */
     @Around("cache(thisCachename)")
-    public Object aroundCache(final ProceedingJoinPoint thisJoinPoint, final empire.data.cache.Cachable thisCachename)
+    public Object aroundCache(final ProceedingJoinPoint thisJoinPoint, final com.eaw1805.data.cache.Cachable thisCachename)
             throws Throwable {
         try {
             if (thisJoinPoint.getKind().equals(ProceedingJoinPoint.METHOD_CALL)) {
@@ -107,12 +107,12 @@ public class CachingAspect {
 
     @Pointcut("@annotation( thisCachename )")
     @SuppressWarnings("unused")
-    private void evictCache(final empire.data.cache.EvictCache thisCachename) {
+    private void evictCache(final com.eaw1805.data.cache.EvictCache thisCachename) {
         // do nothing
     }
 
     @Around("evictCache(thisCachename)")
-    public Object processRequest(final ProceedingJoinPoint thisJoinPoint, final empire.data.cache.EvictCache thisCachename)
+    public Object processRequest(final ProceedingJoinPoint thisJoinPoint, final com.eaw1805.data.cache.EvictCache thisCachename)
             throws Throwable {
         try {
             final String thisJoinPointName = constructCacheKey(thisJoinPoint);

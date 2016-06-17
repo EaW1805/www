@@ -22,6 +22,7 @@ import com.eaw1805.data.model.Nation;
 import com.eaw1805.data.model.army.Brigade;
 import com.eaw1805.data.model.map.Sector;
 import com.eaw1805.www.controllers.remote.EmpireRpcServiceImpl;
+import com.eaw1805.www.shared.stores.GameStore;
 import com.eaw1805.www.shared.stores.util.calculators.CostCalculators;
 
 import java.util.ArrayList;
@@ -100,11 +101,15 @@ public class OrderApplyChangesProcessor
 
             switch (order.getType()) {
                 case ORDER_B_BATT: {
+                    // Double costs custom game option
+                    final int doubleCosts = (GameStore.getInstance().isDoubleCostsArmy()) ? 2 : 1;
+
                     final Sector sector = service.getSectorManager().getByID(Integer.parseInt(order.getParameter1()));
-                    final int multiplier = getSphere(sector, service.nationManager.getByID(getNationId()));
+                    final int sphere = getSphere(sector, service.nationManager.getByID(getNationId()));
+                    final int multiplier = doubleCosts * sphere;
 
                     final BrigadeDTO brig = createBrigadeFromOrder(order);
-                    orderCost = CostCalculators.getBrigadeCost(brig, multiplier);
+                    orderCost = CostCalculators.getBrigadeCost(brig, multiplier, sphere);
                     name = order.getParameter9();
                     ids[0] = Integer.parseInt(order.getParameter1());
                     ids[1] = brig.getBrigadeId();

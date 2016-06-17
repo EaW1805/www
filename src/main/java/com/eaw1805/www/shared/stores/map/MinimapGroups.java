@@ -52,23 +52,23 @@ public final class MinimapGroups
     void loadMiniMapImages(final int regionId) {
         final Image imgMinmap;
         switch (regionId) {
-            case empire.data.constants.RegionConstants.CARIBBEAN:
+            case com.eaw1805.data.constants.RegionConstants.CARIBBEAN:
                 imgMinmap = new Image(0, 0, 120, 90, "http://static.eaw1805.com/tiles/minimaps/s" + GameStore.getInstance().getScenarioId() + "/" + regionId
                         + PNG);
                 break;
 
-            case empire.data.constants.RegionConstants.INDIES:
+            case com.eaw1805.data.constants.RegionConstants.INDIES:
                 imgMinmap = new Image(0, 0, 120, 90, "http://static.eaw1805.com/tiles/minimaps/s" + GameStore.getInstance().getScenarioId() + "/" + regionId
                         + PNG);
                 break;
 
-            case empire.data.constants.RegionConstants.AFRICA:
+            case com.eaw1805.data.constants.RegionConstants.AFRICA:
                 imgMinmap = new Image(0, 0, 120, 90, "http://static.eaw1805.com/tiles/minimaps/s" + GameStore.getInstance().getScenarioId() + "/" + regionId
                         + PNG);
                 break;
 
 
-            case empire.data.constants.RegionConstants.EUROPE:
+            case com.eaw1805.data.constants.RegionConstants.EUROPE:
             default:
                 switch (GameStore.getInstance().getScenarioId()) {
                     case HibernateUtil.DB_FREE:

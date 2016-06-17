@@ -642,10 +642,11 @@ public final class ArmyStore
 
         //if it is client calculate multiplier here... else use the given one.        
         final SectorDTO sector = RegionStore.getInstance().getSectorByPosition(newBrig);
-        final int multiplier = doubleCosts * CostCalculators.getSphere(sector, DataStore.getInstance().getNationById(GameStore.getInstance().getNationId()));
+        final int sphere = CostCalculators.getSphere(sector, DataStore.getInstance().getNationById(GameStore.getInstance().getNationId()));
+        final int multiplier = doubleCosts * sphere;
 
         try {
-            if (OrderStore.getInstance().addNewOrder(ORDER_B_BATT, CostCalculators.getBrigadeCost(newBrig, multiplier), newBrig.getRegionId(), newBrig.getName(), ids, 0, "") != 1) {
+            if (OrderStore.getInstance().addNewOrder(ORDER_B_BATT, CostCalculators.getBrigadeCost(newBrig, multiplier, sphere), newBrig.getRegionId(), newBrig.getName(), ids, 0, "") != 1) {
                 //if something went wrong... remove it.
                 barrBrigMap.get(sectorId).remove(barrBrigMap.get(sectorId).size() - 1);
             }

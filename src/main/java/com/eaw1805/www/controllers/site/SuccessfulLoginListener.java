@@ -22,7 +22,8 @@ import java.util.Date;
 /**
  * Listener for Successful logins. Called after login.
  */
-public class SuccessfulLoginListener extends SavedRequestAwareAuthenticationSuccessHandler {
+public class SuccessfulLoginListener
+        extends SavedRequestAwareAuthenticationSuccessHandler {
 
     /**
      * a log4j logger to print messages.

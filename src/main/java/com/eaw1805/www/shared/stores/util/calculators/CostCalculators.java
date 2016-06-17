@@ -90,15 +90,15 @@ public final class CostCalculators
      * @param multiplier the cost is doubled or trippled based on the soi.
      * @return the cost object that describes the brigade
      */
-    public static OrderCostDTO getBrigadeCost(final BrigadeDTO brigade, final int multiplier) {
+    public static OrderCostDTO getBrigadeCost(final BrigadeDTO brigade, final int multiplier, final int sphere) {
         final OrderCostDTO cost = new OrderCostDTO();
 
         if (brigade.getRegionId() == EUROPE) {
-            if (multiplier == 1) {
+            if (sphere == 1) {
                 cost.setNumericCost(GOOD_AP, AdminCommandPoints.P_ADM.get(ORDER_B_BATT));
                 cost.setNumericCost(GOOD_CP, AdminCommandPoints.P_COM.get(ORDER_B_BATT));
 
-            } else if (multiplier == 2) {
+            } else if (sphere == 2) {
                 cost.setNumericCost(GOOD_AP, 3);
                 cost.setNumericCost(GOOD_CP, 3);
 

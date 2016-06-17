@@ -1,0 +1,138 @@
+.scrollable {
+    overflow: hidden !important;
+    position: relative;
+}
+
+.scrollable .scrollcontent {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    bottom: 10px;
+    left: 0px;
+    overflow: hidden;
+    line-height: 0px;
+}
+
+.scrollable .scrollwrap {
+    overflow: hidden;
+    display: inline-block;
+    line-height: 1.3em;
+}
+
+.scrollable .scrollwrap:after {
+    display: none;
+}
+
+.scrollable.no_scroll_v .scrollcontent {
+    left: 0px;
+    right: 0px;
+}
+
+.scrollable.no_scroll_h .scrollcontent {
+    top: auto;
+    bottom: 0px;
+}
+
+.scrollable .scroller {
+    position: absolute;
+}
+
+.scrollable .vscroller {
+    top: 0px;
+    right: 5px;
+    width: 13px;
+    bottom: 5px;
+}
+
+.scrollable.no_scroll_v .vscroller {
+    display: none;
+}
+
+.scrollable.no_scroll_h .vscroller {
+    bottom: 0px;
+}
+
+
+.scrollable.no_scroll_v .hscroller {
+    right: 0px;
+}
+
+
+.scrollable .scrollarea {
+    position: absolute;
+    background-image: url(http://static.eaw1805.com/images/panels/trade/barVertical.png);
+    background-repeat: repeat-y;
+    background-position: 50%;
+}
+
+.scrollable .vscroller .scrollarea {
+    top: 15px;
+    bottom: 20px;
+    left: 0px;
+    right: 0px;
+}
+
+.scrollable .scrollblock {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: transparent;
+    background-image: url(http://static.eaw1805.com/images/panels/trade/ScrollerVertical.png);
+}
+
+
+.scrollable .vscroller .scrollblock {
+    top: 20px;
+    height: 60px;
+    left: 0px;
+    right: 0px;
+}
+
+
+.scrollable .scrollbtn {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    vertical-align: middle;
+    color: black;
+    font-weight: bold;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+
+    -moz-box-sizing: border-box;
+
+    cursor: default;
+}
+
+
+.scrollable .scrolltop {
+    top: 0px;
+    left: -1px;
+    background-image: url(http://static.eaw1805.com/images/panels/trade/ButZoomInOff.png);
+    background-repeat: no-repeat;
+}
+
+.scrollable .scrolldown {
+    left: -1px;
+    bottom: 0px;
+    top: auto;
+    background-image: url(http://static.eaw1805.com/images/panels/trade/ButZoomOutOff.png);
+    background-repeat: no-repeat;
+}
+
+
+.scrollable .filler {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    height: 20px;
+    width: 20px;
+    left: auto;
+    top: auto;
+}
+

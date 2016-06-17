@@ -1,0 +1,84 @@
+.prodSitePanel {
+    background-color: rgba(121, 139, 39, 0.7);
+    border: outset 2px;
+}
+
+.prodSitePanel:Hover {
+    background-color: rgba(121, 139, 39, 0.5);
+    border: inset 2px;
+    cursor: pointer;
+}
+
+.infoBarPanel {
+    padding: 4px;
+    font-weight: bold;
+    cursor: default;
+    opacity: 1;
+    background-color: #6b6939;
+    border: 2px ridge gray;
+}
+
+@font-face {
+    font-family: empireFont;
+    src: url("http://static.eaw1805.com/style/empireFont.otf");
+}
+
+.empireFontLabel {
+    font-family: empireFont;
+    font-size: 20px;
+}
+
+.prodSitePanelSel {
+    background-color: rgba(121, 139, 39, 0.5);
+    border: inset 2px;
+    cursor: pointer;
+}
+
+.barShipPanel {
+    background-color: #884c32;
+}
+
+.barrackPanel {
+    background-image: url("http://static.eaw1805.com/images/infopanels/barracks.png");
+    /*background-color: #818832;*/
+}
+
+.baggageTrainPanel {
+    background-color: #547651 !important;
+}
+
+.baggageInfoPanel {
+    background-image: url("http://static.eaw1805.com/images/infopanels/baggagetrain.png");
+    /*background-color: #765172 !important;*/
+}
+
+.admPtsPanel {
+    background-image: url("http://static.eaw1805.com/images/goods/good-15.png");
+}
+
+.commPtsPanel {
+    background-image: url("http://static.eaw1805.com/images/goods/good-16.png");
+}
+
+.embossedInfoPanel {
+    background-color: rgba(121, 139, 39, 0.7);
+    border: outset 2px;
+}
+
+.evenRow {
+    background-color: rgba(108, 169, 91, 0.6);
+}
+
+.oddRow {
+    background-color: rgba(91, 101, 169, 0.6);
+}
+
+.tradePanel {
+    background-image: url("http://static.eaw1805.com/images/buttons/tradeBG.png");
+}
+
+.tradeWithCityPanel {
+    border: groove 2px #d09e32;
+    border-right: groove 5px #d09e32;
+    background-color: rgba(208, 158, 50, 0.4);
+}

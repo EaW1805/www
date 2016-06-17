@@ -3,7 +3,6 @@ package com.eaw1805.www.controllers.cache;
 import com.eaw1805.data.managers.beans.UserManagerBean;
 import com.eaw1805.data.model.User;
 import com.eaw1805.www.controllers.exception.InvalidPageException;
-import net.sf.ehcache.CacheManager;
 import org.apache.logging.log4j.LogManager; import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;

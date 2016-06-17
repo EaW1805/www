@@ -1,0 +1,12 @@
+<web-app xmlns="http://caucho.com/ns/resin">
+
+    <!-- WebSocket servlets-->
+    <!--<servlet servlet-name="chatWebSocket.ws"-->
+    <!--servlet-class="com.eaw1805.www.websockets.WebSocketServlet"/>-->
+
+    <!--&lt;!&ndash;WebSocket servlet mappings&ndash;&gt;-->
+    <!--<servlet-mapping url-pattern="1804/chatWebSocket.ws"-->
+    <!--servlet-name="chatWebSocket.ws"/>-->
+
+</web-app>
+

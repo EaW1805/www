@@ -316,7 +316,7 @@ public class AchievementViewController
 
             System.out.println("Image Created");
 
-//        File fi = new File("/home/karavias/Projects/empire/trunk/dev-web/src/empire/webapp/images/panels/gameResults/survivor.png");
+//        File fi = new File("/home/karavias/Projects/empire/trunk/dev-web/src/com.eaw1805.www.images/panels/gameResults/survivor.png");
 //        byte[] fileContent = Files.readAllBytes(fi.toPath());
 //        InputStream in = new FileImageInputStream(new File("strawbefs;rry.jpg"));
 
@@ -535,7 +535,7 @@ public class AchievementViewController
 //
 //        Read Spring content
         final ApplicationContext ctx = new ClassPathXmlApplicationContext(new String[]{
-                "classpath*:empire/webapp/resources/empire-data.xml"});
+                "classpath*:com.eaw1805.www.resources/com.eaw1805.data.xml"});
 
 
         // Try to retrieve timesheet
@@ -669,7 +669,7 @@ public class AchievementViewController
         System.out.println("Image Created");
 
 
-//        File fi = new File("/home/karavias/Projects/empire/trunk/dev-web/src/empire/webapp/images/panels/gameResults/survivor.png");
+//        File fi = new File("/home/karavias/Projects/empire/trunk/dev-web/src/com.eaw1805.www.images/panels/gameResults/survivor.png");
 //        byte[] fileContent = Files.readAllBytes(fi.toPath());
 //        InputStream in = new FileImageInputStream(new File("strawbefs;rry.jpg"));
 

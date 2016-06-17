@@ -1,0 +1,5111 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: "Vivaldi";
+    src: url("./VivaldiItalic.ttf");
+}
+
+html {
+    font-size: 100%;
+    /* Always show a scrollbar for short pages - stops the jump when the scrollbar appears. non-IE browsers */
+    height: 100%;
+    color: black;
+}
+
+body {
+    font: 13.34px helvetica, arial, freesans, clean, sans-serif;
+    font-size: small;
+    line-height: 1.4;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#wrap {
+    min-height: 100%;
+    background: #515031;
+}
+
+#main {
+    overflow: auto;
+    padding-bottom: 210px;
+    background: url('http://static.eaw1805.com/images/site/background-field.jpg') center top no-repeat;
+    background-attachment: fixed;
+}
+
+#mainClear {
+    overflow: auto;
+    padding-bottom: 210px;
+    background: url('http://static.eaw1805.com/images/site/background-hand2hand.jpg') center top no-repeat;
+    background-size: 120%;
+}
+
+h2 {
+    text-align: left;
+    color: #444446;
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif;
+    text-shadow: 0.5px 1px 0.1px #7B714B;
+    font-weight: normal;
+    letter-spacing: -1px;
+    font-size: 24px;
+}
+
+h3 {
+    text-align: left;
+    color: #444446;
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif;
+    text-shadow: 1px 1px 0.1px #7B714B;
+    font-weight: normal;
+    letter-spacing: -1px;
+    font-size: 20px;
+}
+
+span {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+a {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    line-height: 16pt;
+    font-size: 11px;
+    font-weight: bold;
+    color: #654900;
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    -webkit-transition: color 0.25s ease-in-out;
+    -moz-transition: color 0.25s ease-in-out;
+    -o-transition: color 0.25s ease-in-out;
+    -ms-transition: color 0.25s ease-in-out;
+    transition: color 0.25s ease-in-out;
+}
+
+/*================================================================*/
+
+#header {
+    margin: 0 auto;
+    width: 1035px;
+    height: 291px;
+    min-width: 1035px;
+    border-bottom: none;
+}
+
+#header .eaw-logo {
+    position: relative;
+    margin: 35px 0 0 0;
+    width: 850px;
+    height: 92px;
+    cursor: pointer;
+    background: url('http://static.eaw1805.com/images/site/eaw1805-header-logo.png') 0 0 no-repeat;
+}
+
+#header .eaw-logo-clear {
+    position: relative;
+    background-color: transparent;
+    background-image: url("http://static.eaw1805.com/images/site/eaw1805.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 298px 0px;
+    background-clip: border-box;
+    background-size: 380px auto;
+    z-index: 1;
+    margin-top: 20px;
+    width: 975px;
+    padding-top: 31px;
+    height: 250px;
+    cursor: pointer;
+}
+
+#header .french-soldier {
+    position: relative;
+    margin: -110px 0 0 725px;
+    width: 294px;
+    height: 140px;
+    background: url('http://static.eaw1805.com/images/site/header-french-soldier.png') 0 0 no-repeat;
+}
+
+#header .parchment-head {
+    position: relative;
+    margin: -26px 0 0 -30px;
+    width: 1035px;
+    height: 48px;
+    padding: 0 0 10px;
+    background: url('http://static.eaw1805.com/images/site/background-parchment-header.png') 0 0 no-repeat;
+}
+
+.topbox {
+    float: left;
+    clear: right;
+    margin-top: -178px;
+}
+
+.topbox a {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    line-height: 16pt;
+    font-size: 11px;
+    font-weight: bold;
+    color: #654900;
+    text-decoration: none;
+}
+
+ul.topbox {
+    display: inline;
+    margin-top: 3px;
+    margin-right: 0pt;
+    margin-bottom: 0pt;
+    margin-left: 0pt;
+    white-space: nowrap;
+    font-size: 11px;
+}
+
+.topbox ul {
+    float: right;
+    display: inline;
+    margin: -3px 0 0 0;
+    white-space: nowrap;
+    font-size: 11px;
+}
+
+.topbox li {
+    list-style-type: none;
+    display: inline;
+    margin: 0 15px 0 0;
+}
+
+.topbox li a {
+    color: white;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-shadow: 1px 1px 0.1px rgba(0, 0, 0, 0.3);
+}
+
+.topbox li a:hover {
+    color: #000;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-shadow: 1px 1px 0.1px rgba(0, 0, 0, 0.3);
+    -webkit-transition: color 0.25s ease-in-out;
+    -moz-transition: color 0.25s ease-in-out;
+    -o-transition: color 0.25s ease-in-out;
+    -ms-transition: color 0.25s ease-in-out;
+    transition: color 0.25s ease-in-out;
+}
+
+.topbox li a.selected {
+    color: #000;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.loginbox {
+    float: right;
+    clear: right;
+    margin-top: -172px;
+    margin-right: 58px;
+    display: block;
+}
+
+.loginbox span.login .username, span.login .password, span.login .login-button-text, span.login .login-button-icon {
+    padding-right: 5px;
+    float: left;
+}
+
+.loginbox input {
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: normal;
+    font-size-adjust: none;
+    font-stretch: normal;
+    -x-system-font: none;
+    vertical-align: middle;
+}
+
+.loginbox span.login .username input, span.login .password input {
+    width: 70px;
+    height: 16px;
+    padding-top: 4px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 30px;
+    border-top-width: medium;
+    border-right-width-value: medium;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-bottom-width: medium;
+    border-left-width-value: medium;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-top-style: none;
+    border-right-style-value: none;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-bottom-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-left-style-value: none;
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-top-color: -moz-use-text-color;
+    border-right-color-value: -moz-use-text-color;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-bottom-color: -moz-use-text-color;
+    border-left-color-value: -moz-use-text-color;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    float: left;
+    color: #646464;
+    font-size: 75%;
+}
+
+.loginbox span.login .username input {
+    background-color: transparent;
+    background-image: url("http://static.eaw1805.com/images/site/login/username_bg.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 0pt 0pt;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+}
+
+.loginbox span.login .username input:hover {
+    background-color: transparent;
+    background-image: url("http://static.eaw1805.com/images/site/login/username_bg.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 0pt -20px;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    color: #000000;
+}
+
+.loginbox span.login .username input:focus {
+    background-color: transparent;
+    background-image: url("http://static.eaw1805.com/images/site/login/username_bg.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 0pt -20px;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    color: #000000;
+}
+
+.loginbox span.login .password input {
+    background-color: transparent;
+    background-image: url("http://static.eaw1805.com/images/site/login/password_bg.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 0pt 0pt;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+}
+
+.loginbox span.login .password input:hover {
+    background-color: transparent;
+    background-image: url("http://static.eaw1805.com/images/site/login/password_bg.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 0pt -20px;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    color: #000000;
+}
+
+.loginbox span.login .password input:focus {
+    background-color: transparent;
+    background-image: url("http://static.eaw1805.com/images/site/login/password_bg.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 0pt -20px;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    color: #000000;
+}
+
+.loginbox  span.login .login-button-icon input {
+    display: block;
+    height: 20px;
+    width: 21px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    border-left-style: none;
+    border-right-style: none;
+    border-top-width: medium;
+    border-right-width-value: medium;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-bottom-width: medium;
+    border-left-width-value: medium;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-top-style: none;
+    border-right-style-value: none;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-bottom-style: none;
+    border-left-style-value: none;
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-top-color: -moz-use-text-color;
+    border-right-color-value: -moz-use-text-color;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-bottom-color: -moz-use-text-color;
+    border-left-color-value: -moz-use-text-color;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    background-color: transparent;
+    background-image: url("http://static.eaw1805.com/images/site/login/login_button_bg.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 0pt 0pt;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    cursor: pointer;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.loginbox span.login .login-button-icon input:hover {
+    background-color: transparent;
+    background-image: url("http://static.eaw1805.com/images/site/login/login_button_bg.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 0pt -20px;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+}
+
+.userbox {
+    float: right;
+    clear: right;
+    margin-top: -172px;
+    margin-right: 95px;
+    display: block;
+}
+
+.userbox .avatarname {
+    display: inline;
+    padding-right: 6px;
+    font-weight: bold;
+}
+
+.userbox .avatarname img {
+    margin-top: -3px;
+    margin-right: 3px;
+    vertical-align: middle;
+    color: black !important;
+    padding: 1px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    opacity: 1 !important;
+}
+
+.userbox ul.usernav {
+    display: inline;
+    margin: 0;
+    font-weight: bold;
+}
+
+.userbox li.first {
+    list-style-type: none;
+    display: inline;
+    margin: 0;
+    padding: 0 8px 0 9px;
+    background: none;
+}
+
+.userbox ul.usernav li {
+    list-style-type: none;
+    display: inline;
+    margin: 0;
+    padding: 0 8px 0 9px;
+}
+
+.userbox a, ul.usernav li a {
+    color: white;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-shadow: 1px 1px 0.1px rgba(0, 0, 0, 0.3);
+}
+
+.userbox a:hover, ul.usernav li a:hover {
+    color: #000;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-shadow: 1px 1px 0.1px rgba(0, 0, 0, 0.3);
+    -webkit-transition: color 0.25s ease-in-out;
+    -moz-transition: color 0.25s ease-in-out;
+    -o-transition: color 0.25s ease-in-out;
+    -ms-transition: color 0.25s ease-in-out;
+    transition: color 0.25s ease-in-out;
+}
+
+.userbox a.selected, ul.usernav li a.selected {
+    color: #000;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+a.unread_count {
+    display: inline-block;
+    font-size: 10px;
+    margin-left: 2px;
+    padding: 2px 3px;
+    background: #6b1000;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: none;
+    text-decoration: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+
+span.logout-button-icon button {
+    float: right;
+    clear: right;
+    margin-top: -171px;
+    margin-right: 62px;
+    display: block;
+    height: 20px;
+    width: 21px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    border-left-style: none;
+    border-right-style: none;
+    border-top-width: medium;
+    border-right-width-value: medium;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-bottom-width: medium;
+    border-left-width-value: medium;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-top-style: none;
+    border-right-style-value: none;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-bottom-style: none;
+    border-left-style-value: none;
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-top-color: -moz-use-text-color;
+    border-right-color-value: -moz-use-text-color;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-bottom-color: -moz-use-text-color;
+    border-left-color-value: -moz-use-text-color;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    background-color: transparent;
+    background-image: url("http://static.eaw1805.com/images/site/login/logout_button_bg2.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 0pt 0pt;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    cursor: pointer;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+span.logout-button-icon button:hover {
+    background-color: transparent;
+    background-image: url("http://static.eaw1805.com/images/site/login/logout_button_bg2.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 0pt -20px;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+}
+
+/*================================================================*/
+
+.site {
+    margin: 0 auto;
+    width: 985px;
+    padding: 0 15px;
+}
+
+.site ul {
+    margin: 3px 0 0 10pt;
+    white-space: nowrap;
+    font-size: 11px;
+}
+
+.site li {
+    margin: 0 15px 0 0;
+}
+
+/*================================================================*/
+
+#footer {
+    position: relative;
+    bottom: 0;
+    color: #333;
+    font-size: 12px;
+    margin-top: -210px; /* negative value of footer height */
+    margin-left: auto;
+    height: 210px;
+    clear: both;
+}
+
+#footer .grass {
+    position: relative;
+    margin: -5px 0 0 0;
+    width: auto;
+    height: 220px;
+    background: url('http://static.eaw1805.com/images/site/background-field-footer.png') center top repeat-x;
+    z-index: 65000;
+}
+
+#footer .parchment-footer {
+    position: relative;
+    margin: -215px 0 0 -55px;
+    width: 1035px;
+    height: 58px;
+    background: url('http://static.eaw1805.com/images/site/background-parchment-footer.png') 0 0 no-repeat;
+    opacity: 0.8;
+    filter: alpha(opacity = 80); /* For IE8 and earlier */
+}
+
+#footer .eaw-logo {
+    position: relative;
+    margin: -10px 0 0 -30px;
+    height: 130px;
+    width: 183px;
+    cursor: pointer;
+    background: url('http://static.eaw1805.com/images/eaw1805-footer.png') center bottom no-repeat;
+    z-index: 65100;
+}
+
+#footer .oplon-logo {
+    position: relative;
+    margin-top: -116px;
+    margin-left: 790px;
+    height: 118px;
+    width: 170px;
+    cursor: pointer;
+    background: url('http://static.eaw1805.com/images/oplon-footer.png') center bottom no-repeat;
+    z-index: 65100;
+}
+
+#footer .footer_upper {
+    height: 210px;
+    overflow: hidden;
+    z-index: 65100;
+}
+
+#footer .footer_upper a {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    line-height: 16pt;
+    font-size: 11px;
+    font-weight: bold;
+    color: #654900;
+    text-decoration: none;
+}
+
+#footer .footer_upper ul.footer_nav {
+    position: relative;
+    float: left;
+    width: 164px;
+    margin: -100px 0 0 240px;
+    z-index: 65100;
+    height: 100px;
+}
+
+#footer .footer_upper ul.footer_nav h4 {
+    margin-left: -1px;
+    margin-bottom: 3px;
+    padding-bottom: 3px;
+    color: #ffffff;
+    font-size: 22px;
+    font-family: Vivaldi, helvetica, arial, freesans, clean, sans-serif;
+}
+
+#footer .footer_upper div ul {
+    float: left;
+    text-indent: 0;
+    display: inline;
+    margin-top: 10px;
+}
+
+#footer .footer_nav2 {
+    margin-left: 180px;
+}
+
+#footer .footer_nav3 {
+    margin-left: 380px;
+}
+
+#footer .footer_nav4 {
+    margin-top: 37px;
+    margin-left: 460px;
+}
+
+#footer .footer_nav5 {
+    margin-top: 37px;
+    margin-left: 600px;
+}
+
+#footer .footer_upper li {
+    list-style: none;
+}
+
+#footer .footer_upper a {
+    color: #f2eeb2;
+}
+
+#footer .footer_upper a:visited {
+    color: #f2eeb2;
+}
+
+#footer .footer_upper a:hover {
+    color: #ff9e01;
+    text-decoration: none;
+}
+
+#footer .footer_upper a:active {
+    color: #ff9e01;
+    text-decoration: none;
+}
+
+#footer .footer_low {
+    position: relative;
+    float: center;
+    margin: 7px 0 0 0px !important;
+    z-index: 65100;
+}
+
+#footer .footer_low p {
+    text-align: center;
+    color: #fff;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    z-index: 65400;
+}
+
+#footer .footer_low a {
+    color: #5c5c5c;
+    font-weight: bold;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#footer .footer_low a:visited {
+    color: #5c5c5c;
+    font-weight: bold;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#footer .footer_low a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+/*================================================================*/
+
+.pagehead {
+    position: relative;
+    margin: -147px 0 0 -55px;
+    width: 1035px;
+    min-height: 343px;
+    padding: 0 25px 0;
+    background: url('http://static.eaw1805.com/images/site/background-parchment-body.png') 0 0 repeat-y;
+}
+
+.pageheadMinimal {
+    position: relative;
+    margin: -147px 0 0 -55px;
+    width: 1035px;
+    min-height: 343px;
+    padding: 0 25px 0;
+}
+
+.player {
+    padding-left: 9pt;
+}
+
+.pagehead h1 {
+    margin: 0 0 0px 0;
+    text-align: left;
+    color: #444446;
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif;
+    text-shadow: 1px 1px 0.1px #7B714B;
+    font-weight: normal;
+    letter-spacing: -1px;
+    font-size: 28px;
+}
+
+.pagehead h1 em {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.pagehead h1 em a {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.pagehead h1 em a:hover {
+    background: #eee;
+}
+
+.pagehead h1 em strong {
+    font-weight: bold;
+}
+
+.pagehead h3 {
+    padding-top: 6px;
+    margin-bottom: 2px;
+    font-size: 14px;
+    height: 24px;
+    font-weight: bold;
+}
+
+.pagehead h1.nationflag img {
+    vertical-align: top;
+    top: -20px;
+    padding-top: -10px;
+    margin-right: 5px;
+    padding: 2px;
+    border: 0px solid #ddd;
+}
+
+.pagehead h1.player {
+    padding-top: 35px;
+    padding-left: 5px;
+    position: relative;
+    width: 957px;
+    height: 187px;
+    background: url('http://static.eaw1805.com/images/site/header.png') 0 0 no-repeat;
+}
+
+.pagehead h1.player em {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    color: #490100;
+}
+
+.pagehead h1.player img {
+    padding: 2px;
+    color: black !important;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    opacity: 1 !important;
+    vertical-align: middle;
+}
+
+.pagehead.shrunken h1.player img {
+    top: -1px;
+    padding: 1px;
+}
+
+.pagehead.shrunken h1.player span {
+    letter-spacing: 0;
+    color: #808080;
+    margin-left: .5em;
+    font-size: .9em;
+}
+
+.pagehead h2.player {
+    position: relative;
+    margin-top: -150px;
+    line-height: 0.95;
+    font-size: 18px;
+    width: 500px;
+    margin-left: 53px;
+}
+
+.pagehead h3.player {
+    position: relative !important;
+    margin-top: -90px !important;
+    line-height: 0.95 !important;
+    font-size: 18px !important;
+    float: right !important;
+    margin-right: 0 !important;
+    width: 439px !important;
+}
+
+.pagehead h3.player a {
+    line-height: 1.05;
+}
+
+.pagehead h1.game {
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif !important;
+    padding-top: 5px;
+    padding-left: 5px;
+    position: relative;
+    width: 957px;
+    height: 187px;
+    background: url('http://static.eaw1805.com/images/site/header.png') 0 0 no-repeat;
+    font-size: 68pt;
+}
+
+.pagehead h2.game {
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif !important;
+    position: relative;
+    margin-top: -87px;
+    line-height: 0.95;
+    font-size: 19px;
+    width: 500px;
+    margin-left: 45px;
+}
+
+.pagehead h3.game {
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif;
+    position: relative !important;
+    margin-top: -76px !important;
+    line-height: 0.95 !important;
+    font-weight: normal;
+    font-size: 52px !important;
+    float: left !important;
+    margin-left: 385pt !important;
+    text-align: right;
+    width: 440px !important;
+}
+
+.pagehead h4.game {
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif;
+    position: relative !important;
+    margin-top: -50px !important;
+    line-height: 0.95 !important;
+    font-size: 12px !important;
+    float: right !important;
+    margin-right: 0 !important;
+    width: 439px !important;
+    font-weight: normal;
+}
+
+.pagehead h1.game {
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif !important;
+    padding-top: 5px;
+    padding-left: 5px;
+    position: relative;
+    width: 957px;
+    height: 187px;
+    background: url('http://static.eaw1805.com/images/site/header.png') 0 0 no-repeat;
+    font-size: 68pt;
+}
+
+.pagehead h2.game {
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif !important;
+    position: relative;
+    margin-top: -87px;
+    line-height: 0.95;
+    font-size: 19px;
+    width: 500px;
+    margin-left: 45px;
+}
+
+.pagehead h3.game {
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif;
+    position: relative !important;
+    margin-top: -76px !important;
+    line-height: 0.95 !important;
+    font-weight: normal;
+    font-size: 52px !important;
+    float: left !important;
+    margin-left: 385pt !important;
+    text-align: right;
+    width: 440px !important;
+}
+
+.pagehead h4.game {
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif;
+    position: relative !important;
+    margin-top: -50px !important;
+    line-height: 0.95 !important;
+    font-size: 12px !important;
+    float: right !important;
+    margin-right: 0 !important;
+    width: 439px !important;
+    font-weight: normal;
+}
+
+.pagehead ul.avatars {
+    padding-left: 55px;
+    margin-top: -25px;
+    min-height: 28px;
+}
+
+.pagehead ul.avatars li {
+    list-style-type: none;
+    display: inline;
+    margin: 0 1px 0 0;
+}
+
+.pagehead ul.avatars li img {
+    padding: 1px;
+    color: black !important;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    opacity: 1 !important;
+}
+
+.rule {
+    clear: both;
+    width: 90%;
+    padding: 0 10px;
+    margin: 10px 0 10px 0px;
+    border-top: 1px solid #e8b001;
+    border-bottom: 1px solid #fdffcd;
+    height: 0;
+    overflow: hidden;
+}
+
+.pagehead h1.playButton img {
+    position: relative;
+    float: right;
+    vertical-align: top;
+    top: -190px;
+    margin-right: 45px;
+}
+
+.pagehead ul.tabs {
+    position: relative;
+    margin: 30px 0 0px 0;
+    height: 32px;
+    padding: 6px 10px;
+    width: 540px;
+    background: #fffd00;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0, startColorstr = '#ff9e01', endColorstr = '#fdffcd');
+    background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#ff9e01), to(#fdffcd));
+    background: -moz-linear-gradient(270deg, #ff9e01, #fdffcd);
+    border-color: #654900;
+    border: 1px solid #e8b001;
+    border-bottom-color: #d48d01;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.pagehead ul.tabs li {
+    list-style-type: none;
+    margin: 0;
+    display: inline;
+}
+
+.pagehead ul.tabs li a {
+    float: left;
+    top: 1px;
+    margin-right: 15px;
+    margin-top: 2px;
+    height: 26px;
+    padding: 0 8px;
+    line-height: 26px;
+    font-size: 14px;
+    color: #666;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+
+.pagehead ul.tabs li a:hover {
+    top: -1px;
+    color: #333;
+    background-color: #ff9e01;
+    text-decoration: none;
+}
+
+.pagehead ul.tabs li a.selected {
+    position: relative;
+    margin-top: -1px;
+    font-weight: bold;
+    color: #b77400;
+    text-shadow: 1px 1px 0 rgba(70, 0, 0, 0.7);
+    background: #550000;
+    border: 2px solid #e0d400;
+    border-right-color: #422e00;
+    border-bottom-color: #2f2400;
+}
+
+.pagehead ul.tabs li a.selected:hover {
+    top: 1px;
+    color: #b77400;
+}
+
+.pagehead ul.withsubs {
+    -webkit-border-bottom-left-radius: 0;
+    -webkit-border-bottom-right-radius: 0;
+    -moz-border-radius-bottomleft: 0;
+    -moz-border-radius-bottomright: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 0px solid #fdffcd;
+}
+
+.pagehead ul.subtabs {
+    position: relative;
+    margin: -12px 0 10px 0;
+    padding: 0px 10px;
+    position: relative;
+    height: 30px;
+    width: 540px;
+    background: #fdffcd;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0, startColorstr = '#fdffcd', endColorstr = '#fdffe6');
+    background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#fdffcd), to(#fdffe6));
+    background: -moz-linear-gradient(270deg, #fdffcd, #fdffe6);
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-color: #654900;
+    border: 1px solid #e8b001;
+    border-bottom-color: #d48d01;
+    border-top: none;
+    border-top: 0px solid #fdffff;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.pagehead ul.subtabs li {
+    list-style-type: none;
+    margin: 0;
+    display: inline;
+}
+
+.pagehead ul.subtabs li a {
+    float: left;
+    margin-right: 15px;
+    margin-top: -8px;
+    height: 18px;
+    padding: 0 8px;
+    line-height: 24px;
+    font-size: 12px;
+    color: #666;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+
+.pagehead ul.subtabs li a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.pagehead ul.subtabs li a.selected {
+    color: #705715;
+}
+
+.pagehead ul.actions {
+    margin: 0;
+    float: right;
+    position: relative;
+    top: -45px;
+    right: 0;
+}
+
+.pagehead ul.actions li, ul.singleGameActions li, ul.bottomLeftActions li {
+    list-style-type: none;
+    display: inline;
+    font-size: 11px;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 0 5px;
+}
+
+.pagehead ul.actions li.text {
+    padding: 0 5px;
+}
+
+.pagehead ul.actions li a {
+    right: 92px;
+}
+
+.pagehead ul.actions li a, ul.singleGameActions li a, ul.bottomLeftActions li a {
+    display: inline-block;
+    height: 24px;
+    padding: 0;
+    position: relative;
+    top: 0px;
+    margin-left: 15px;
+    font-family: helvetica, arial, freesans, clean, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    color: #333;
+    text-shadow: 1px 1px 0 #fff;
+    white-space: nowrap;
+    border: none;
+    overflow: visible;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0, startColorstr = '#ff9e01', endColorstr = '#fdffcd');
+    background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#ff9e01), to(#fdffcd));
+    background: -moz-linear-gradient(270deg, #ff9e01, #fdffcd);
+    border-color: #654900;
+    border: 1px solid #e8b001;
+    border-bottom-color: #d48d01;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    padding: 0 13px;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+.pagehead ul.actions li a:hover, ul.singleGameActions li a:hover, ul.bottomLeftActions li a:hover {
+    color: #fff;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+    border-bottom-color: #0770a0;
+    border-bottom-color: #0770a0;
+    background: #feefac;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0, startColorstr = '#c00000', endColorstr = '#450102');
+    background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#c00000), to(#450102));
+    background: -moz-linear-gradient(-90deg, #c00000, #450102);
+}
+
+/*================================================================*/
+
+#content {
+    padding-left: 10px;
+    padding-right: 60px;
+    padding-bottom: 56px;
+    overflow: auto;
+}
+
+#content h1.title {
+    font-size: 52px;
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif;
+    text-align: left;
+    color: #444446;
+    text-shadow: 1px 1px 0.1px #7b714b;
+    margin: 0 0 0 0;
+    font-weight: normal;
+    letter-spacing: -1px;
+}
+
+#content h2.title {
+    font-size: 24px;
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif;
+    text-align: left;
+    color: #444446;
+    text-shadow: 1px 1px 0.1px #7b714b;
+    margin: 10px 0 0 0;
+    font-weight: normal;
+    letter-spacing: -1px;
+}
+
+#content h3.title {
+    font-size: 18px;
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif;
+    text-align: left;
+    color: #444446;
+    text-shadow: 1px 1px 0.1px #7b714b;
+    margin: 10px 0 5px 0;
+    font-weight: normal;
+    letter-spacing: -1px;
+}
+
+#content th.title {
+    font-size: 16px;
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif;
+    color: #444446;
+    text-shadow: 1px 1px 0.1px #7b714b;
+    font-weight: normal;
+    letter-spacing: -1px;
+}
+
+#content td.title {
+    color: #444446;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 14px;
+    text-shadow: 1px 1px 0.1px rgba(0, 0, 0, 0.2);
+    margin: 15px 0pt;
+}
+
+blockquote.content {
+    margin: 0px 0 20px;
+    color: #444446;
+    quotes: '\201C' '\201D' '\2018' '\2019';
+    font-style: italic;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-align: center;
+    padding: 0 20px;
+    font-size: 16px;
+    line-height: 22px;
+    text-shadow: 1px 1px 0.1px rgba(0, 0, 0, 0.2);
+}
+
+.content blockquote:before {
+    content: '\201C';
+}
+
+.content blockquote:after {
+    content: '\201D';
+}
+
+#content p {
+    color: #444446;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 14px;
+    text-shadow: 1px 1px 0.1px rgba(0, 0, 0, 0.2);
+    margin: 0px 0pt;
+}
+
+/*================================================================*/
+
+.columns.profilecols .first {
+    float: left;
+    width: 300px;
+}
+
+.columns.profilecols .last {
+    float: right;
+    width: 600px;
+}
+
+.vcard dl {
+    margin: 5px 0 0 0;
+    font-size: 12px;
+}
+
+.vcard dl:first-child {
+    margin-top: 0;
+}
+
+.vcard dl dt {
+    margin: 0;
+    float: left;
+    width: 100px;
+    color: #654900;
+}
+
+.vcard dl dd {
+    margin: 0;
+}
+
+.following {
+    float: left;
+    margin-right: 40px;
+    margin-top: -5px;
+    margin-bottom: 15px;
+}
+
+.following h3 {
+    margin: 0 0 5px 0;
+    font-size: 10px;
+}
+
+.following h3 a {
+    margin: 0 0 5px 0;
+    font-size: 10px;
+}
+
+.following ul.avatars {
+    margin: 0;
+}
+
+.following ul.avatars li {
+    list-style-type: none;
+    display: inline;
+    margin: 0 1px 0 0;
+}
+
+.following ul.avatars li img {
+    padding: 1px;
+    border: 1px solid #ddd;
+}
+
+.following ul.games {
+    margin: 0;
+}
+
+.following ul.games li {
+    list-style-type: none;
+    display: inline;
+    margin: 0 1px 0 0;
+}
+
+.following ul.games li img {
+    padding: 1px;
+    border: 1px solid #ddd;
+}
+
+/*================================================================*/
+
+legend {
+    margin-left: 1em;
+    color: #450102;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+fieldset {
+    margin: 1.5em 0 0 0;
+    padding: 0;
+}
+
+fieldset dl {
+    padding: 1em 1em 0 1em;
+    list-style: none;
+}
+
+fieldset dd {
+    padding-bottom: 2px;
+}
+
+fieldset.submit {
+    border-style: none;
+}
+
+label {
+    float: left;
+    width: 14em;
+    margin-right: 2px;
+    text-align: left;
+    color: #5c3e02;
+}
+
+/*================================================================*/
+
+table.logo {
+    text-align: center;
+    table-layout: fixed;
+    border-collapse: separate;
+    border: 0;
+}
+
+td.logo {
+    overflow: auto;
+    white-space: nowrap;
+    border: 0;
+    color: #000000;
+    padding: 0;
+}
+
+tr.logo:hover {
+    color: #ffffff;
+    background: #ffffff;
+    border: 0;
+    padding: 0;
+}
+
+a.logo {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #0000ff;
+    text-decoration: none;
+    border: 0;
+}
+
+img.logo {
+    border: 0;
+    vertical-align: bottom;
+}
+
+/*================================================================*/
+
+table.statistics {
+    position: relative;
+    float: right;
+    top: 20px;
+    right: -285px;
+    width: 260px;
+    vertical-align: top;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    background: #ff9e01;
+    border: 1px solid #e8b001;
+    border-bottom-color: #d48d01;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 10px;
+    text-align: left;
+}
+
+tr.statistics {
+    font-size: 10px;
+    padding: 0 0;
+    border: none;
+}
+
+th.statistics {
+    font-size: 10px;
+    padding: 4px 4px;
+    border: none;
+}
+
+/*================================================================*/
+
+table.treasury {
+    position: relative;
+    float: right;
+    margin-right: 15px;
+    top: 20px;
+    width: 260px;
+    vertical-align: top;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    background: rgba(208, 158, 50, 0.5);
+    border-bottom-color: #d48d01;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 11px;
+    text-align: center;
+}
+
+tr.treasury {
+    font-size: 14px;
+    padding: 0 0;
+    border: none;
+}
+
+th.treasury {
+    font-size: 14px;
+    padding: 4px 4px;
+    border: none;
+}
+
+th.head {
+    font-size: 14px;
+    padding: 6px 4px;
+    border: none;
+    text-align: right;
+    color: #490100;
+}
+
+/*================================================================*/
+
+table.warehouse {
+    width: 662px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    background: rgba(208, 158, 50, 0.5);
+    border-bottom-color: #d48d01;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 11px;
+    text-align: center;
+}
+
+tr.warehouse {
+    font-size: 14px;
+    padding: 0 0;
+    border: none;
+}
+
+th.warehouse {
+    font-size: 14px;
+    padding: 4px 4px;
+    border: none;
+    text-align: right;
+    padding-right: 8px;
+}
+
+td.warehouse {
+    text-align: right;
+    padding-right: 8px;
+}
+
+th.warehouseimg {
+    text-align: center;
+    padding-right: 0;
+}
+
+th.warehouse-head {
+    font-size: 14px;
+    padding: 6px 8px 6px 4px;
+    border: none;
+    text-align: right;
+    color: #490100;
+    text-align: right;
+}
+
+td.warehouse-sep {
+    font-size: 6px;
+    border: none;
+    text-align: right;
+    color: #490100;
+    text-align: right;
+    padding-right: 8px;
+}
+
+tr.warehouse-details {
+    font-size: 11px;
+    padding: 0 0;
+    border: none;
+}
+
+td.warehouse-details {
+    font-size: 11px;
+    text-align: right;
+    padding-right: 8px;
+}
+
+/*================================================================*/
+
+table.popupdetailLeft {
+    position: relative;
+    float: left;
+    top: 0;
+    left: 100; /*width: 260px;*/
+    vertical-align: top;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    text-align: left;
+}
+
+table.popupdetail {
+    position: relative;
+    float: right;
+    top: 0;
+    right: 0; /*width: 260px;*/
+    vertical-align: top;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    text-align: left;
+}
+
+tr.popupdetail {
+    font-size: 10px;
+    padding: 0 0;
+    border: none;
+}
+
+th.popupdetail {
+    font-size: 10px;
+    padding: 4px 4px;
+    border: none;
+}
+
+td.popupdetail {
+    font-size: 12px;
+    border: none;
+    text-align: left;
+    color: #490100;
+}
+
+td.popupdetailsmall {
+    font-size: 10px;
+    border: none;
+    text-align: left;
+    color: #490100;
+}
+
+/*================================================================*/
+
+table.warehouse-activity {
+    width: 955px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    background: rgba(208, 158, 50, 0.5);
+    border-bottom-color: #d48d01;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 11px;
+    text-align: center;
+}
+
+tr.warehouse-activity {
+    font-size: 14px;
+    padding: 0 0;
+    border: none;
+}
+
+th.warehouse-activity {
+    font-size: 14px;
+    padding: 4px 8px 4px 4px;
+    border: none;
+    text-align: right;
+}
+
+td.warehouse-activity {
+    text-align: right;
+    padding-right: 8px;
+}
+
+th.warehouseimg {
+    text-align: center;
+    padding-right: 0;
+}
+
+th.warehouse-head {
+    font-size: 14px;
+    padding: 6px 8px 6px 4px;
+    border: none;
+    text-align: right;
+    color: #490100;
+    text-align: right;
+}
+
+td.warehouse-sep {
+    font-size: 6px;
+    border: none;
+    text-align: right;
+    color: #490100;
+    text-align: right;
+    padding-right: 8px;
+}
+
+tr.warehouse-details {
+    font-size: 11px;
+    padding: 0 0;
+    border: none;
+}
+
+td.warehouse-details {
+    font-size: 11px;
+    text-align: right;
+    padding-right: 8px;
+}
+
+/*================================================================*/
+
+table.special {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 11px;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid #dd9e01;
+}
+
+td.special {
+    overflow: hidden;
+    white-space: nowrap;
+    color: #8f6300;
+    padding: 2px 5px;
+}
+
+tr.special {
+    color: #8c5e00;
+    background: #fbefc7;
+}
+
+tr.special:hover {
+    color: #8c5e00;
+    background: #fbefc7;
+}
+
+th.special {
+    font-weight: bold;
+    font-size: 11px;
+    color: #5a0000;
+    border: none;
+    padding: 4px 4px;
+}
+
+tr.specialBlue {
+    font-weight: normal;
+    font-size: 11px;
+    background: #134891;
+}
+
+tbody.special
+tr.specialBlue:hover {
+    color: #134891;
+    background: #d0dafd;
+}
+
+tr.specialCyan {
+    font-weight: normal;
+    font-size: 11px;
+    background: #00ffaf;
+}
+
+tbody.special
+tr.specialCyan:hover {
+    color: #00ffaf;
+    background: #d0dafd;
+}
+
+tr.specialBrown {
+    font-weight: normal;
+    font-size: 11px;
+    background: #bd8150;
+}
+
+tbody.special
+tr.specialBrown:hover {
+    color: #bd8150;
+    background: #d0dafd;
+}
+
+tr.specialRed {
+    font-weight: normal;
+    font-size: 11px;
+    background: #c30404;
+}
+
+tbody.special
+tr.specialRed:hover {
+    color: #c30404;
+    background: #d0dafd;
+}
+
+td.specialRed {
+    overflow: hidden;
+    white-space: nowrap;
+    color: #c30404;
+    background: 2px 5px;
+}
+
+/*================================================================*/
+
+.login_form form {
+    width: 500px;
+    color: #fff;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+    margin: 5em auto;
+}
+
+.login_form .formbody {
+    padding: 2em;
+    background-color: #e7dbb7;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 1px 1px 2px;
+    border-color: #d48d01 #e8b001 #d48d01;
+    border: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    -webkit-border-radius: 0 0 3px 3px;
+}
+
+.login_form h1 {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #fffd00;
+    background: -moz-linear-gradient(center top, '#d48d01', '#654900');
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0, startColorstr = '#d48d01', endColorstr = '#654900');
+    background: -webkit-gradient(linear, left top, left bottom, from(#d48d01), to(#654900));
+    background: -moz-linear-gradient(top, #d48d01, #654900);
+    border: 1px solid #e8b001;
+    border-bottom-color: #d48d01;
+    border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+    -webkit-border-radius: 3px 3px 0 0;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.7);
+    margin: 0;
+    padding: 8px 18px;
+}
+
+.login_form form label, .login_form form .label, label.standard {
+    font-size: 110%;
+    color: #666;
+    text-shadow: 0 -1px 0 rgba(100, 100, 100, 0.1);
+    display: inline-block;
+    cursor: text;
+}
+
+.login_form form label a {
+    font-size: 90%;
+}
+
+.login_form form label.error {
+    color: #a00;
+}
+
+.login_form form .label label {
+    margin: 0;
+    color: black;
+    font-size: 95%;
+}
+
+.login_form form .label span {
+    font-size: 90%;
+    color: #888;
+}
+
+.login_form form input.text, .login_form form textarea, .login_form form input {
+    padding: 5px;
+    border: 1px solid #d8dee2;
+    margin: .2em 0 1em 0;
+    font-size: 110%;
+}
+
+.login_form form input[type=submit] {
+    font-size: 90%;
+}
+
+/*================================================================*/
+
+div.news {
+    clear: both;
+    position: relative;
+    width: 468px;
+    padding-top: 260px;
+    top: -255px;
+    margin-bottom: -255px;
+}
+
+.flag {
+    vertical-align: middle;
+    margin: 0;
+    padding: 1px;
+    border: 1px solid #ddd;
+    width: 36px;
+    height: 24px;
+}
+
+.message {
+    position: relative;
+    left: 48px;
+    top: -24px;
+    width: 418px;
+}
+
+.title {
+    margin-bottom: 10px;
+}
+
+table.oldnews {
+    position: relative;
+    float: right;
+    top: 300px;
+    right: -545px;
+    width: 260px;
+    vertical-align: top;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    background: #ff9e01;
+    border: 1px solid #e8b001;
+    border-bottom-color: #d48d01;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 10px;
+    text-align: left;
+}
+
+tr.oldnews {
+    font-size: 10px;
+    padding: 0 0;
+    border: none;
+}
+
+th.oldnews {
+    font-size: 10px;
+    padding: 4px 4px;
+    border: none;
+}
+
+/*================================================================*/
+
+table.oldreports {
+    position: relative;
+    float: right;
+    top: 20px;
+    width: 260px;
+    vertical-align: top;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    background: #ff9e01;
+    border: 1px solid #e8b001;
+    border-bottom-color: #d48d01;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 10px;
+    text-align: left;
+}
+
+tr.oldreports {
+    font-size: 10px;
+    padding: 0 0;
+    border: none;
+}
+
+th.oldreports {
+    font-size: 10px;
+    padding: 4px 4px;
+    border: none;
+}
+
+/*================================================================*/
+
+.commanderTableContainer {
+    margin-top: 194px;
+}
+
+.commanderContainer {
+    position: relative;
+    top: -177px;
+}
+
+.commander {
+    position: relative;
+    width: 950px;
+    margin-top: 10px;
+}
+
+.commanderFirst {
+    position: absolute;
+}
+
+.commander img {
+    vertical-align: middle;
+    top: -2px;
+    margin-right: 5px;
+    padding: 2px;
+    border: 1px solid #dd9e01;
+}
+
+table.commander {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 11px;
+    text-align: left;
+}
+
+td.big {
+    width: 100%;
+}
+
+td.commanderImage {
+    overflow: hidden;
+    white-space: nowrap;
+    color: #8f6300;
+    width: 64px;
+    vertical-align: top;
+}
+
+td.commanderLeft {
+    overflow: hidden;
+    white-space: nowrap;
+    color: #8f6300;
+    padding-top: 0;
+    padding-left: 5px;
+    vertical-align: top;
+    text-align: left;
+}
+
+td.commanderRight {
+    overflow: hidden;
+    white-space: nowrap;
+    color: #8f6300;
+    padding-top: 0;
+    padding-right: 10px;
+    vertical-align: top;
+    text-align: right;
+}
+
+tr.commander {
+    color: #8c5e00;
+}
+
+.commander h2 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.commander h3 {
+    font-size: 12px;
+}
+
+.commander h4 {
+    font-size: 12px;
+}
+
+.good img {
+    border: 0 none #fff;
+    margin: 0 0 0 0;
+}
+
+.commander h5 {
+    margin-top: 3px;
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.commander h6 {
+    margin-top: 3px;
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.position {
+    padding-top: 56px;
+    font-size: 12px;
+    color: #000000;
+    font-weight: normal;
+}
+
+/*================================================================*/
+
+.baggagetrain {
+    position: relative;
+    width: 570px;
+    margin-top: 10px;
+}
+
+.baggagetrain img {
+    vertical-align: middle;
+    top: -2px;
+    margin-right: 5px;
+    padding: 2px;
+    border: 1px solid #dd9e01;
+}
+
+table.baggagetrain {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 11px;
+    text-align: left;
+}
+
+td.baggagetrainImage {
+    overflow: hidden;
+    white-space: nowrap;
+    color: #8f6300;
+    width: 64px;
+    vertical-align: top;
+}
+
+td.baggagetrainLeft {
+    overflow: hidden;
+    white-space: nowrap;
+    color: #8f6300;
+    padding-top: 0;
+    padding-left: 5px;
+    vertical-align: top;
+    text-align: left;
+}
+
+td.baggagetrainRight {
+    overflow: hidden;
+    white-space: nowrap;
+    color: #8f6300;
+    padding-top: 0;
+    padding-right: 10px;
+    vertical-align: top;
+    text-align: right;
+}
+
+tr.baggagetrain {
+    color: #8c5e00;
+}
+
+.baggagetrain h2 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.baggagetrain h3 {
+    font-size: 12px;
+}
+
+.baggagetrain h4 {
+    font-size: 12px;
+}
+
+table.baggagetrainGoods {
+    width: 410px;
+    border: 0 none #dd9e01;
+}
+
+tr.baggagetrainGoods {
+    vertical-align: top;
+    text-align: left;
+}
+
+td.baggagetrainGoods {
+    vertical-align: top;
+    font-size: 12px;
+}
+
+td.baggagetrainGoodsQTE {
+    vertical-align: middle;
+    padding-right: 6px;
+    font-size: 12px;
+    text-align: left;
+}
+
+.baggagetrainGoods img {
+    border: 0 none #fff;
+    margin: 0 0 0 0;
+    vertical-align: top;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 72px;
+    padding-right: 6px;
+}
+
+.baggagetrain h5 {
+    margin-top: 3px;
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.baggagetrain h6 {
+    margin-top: 3px;
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/*================================================================*/
+
+h1.tacticalengine {
+    position: relative;
+    width: 985px;
+    border: 0 solid #ddd;
+}
+
+/*================================================================*/
+
+h1.battlepanel img {
+    position: relative;
+    width: 945px;
+    top: -30px;
+    left: 10px;
+    margin-bottom: -191px;
+    border: 0 solid #ddd;
+}
+
+h1.battlepanel img.tacticalpanel {
+    top: -19px;
+    margin-bottom: -163px;
+    left: 11px;
+}
+
+h1.battlepanel img.nationA {
+    position: relative;
+    width: 108px;
+    top: -1px;
+    margin-bottom: -72px;
+    left: 30px;
+    border: 0 solid #ddd;
+}
+
+h1.battlepanel img.nationB {
+    position: relative;
+    width: 108px;
+    top: -1px;
+    left: 713px;
+    margin-bottom: -72px;
+    border: 0 solid #ddd;
+}
+
+h1.battlepanel img.commA {
+    position: relative;
+    width: 71px;
+    top: -1px;
+    margin-bottom: -71px;
+    left: 120px;
+    border: 0 solid #ddd;
+}
+
+h1.battlepanel img.commB {
+    position: relative;
+    width: 71px;
+    top: -1px;
+    margin-bottom: -71px;
+    left: 241px;
+    border: 0 solid #ddd;
+}
+
+h1.battlesidenameA {
+    position: relative;
+    color: #444446;
+    width: 184px;
+    top: -10px;
+    left: 152px;
+    height: 68px;
+    margin-bottom: -68px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 18pt;
+    font-family: Georgia, Arial, serif;
+    text-shadow: 1px 1px 0.1px #7b714b;
+}
+
+h1.battlesidenameB {
+    position: relative;
+    color: #444446;
+    width: 185px;
+    top: -10px;
+    left: 630px;
+    height: 68px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 18pt;
+    font-family: Georgia, Arial, serif;
+    text-shadow: 1px 1px 0.1px #7b714b;
+}
+
+h2.battlepanel img.battlemap {
+    margin-right: 5px;
+    padding: 2px;
+    border: 1px solid #000;
+}
+
+table.battleinfo {
+    position: relative;
+    top: 20px;
+    left: 15px;
+    font-size: 12pt;
+    color: #444446;
+    font-family: Georgia, Arial, serif;
+    text-shadow: 1px 1px 0.1px #7b714b;
+}
+
+h3.battleresult {
+    position: relative;
+    top: -90px;
+    left: 320px;
+    width: 600px;
+    margin-right: 5px;
+    color: #444446;
+    font-size: 22pt;
+    font-family: Georgia, Arial, serif;
+    text-shadow: 1px 1px 0.1px #7b714b;
+}
+
+h4.battlepanel {
+    font-size: 12px;
+}
+
+h5.battlepanel {
+    padding: 20px;
+    font-family: "Vivaldi", "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: bold;
+    color: #9c1102;
+}
+
+h6.battlepanel {
+    font-size: 10px;
+    font-weight: normal;
+}
+
+h6.battlepanel img.shipPairLeft {
+    font-size: 12px;
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 4px;
+    padding-bottom: 2px;
+    width: 24px;
+    border: 0 solid #ddd;
+    text-align: left;
+    vertical-align: middle;
+}
+
+h6.battlepanel img.shipPairRight {
+    font-size: 12px;
+    padding-top: 2px;
+    padding-left: 4px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    width: 24px;
+    border: 0 solid #ddd;
+    text-align: right;
+    vertical-align: middle;
+}
+
+h7.battlepanel {
+    font-size: 10px;
+    font-weight: normal;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    clear: right;
+}
+
+h7.battlepanel em.resultBad {
+    font-weight: bold;
+    color: #9c1102;
+}
+
+h7.battlepanel em.resultGood {
+    font-weight: bold;
+    color: #02119c;
+}
+
+h7.battlepanel img.shipPairLeft {
+    float: left;
+    font-size: 12px;
+    padding-left: 2px;
+    padding-right: 4px;
+    width: 36px;
+    border: 0 solid #ddd;
+    text-align: left;
+    vertical-align: top;
+}
+
+h7.battlepanel img.shipPairRight {
+    float: right;
+    font-size: 12px;
+    padding-left: 4px;
+    padding-right: 2px;
+    width: 36px;
+    border: 0 solid #ddd;
+    text-align: right;
+    vertical-align: top;
+}
+
+table.battlepanel {
+    position: relative;
+    top: 0px;
+    left: -5px;
+    margin-bottom: -50px;
+    width: 985px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 11px;
+    text-align: center;
+    border-collapse: collapse;
+    border: 0 solid #dd9e01;
+}
+
+th.battlepanel {
+    font-family: "Vivaldi", "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 28px;
+    color: #222226;
+    padding: 2px 5px;
+    text-shadow: 1px 1px 0.1px #7b714b;
+}
+
+tr.battleresult {
+    width: 985px;
+    height: 2px;
+    vertical-align: top;
+}
+
+tr.battlepanelempty {
+    height: 5px;
+    font-size: 6px;
+    vertical-align: top;
+}
+
+td.battlepanelempty {
+    height: 5px;
+    font-size: 6px;
+}
+
+td.battlepaneldisengagement {
+    font-family: Georgia, "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 18px;
+    color: #222226;
+    text-shadow: 1px 1px 0.1px #7b714b;
+}
+
+td.battlepanelleft {
+    width: 350px;
+    color: #111111;
+    text-align: left;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+td.battlepanelleft img {
+    padding-top: 1px;
+    width: 72px;
+    padding-right: 9px;
+    border: 0 solid #ddd;
+}
+
+td.battlepanelright {
+    width: 350px;
+    color: #111111;
+    text-align: right;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+td.battlepanelright img {
+    padding-top: 1px;
+    width: 72px;
+    padding-right: 9px;
+    border: 0 solid #ddd;
+}
+
+td.battlepanelinfo {
+    font-family: Georgia;
+    margin: 0 0 0 0;
+    font-weight: normal;
+    letter-spacing: -1px;
+    white-space: nowrap;
+    color: #444446;
+    text-align: center;
+}
+
+td.battlepanelmiddle {
+    white-space: nowrap;
+    font-family: Georgia;
+    font-weight: bold;
+    letter-spacing: -1px;
+    color: #444446;
+    text-align: center;
+    text-shadow: 1px 1px 0.1px #7b714b;
+}
+
+td.battlepanelcenter {
+    width: 220px;
+}
+
+tr.battlepanelarmy {
+    width: 985px;
+    height: 2px;
+    vertical-align: top;
+}
+
+td.battlepanelarmy {
+    width: 350px;
+    text-align: center;
+    vertical-align: top;
+    padding-left: 10px;
+}
+
+td.battlepanelarmy img {
+    width: 72px;
+    border: 0 solid #ddd;
+    padding-right: 9px;
+}
+
+/*================================================================*/
+
+table.singleGame {
+    position: relative; /*float: right;*/
+    top: 20px; /*left: 285px;*/
+    width: 540px;
+    vertical-align: top;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    background: #ff9e01;
+    border: 1px solid #e8b001;
+    border-bottom-color: #d48d01;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 10px;
+    text-align: left;
+}
+
+tr.singleGame {
+    font-size: 10px;
+    padding: 0 0;
+    border: none;
+}
+
+th.singleGame {
+    font-size: 10px;
+    padding: 4px 4px;
+    border: none;
+}
+
+.pagehead ul.singleGameActions {
+    margin: 0;
+    float: right;
+    position: relative;
+    right: 0;
+}
+
+.pagehead ul.bottomLeftActions {
+    margin: 0; /*float: right;*/
+    position: relative;
+    right: 0;
+}
+
+.unread {
+    background-color: #f5f5dc;
+}
+
+.publishable_content {
+}
+
+.publishable_content:hover {
+    background-color: #f5f5dc;
+}
+
+.providers_container {
+    display: block;
+}
+
+/*.centeredHidden {*/
+/*display:none;*/
+/*position:absolute;*/
+/*top:50%;*/
+/*left:35%;*/
+/*width:350px;*/
+/*}*/
+
+/*.centeredVisible {*/
+/*display:block;*/
+/*position:absolute;*/
+/*top:50%;*/
+/*left:35%;*/
+/*width:350px;*/
+/*}*/
+
+/*span.closeMessage {*/
+/*bottom:0;*/
+/*right:0;*/
+/*}*/
+.target {
+    width: 80px;
+    text-align: center;
+    border: 2px solid #666666;
+    padding: 5px;
+    background-color: #00FFFF;
+    height: 45px;
+    display: block;
+    float: left;
+}
+
+input.alt-target {
+    width: 80px;
+}
+
+.bttitle {
+}
+
+/*================================================================*/
+
+article bigmap {
+    padding-left: 5px;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: dashed;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 5px;
+    float: left;
+    clear: none;
+    width: 945px;
+    height: 923px;
+    position: relative;
+}
+
+article mediummap {
+    padding-left: 5px;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: dashed;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 5px;
+    float: left;
+    clear: none;
+    width: 945px;
+    position: relative;
+}
+
+article smallmap {
+    padding-left: 5px;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: dashed;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 5px;
+    float: left;
+    clear: none;
+    width: 304px;
+    height: 264px;
+    position: relative;
+}
+
+article infomap {
+    padding-left: 5px;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: dashed;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 5px;
+    float: left;
+    clear: none;
+    width: 945px;
+    position: relative;
+}
+
+article bigmap h2 {
+    font-size: 22px !important;
+    margin-bottom: 0px !important;
+    opacity: 1 !important;
+    font-weight: normal !important;
+    margin: 0 !important;
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    text-shadow: 0.5px 1px 0.1px #7B714B;
+}
+
+article bigmap h3 {
+    font-size: 20px !important;
+    margin-bottom: 0px !important;
+    opacity: 1 !important;
+    font-weight: normal !important;
+    margin: 0 !important;
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    text-shadow: 0.5px 1px 0.1px #7B714B;
+}
+
+article nationList {
+    padding-left: 5px;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: dashed;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 5px;
+    float: left;
+    clear: none;
+    width: 945px;
+    position: relative;
+}
+
+ul.nationList {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+}
+
+ul.nationList li {
+    border-radius: 10px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid #8F8F8F;
+    background: rgba(243, 243, 243, 0.3) none repeat-x 0 0;
+    margin-left: 0px;
+    margin-right: 4px;
+}
+
+ul.nationList li.header {
+    border-radius: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    background: none;
+    margin-left: 0px;
+    margin-right: 4px;
+}
+
+ul.nationList dl {
+    display: block;
+    position: relative;
+    padding: 2px 0;
+    height: 36px;
+}
+
+ul.nationList dt {
+    display: block;
+    float: left;
+    width: 180pt;
+    font-size: 1.1em;
+    padding-top: 1px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+ul.nationList dk {
+    display: block;
+    float: right;
+    width: 30pt;
+    font-size: 1.1em;
+    padding-top: 1px;
+    padding-left: 5px;
+    padding-right: 0px;
+}
+
+ul.nationList dd {
+    display: block;
+    float: left;
+    font-size: 8pt;
+    padding-top: 11px;
+    width: 68pt;
+    text-align: right;
+}
+
+ul.nationList ds {
+    display: block;
+    float: left;
+    font-size: 7pt;
+    font-weight: bold;
+    padding-top: 10.5px;
+    padding-left: 4px;
+    width: 5pt;
+    text-align: center !important;
+    color: #525252;
+}
+
+/*================================================================*/
+
+article army {
+    padding-left: 5px;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: dashed;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 5px;
+    float: left;
+    clear: none;
+    width: 955px;
+    height: 383px;
+    position: relative;
+}
+
+article army h2 {
+    font-size: 22px !important;
+    margin-bottom: 0px !important;
+    opacity: 1 !important;
+    font-weight: normal !important;
+    margin: 0 !important;
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    text-shadow: 0.5px 1px 0.1px #7B714B;
+}
+
+article army h3 {
+    font-size: 12px !important;
+    margin-bottom: -5px !important;
+    margin-top: -8px !important;
+    opacity: 1 !important;
+    font-weight: normal !important;
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    text-shadow: 1px 1px 0.1px #7B714B;
+}
+
+article army h4 {
+    font-size: 10px !important;
+    margin-top: 5px !important;
+    margin-bottom: -5px !important;
+    opacity: 1 !important;
+    font-weight: normal !important;
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    text-shadow: 1px 1px 0.1px #7B714B;
+}
+
+article army ul.commpanel {
+    display: block;
+    list-style-type: none;
+    margin-left: 0px !important;
+    border-radius: 6px;
+    border-top: 1px solid #ded356;
+    border-bottom: 1px solid #8F8F8F;
+    background: rgba(208, 158, 50, 0.5) none repeat-x 0 0;
+    padding: 1px 0px 0px 2px;
+    height: 210px;
+    width: 132px;
+}
+
+article army ul.infopanel {
+    display: block;
+    list-style-type: none;
+    margin-left: 0px !important;
+    margin-top: 5px !important;
+    border-radius: 6px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid #8F8F8F;
+    background: rgba(243, 243, 243, 0.3) none repeat-x 0 0;
+    margin-bottom: 2px !important;
+    padding: 1px 0px 0px 2px;
+    height: 128px;
+    width: 132px;
+}
+
+article army td.infopanel {
+    font-size: 8px;
+    text-align: center;
+}
+
+article army td.infopanelTroops {
+    font-size: 8px;
+    text-align: right;
+}
+
+article army td.infopanelTotals {
+    font-size: 9px;
+    font-weight: bold;
+    text-align: right;
+}
+
+article productionsite {
+    padding-left: 5px;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: dashed;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 5px;
+    float: left;
+    clear: none;
+    width: 79px;
+    height: 155px;
+    position: relative;
+}
+
+article productionsite ul.infopanel {
+    display: block;
+    list-style-type: none;
+    margin-left: 0px !important;
+    margin-top: 5px !important;
+    border-radius: 6px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid #8F8F8F;
+    background: rgba(243, 243, 243, 0.3) none repeat-x 0 0;
+    margin-bottom: 2px !important;
+    padding: 1px 0px 0px 2px;
+    width: 60px;
+}
+
+article productionsite td.infopanelTotals {
+    font-size: 9px;
+    font-weight: bold;
+    text-align: right;
+}
+
+article corp {
+    padding-left: 5px;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: dashed;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 5px;
+    float: left;
+    clear: none;
+    width: 457px;
+    height: 384px;
+    position: relative;
+}
+
+article fleet {
+    padding-left: 5px;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: dashed;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 5px;
+    float: left;
+    clear: none;
+    width: 457px;
+    height: 384px;
+    position: relative;
+}
+
+article corp h2, article fleet h2 {
+    font-size: 22px !important;
+    margin-bottom: 0px !important;
+    opacity: 1 !important;
+    font-weight: normal !important;
+    margin: 0 !important;
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    text-shadow: 0.5px 1px 0.1px #7B714B;
+}
+
+article corp h3, article fleet h3 {
+    font-size: 12px !important;
+    margin-bottom: -5px !important;
+    margin-top: -8px !important;
+    opacity: 1 !important;
+    font-weight: normal !important;
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    text-shadow: 1px 1px 0.1px #7B714B;
+}
+
+article corp h4, article fleet h4 {
+    font-size: 10px !important;
+    margin-top: 5px !important;
+    margin-bottom: -5px !important;
+    opacity: 1 !important;
+    font-weight: normal !important;
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    text-shadow: 1px 1px 0.1px #7B714B;
+}
+
+article corp ul.commpanel {
+    display: block;
+    list-style-type: none;
+    margin-left: 0px !important;
+    border-radius: 6px;
+    border-top: 1px solid #ded356;
+    border-bottom: 1px solid #8F8F8F;
+    background: rgba(208, 158, 50, 0.5) none repeat-x 0 0;
+    padding: 1px 0px 0px 2px;
+    height: 210px;
+    width: 132px;
+}
+
+article corp ul.infopanel {
+    display: block;
+    list-style-type: none;
+    margin-left: 0px !important;
+    margin-top: 5px !important;
+    border-radius: 6px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid #8F8F8F;
+    background: rgba(243, 243, 243, 0.3) none repeat-x 0 0;
+    margin-bottom: 2px !important;
+    padding: 1px 0px 0px 2px;
+    height: 128px;
+    width: 132px;
+}
+
+article fleet ul.infopanel {
+    display: block;
+    list-style-type: none;
+    margin-left: 0px !important;
+    margin-top: 5px !important;
+    border-radius: 6px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid #8F8F8F;
+    background: rgba(243, 243, 243, 0.3) none repeat-x 0 0;
+    margin-bottom: 2px !important;
+    padding: 1px 0px 0px 2px;
+    width: 145px;
+}
+
+article corp td.infopanel, article fleet td.infopanel {
+    font-size: 8px;
+    text-align: center;
+}
+
+article corp td.infopanelTroops, article fleet td.infopanelTroops {
+    font-size: 8px;
+    text-align: right;
+}
+
+article corp td.infopanelTotals, article fleet td.infopanelTotals {
+    font-size: 9px;
+    font-weight: bold;
+    text-align: right;
+}
+
+article corp ul.battpanel, article fleet ul.shippanel {
+    float: right;
+    display: block;
+    list-style-type: none;
+    height: 345px;
+    width: 323px;
+    margin-top: 5px !important;
+    margin-right: -85px !important;
+}
+
+article corp div.numBats, article fleet div.numBats {
+    position: absolute;
+    top: -3px !important;
+    left: 3px;
+    font-weight: bold;
+    font-size: 7px;
+    color: #FFFFFF;
+}
+
+article corp div.avgExp, article fleet div.avgExp {
+    position: absolute;
+    text-align: right;
+    top: -3px !important;
+    left: 48px !important;
+    font-weight: bold;
+    font-size: 7px;
+    color: #FFFFFF;
+}
+
+article corp div.headcount, article fleet div.headcount {
+    position: absolute;
+    top: 52px !important;
+    left: 3px;
+    font-weight: bold;
+    font-size: 7px;
+    color: #FFFFFF;
+}
+
+article brigade {
+    padding-left: 5px;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: dashed;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 5px;
+    float: left;
+    clear: none;
+    width: 457px;
+    height: 120px;
+    position: relative;
+}
+
+article brigade h2 {
+    font-size: 20px !important;
+    margin-bottom: 0px !important;
+    opacity: 1 !important;
+    font-weight: normal !important;
+    margin: 0 !important;
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    text-shadow: 0.5px 1px 0.1px #7B714B;
+}
+
+article brigade ul.battpanel {
+    display: block;
+    list-style-type: none;
+    margin-top: 12px !important;
+    margin-left: -2px !important;
+    width: 478px;
+}
+
+article brigade div.numBats {
+    position: absolute;
+    top: -3px !important;
+    left: 3px;
+    font-weight: bold;
+    font-size: 7px;
+    color: #FFFFFF;
+}
+
+article brigade div.avgExp {
+    position: absolute;
+    text-align: right;
+    top: -3px !important;
+    left: 48px !important;
+    font-weight: bold;
+    font-size: 7px;
+    color: #FFFFFF;
+}
+
+article brigade div.headcount {
+    position: absolute;
+    top: 52px !important;
+    left: 3px;
+    font-weight: bold;
+    font-size: 7px;
+    color: #FFFFFF;
+}
+
+article commander {
+    padding-left: 5px;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: dashed;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 5px;
+    float: left;
+    clear: none;
+    width: 220px;
+    height: 280px;
+    position: relative;
+}
+
+article commander h2 {
+    font-size: 20px !important;
+    margin-bottom: 0px !important;
+    opacity: 1 !important;
+    font-weight: normal !important;
+    margin: 0 !important;
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    text-shadow: 0.5px 1px 0.1px #7B714B;
+}
+
+article commander h3 {
+    font-size: 14px !important;
+    margin-bottom: -2px !important;
+    margin-top: -10px !important;
+    opacity: 1 !important;
+    font-weight: normal !important;
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    text-shadow: 1px 1px 0.1px #7B714B;
+}
+
+article commander h4 {
+    font-size: 11px !important;
+    margin-top: 5px !important;
+    margin-bottom: -5px !important;
+    opacity: 1 !important;
+    font-weight: normal !important;
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    text-shadow: 1px 1px 0.1px #7B714B;
+}
+
+article commander h4 {
+    font-size: 15px !important;
+    margin-top: 5px !important;
+    margin-bottom: -5px !important;
+    opacity: 1 !important;
+    font-weight: normal !important;
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    text-shadow: 1px 1px 0.1px #7B714B;
+}
+
+article commander img {
+    align: middle;
+}
+
+article baggagetrain {
+    padding-left: 5px;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: dashed;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 5px;
+    float: left;
+    clear: none;
+    width: 950px;
+    position: relative;
+}
+
+article baggagetrain h2 {
+    font-size: 20px !important;
+    margin-bottom: 0px !important;
+    opacity: 1 !important;
+    font-weight: normal !important;
+    margin: 0 !important;
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    text-shadow: 0.5px 1px 0.1px #7B714B;
+}
+
+article baggagetrain ul.battpanel {
+    display: block;
+    list-style-type: none;
+    margin-top: 12px !important;
+    margin-left: -2px !important;
+    width: 478px;
+}
+
+article baggagetrain div.numBats {
+    position: absolute;
+    top: -3px !important;
+    left: 3px;
+    font-weight: bold;
+    font-size: 7px;
+    color: #FFFFFF;
+}
+
+article baggagetrain div.avgExp {
+    position: absolute;
+    text-align: right;
+    top: -3px !important;
+    left: 48px !important;
+    font-weight: bold;
+    font-size: 7px;
+    color: #FFFFFF;
+}
+
+article baggagetrain div.headcount {
+    position: absolute;
+    top: 52px !important;
+    left: 3px;
+    font-weight: bold;
+    font-size: 7px;
+    color: #FFFFFF;
+}
+
+article baggagetrain ul.infopanel {
+    display: block;
+    list-style-type: none;
+    margin-left: 0px !important;
+    margin-top: 5px !important;
+    border-radius: 6px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid #8F8F8F;
+    background: rgba(243, 243, 243, 0.3) none repeat-x 0 0;
+    margin-bottom: 2px !important;
+    padding: 1px 0px 0px 2px;
+    width: 132px;
+}
+
+article baggagetrain td.infopanel {
+    font-size: 8px;
+    text-align: center;
+}
+
+article game {
+    border-width: 1px;
+    border-color: #000000;
+    border-style: dashed;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 5px;
+    float: left;
+    clear: none;
+    width: 955px;
+    height: 220px;
+}
+
+article game h1 a, article army h1 a {
+    font-size: 40px !important;
+    margin-bottom: 0px !important;
+    opacity: 1 !important;
+    font-weight: normal !important;
+    line-height: 90%;
+    margin: 0 !important;
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+}
+
+article game ul, article army ul {
+    display: block;
+    list-style-type: none;
+    margin: 0 !important;
+}
+
+article game li {
+    border-radius: 10px;
+    border-top: 1px solid #ded356;
+    border-bottom: 1px solid #8F8F8F;
+    background: rgba(208, 158, 50, 0.5) none repeat-x 0 0;
+    margin-bottom: 3px !important;
+    padding: 3px 1px 0px 6px;
+}
+
+article game div.info, article army div.info {
+    border-radius: 10px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid #8F8F8F;
+    background: rgba(243, 243, 243, 0.3) none repeat-x 0 0;
+    margin-bottom: 2px !important;
+    padding: 3px;
+}
+
+article game div.map {
+
+}
+
+article game div.mapContainer {
+    float: right;
+    height: 186px;
+    width: 277px;
+    margin-top: -163px;
+    margin-right: 6px;
+    border-radius: 10px;
+    border-top: 1px solid #ded356;
+    border-bottom: 1px solid #8F8F8F;
+    background: rgba(208, 158, 50, 0.5) none repeat-x 0 0;
+    margin-bottom: -30px;
+    padding: 7px 0px 0px 8px;
+}
+
+article army div.battalionsInfo {
+    float: right;
+    height: 186px;
+    width: 277px;
+    margin-top: -173px;
+    margin-right: 483px;
+    border-radius: 10px;
+    border-top: 1px solid #ded356;
+    border-bottom: 1px solid #8F8F8F;
+    background: #d09e32 none repeat-x 0 0;
+    margin-bottom: -30px;
+    padding: 7px 0px 0px 8px;
+}
+
+article army div.battalionsInfo li {
+    height: 25px;
+}
+
+article army div.armiesContainer {
+    float: right;
+    margin-right: 12px;
+    margin-top: -208px;
+    width: 462px;
+}
+
+article army div.armiesContainer li {
+    height: 75px;
+}
+
+/*================================================================*/
+
+article orderList {
+    padding-left: 5px;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: dashed;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 5px;
+    float: left;
+    clear: none;
+    width: 945px;
+    position: relative;
+}
+
+ul.orderList {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+}
+
+ul.orderList li {
+    border-radius: 10px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid #8F8F8F;
+    background: rgba(243, 243, 243, 0.3) none repeat-x 0 0;
+    margin-left: 0px;
+    margin-right: 4px;
+}
+
+ul.orderList li.header {
+    border-radius: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    background: none;
+    margin-left: 0px;
+    margin-right: 4px;
+}
+
+ul.orderList dl {
+    display: block;
+    position: relative;
+    padding: 2px 0;
+    min-height: 20px;
+    overflow: hidden;
+}
+
+ul.orderList dt {
+    display: block;
+    float: left;
+    font-size: 1.1em;
+    padding-top: 1px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 620px !important;
+    white-space: normal;
+    vertical-align: top;
+}
+
+ul.orderList di {
+    display: block;
+    float: right;
+    width: 180pt;
+    font-size: 1em;
+    text-align: right;
+    vertical-align: top;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 8px;
+}
+
+ul.orderList dj {
+    display: block;
+    float: right;
+    width: 20pt;
+    font-size: 1.1em;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+ul.orderList dk {
+    display: block;
+    float: right;
+    width: 20pt;
+    font-size: 1.1em;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+ul.orderList ds {
+    clear: both;
+    display: block;
+    float: left;
+    font-size: 7pt;
+    padding-top: 2px;
+    padding-left: 5px;
+    margin-top: -1px;
+    margin-left: 3px;
+    margin-bottom: 1px;
+    width: 680px !important;
+    white-space: normal;
+    border-radius: 6px;
+    background: rgba(243, 243, 243, 0.4) none repeat-x 0 0;
+}
+
+ul.orderList dn {
+    clear: both;
+    display: block;
+    float: left;
+    font-size: 7pt;
+    padding-top: 2px;
+    padding-left: 5px;
+    margin-top: -1px;
+    margin-left: 3px;
+    margin-bottom: 1px;
+    width: 880px !important;
+    white-space: normal;
+    border-radius: 6px;
+    background: rgba(243, 243, 243, 0.4) none repeat-x 0 0;
+}
+
+hr.orderList {
+    border: 0 none white;
+    border-top: 1px solid #CCC;
+    height: 1px;
+    margin: 5px 0;
+    display: block;
+    clear: both;
+}
+
+/*================================================================*/
+
+.newspaper {
+    position: relative;
+    width: 957px;
+    height: 187px;
+    background: url('http://static.eaw1805.com/images/site/header.png') 0 0 no-repeat;
+}
+
+.newspaper h1 {
+    padding-top: 38px;
+    padding-left: 5px;
+}
+
+.newspaper img.avatarLink {
+    color: black !important;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    opacity: 1 !important;
+}
+
+article, section, footer {
+    display: block;
+}
+
+time {
+    display: inline;
+}
+
+/*main div of the newspaper*/
+#page {
+    text-align: justify;
+    width: 1050px;
+    height: 180%;
+    margin: 0 5%;
+    padding: 1em;
+}
+
+.header_left {
+    padding: 40px 10px;
+    border-style: solid;
+    border-width: medium;
+    opacity: 0.7;
+}
+
+.header_right {
+    width: 50px;
+}
+
+#page > header p {
+    display: inline-block;
+    font-family: serif;
+}
+
+#page > header p:first-of-type {
+    margin-left: 10px;
+}
+
+#page > header p em {
+    display: block;
+}
+
+#page > header p:nth-of-type(2) {
+    font-weight: 800;
+}
+
+#page > header h1 {
+    display: inline-block;
+    text-align: center;
+    font-size: 64px;
+    margin: 20px 50px;
+    opacity: 0.8;
+    font-weight: 100;
+    text-shadow: #666 0px 5px 10px;
+}
+
+section > p {
+    text-indent: 20px;
+    margin: 0;
+}
+
+section {
+    border-width: 1px;
+    border-color: #000000;
+    border-style: dashed;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 5px;
+    float: left;
+    clear: none;
+    width: 228px;
+    height: 346px;
+}
+
+.sectionLink {
+    font-size: 22px !important;
+    margin-bottom: 0px !important;
+    opacity: 1 !important;
+    font-weight: normal !important;
+    color: black !important;
+    line-height: 90%;
+    margin: 0 !important;
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+}
+
+section h1 {
+    font-size: 22px !important;
+    margin-bottom: 0px !important;
+    opacity: 0.8 !important;
+    font-weight: normal !important;
+    color: black !important;
+    line-height: 90%;
+    margin: 2px 2px 5px !important;
+    margin-bottom: 5px !important;
+}
+
+article section.doubleSize h1 {
+    font-size: 40px !important;
+    margin-bottom: 10px !important;
+    opacity: 0.8;
+    font-weight: normal;
+    color: black;
+    margin: 2px !important;
+    margin-bottom: 5px !important;
+}
+
+article section.doubleSize {
+    width: 468px;
+}
+
+article section.doubleSize-Reply {
+    width: 438px;
+    float: right;
+}
+
+article section.doubleSize-Reply  h1 {
+    font-size: 40px !important;
+    margin-bottom: 10px !important;
+    opacity: 0.8;
+    font-weight: normal;
+    color: black;
+    margin: 2px !important;
+    margin-bottom: 5px !important;
+}
+
+article section.doubleSize-Compose {
+    width: 468px;
+    float: right;
+    height: 326px;
+}
+
+article section.achievements h1 {
+    font-size: 40px !important;
+    margin-bottom: 10px !important;
+    opacity: 0.8;
+    font-weight: normal;
+    color: black;
+    margin: 2px !important;
+    margin-bottom: 5px !important;
+}
+
+article section.achievements {
+    width: 468px;
+    float: left;
+    min-height: 346px;
+    height: auto;
+}
+
+article section.doubleSize-Compose  h1 {
+    font-size: 40px !important;
+    margin-bottom: 10px !important;
+    opacity: 0.8;
+    font-weight: normal;
+    color: black;
+    margin: 2px !important;
+    margin-bottom: 5px !important;
+}
+
+article section {
+    line-height: 1.3 !important;
+    font-size: 90%;
+    opacity: 0.8;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-shadow: 1px 1px 0.1px rgba(0, 0, 0, 0.2);
+}
+
+#subtext {
+    overflow: hidden;
+    position: relative;
+    margin: 5px 5px;
+    text-align: justify;
+}
+
+section div p {
+    text-align: justify;
+}
+
+#subtext-left {
+    clear: both;
+    float: left;
+    max-width: 200px;
+    padding-left: 5px;
+    text-align: justify;
+    color: black;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 14px;
+    text-shadow: 1px 1px 0.1px rgba(0, 0, 0, 0.2);
+
+}
+
+#subtext-left a {
+    line-height: 1.3 !important;
+}
+
+#subtext-right {
+    clear: both;
+    float: right;
+    max-width: 200px;
+    padding-right: 5px;
+    text-align: justify;
+    color: black;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 14px;
+    text-shadow: 1px 1px 0.1px rgba(0, 0, 0, 0.2);
+}
+
+#subtext-right a {
+    line-height: 1.2 !important;
+}
+
+article section img {
+    vertical-align: middle;
+    position: relative;
+    margin: 4px;
+    padding: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    float: left;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    opacity: 1 !important;
+}
+
+article section img.error_tooltip {
+    margin: 0;
+    margin-right: 5px;
+}
+
+.sectionText {
+    max-width: 250px;
+    width: 250px;
+    margin-top: 4px;
+}
+
+#quickReply {
+    margin-top: -20px;
+    margin-right: 10px;
+    float: right;
+}
+
+#readMore {
+    margin-top: -20px;
+    margin-left: 10px;
+    float: left;
+}
+
+article section div#content {
+    height: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+article section.avatar {
+    width: 275px;
+    height: 110px;
+}
+
+article section.balance {
+    width: 190px;
+    height: 138px;
+}
+
+article section.balance label {
+    float: left;
+    width: 5em;
+    margin-right: 2px;
+    text-align: left;
+    margin-left: 4px;
+    margin-top: 0px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #000000;
+    font-size: 14px;
+}
+
+article section.balance a {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin-left: 5px;
+}
+
+article section.balance span {
+    float: right;
+    width: 4em;
+    margin-right: -15px;
+    text-align: left;
+    margin-top: 0px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: black;
+    font-size: 14px;
+}
+
+/*
+article section.settings-top-left-big h1 {
+   margin-left: 5px;
+}
+*/
+article section.settings-top-left {
+    width: 378px;
+    height: 260px;
+}
+
+article section.settings-top-left h1 {
+    margin-bottom: 10px !important;
+    opacity: 0.8;
+    font-weight: normal;
+    color: black;
+    margin-left: 95px;
+}
+
+article section.settings-top-left label {
+    width: 8.5em;
+}
+
+article section.settings-top-left input.customInput {
+    width: 15em;
+    float: right;
+    margin-right: 5px;
+}
+
+article section.settings-top-left input[type=submit], input[type=select], .tick-submit {
+    background-color: transparent !important;
+    float: right !important;
+    width: 36px !important;
+    height: 36px !important;
+    background-image: url("http://static.eaw1805.com/images/buttons/ButAcceptOn.png") !important;
+    background-size: auto 36px !important;
+    background-repeat: no-repeat !important;
+    display: inline-block !important;
+    padding: 0 !important;
+    position: relative !important;
+    top: 0 !important;
+    margin: 0 !important;
+    text-shadow: 1px 1px 0 #fff;
+    white-space: nowrap;
+    border: 0 !important;
+    border-bottom-color: transparent !important;
+    overflow: visible;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0, startColorstr = '#ff9e01', endColorstr = '#fdffcd');
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+article section.settings-top-left input[type=submit]:hover, .tick-submit:hover {
+    background-color: transparent !important;
+    float: right !important;
+    width: 36px !important;
+    height: 36px !important;
+    background-image: url("http://static.eaw1805.com/images/buttons/ButAcceptHover.png") !important;
+    background-size: auto 36px !important;
+    background-repeat: no-repeat !important;
+    display: inline-block !important;
+    padding: 0 !important;
+    position: relative !important;
+    top: 0 !important;
+    margin: 0 !important;
+    text-shadow: 1px 1px 0 #fff;
+    white-space: nowrap;
+    border: 0 !important;
+    border-bottom-color: transparent !important;
+    overflow: visible;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0, startColorstr = '#ff9e01', endColorstr = '#fdffcd');
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+article section.transfer input[type=submit], input[type=select] {
+    background-color: transparent !important;
+    float: right !important;
+    width: 36px !important;
+    height: 36px !important;
+    background-image: url("http://static.eaw1805.com/images/buttons/ButAcceptOn.png") !important;
+    background-size: auto 36px !important;
+    background-repeat: no-repeat !important;
+    display: inline-block !important;
+    padding: 0 !important;
+    position: relative !important;
+    top: 0 !important;
+    margin: 0 !important;
+    text-shadow: 1px 1px 0 #fff;
+    white-space: nowrap;
+    border: 0 !important;
+    border-bottom-color: transparent !important;
+    overflow: visible;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0, startColorstr = '#ff9e01', endColorstr = '#fdffcd');
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+article section.transfer input[type=submit]:hover {
+    background-color: transparent !important;
+    float: right !important;
+    width: 36px !important;
+    height: 36px !important;
+    background-image: url("http://static.eaw1805.com/images/buttons/ButAcceptHover.png") !important;
+    background-size: auto 36px !important;
+    background-repeat: no-repeat !important;
+    display: inline-block !important;
+    padding: 0 !important;
+    position: relative !important;
+    top: 0 !important;
+    margin: 0 !important;
+    text-shadow: 1px 1px 0 #fff;
+    white-space: nowrap;
+    border: 0 !important;
+    border-bottom-color: transparent !important;
+    overflow: visible;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0, startColorstr = '#ff9e01', endColorstr = '#fdffcd');
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+article section.connections {
+    width: 275px;
+    height: 110px;
+}
+
+article section.connections h1 {
+    margin-left: 5px;
+}
+
+article section.transfer {
+    width: 361px;
+    height: 138px;
+}
+
+article section.transfer h1 {
+    margin-left: 5px;
+}
+
+article section.section-followers {
+    width: 355px;
+    height: 280px;
+    clear: both;
+}
+
+article section.section-history {
+    float: right;
+    width: 289px;
+    height: 280px;
+}
+
+article section.section-post-create {
+    float: left;
+    width: 948px;
+    height: auto;
+}
+
+article section.section-followers a img {
+    clear: both;
+    margin-bottom: 0px;
+}
+
+article section.section-followers h1 {
+    margin-left: 10px;
+}
+
+article section.section-watching {
+    width: 285px;
+    height: 280px;
+}
+
+article section.section-watching h1 {
+    margin-left: 5px;
+}
+
+article section.section-watching li {
+    margin-left: 10px;
+}
+
+textarea#bodyMessage.sectionTextArea {
+    resize: none;
+    width: 455px;
+    height: 233px;
+    margin: 4px;
+    margin-top: 0;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+}
+
+textarea#bodyMessage.sectionTextArea-reply {
+    resize: none;
+    width: 425px;
+    height: 273px;
+    margin: 4px;
+    margin-top: 0;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+}
+
+article section label.inputCompose {
+    float: left;
+    width: 5em;
+    margin-right: 2px;
+    text-align: left;
+    margin-left: 4px;
+    margin-top: 4px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #000000;
+    font-size: 14px;
+}
+
+label.send-message-btn {
+    float: right;
+    width: 100px;
+    height: 60px;
+}
+
+label.reply-message-btn {
+    float: right;
+    width: 100px;
+    height: 60px;
+    margin-top: -40px;
+}
+
+input.send-message-input {
+    background-color: transparent !important;
+    float: right !important;
+    width: 110px !important;
+    height: 60px !important;
+    background-image: url("http://static.eaw1805.com/images/site/sendMessage.png") !important;
+    background-size: auto 60px !important;
+    background-repeat: no-repeat !important;
+    display: inline-block !important;
+    padding: 0 !important;
+    position: relative !important;
+    top: 0 !important;
+    margin: -4px 10px 10px 10px !important;
+    text-shadow: 1px 1px 0 #fff;
+    white-space: nowrap;
+    border: 0 !important;
+    border-bottom-color: transparent !important;
+    overflow: visible;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0, startColorstr = '#ff9e01', endColorstr = '#fdffcd');
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+input.send-message-input:hover {
+    background-color: transparent !important;
+    background-image: url("http://static.eaw1805.com/images/site/sendMessageOnMouse.png") !important;
+    background-size: auto 60px !important;
+    background-repeat: no-repeat !important;
+}
+
+.pagehead h4.pagination {
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif;
+    position: relative !important;
+    margin-top: 39px !important;
+    margin-left: 385pt !important;
+    line-height: 0.95 !important;
+    font-size: 13px !important;
+    float: left !important;
+    width: 439px !important;
+    font-weight: normal;
+    text-align: right;
+}
+
+.pagehead h4.pagination a.others {
+    font-weight: normal;
+    text-decoration: none;
+    color: #747474;
+    margin: 0 1px;
+    padding: 0 1px;
+    background-color: #EEE;
+    border: 1px solid #BABABA;
+    font-size: 7px !important;
+}
+
+.pagehead h4.pagination a.current {
+    padding: 0 1px;
+    margin: 0 1px;
+    font-weight: normal;
+    color: white;
+    background-color: #BFBFBF;
+    border: 1px solid #BFBFBF;
+    font-size: 7px !important;
+}
+
+.pagehead h4.pagination a.others:hover {
+    border-color: #d2d2d2;
+    background-color: #d2d2d2;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.pagehead h4.pagination a.current:hover {
+    border-color: #d2d2d2;
+    background-color: #d2d2d2;
+    color: #FFF;
+    text-decoration: none;
+}
+
+article section.viewSection {
+    width: 500px;
+    height: 100%;
+}
+
+article section.viewSection div#content div#subtext-left {
+    max-width: 350px;
+}
+
+article section.viewSection div#content div#subtext-right {
+    max-width: 350px;
+}
+
+button.delete {
+    background: url("http://static.eaw1805.com/images/buttons/ButCancelOn.png") no-repeat;
+    background-size: 22px 22px;
+    border: none;
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    float: right;
+    margin-right: 5px;
+}
+
+button.delete:hover {
+    background: url("http://static.eaw1805.com/images/buttons/ButCancelHover.png") no-repeat;
+    background-size: 22px 22px;
+    border: none;
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    float: right;
+    margin-right: 5px;
+}
+
+button.pickup {
+    background: url("http://static.eaw1805.com/images/buttons/ButAssignLeaderOff.png") no-repeat;
+    background-size: 36px 36px;
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    float: right;
+    margin-right: 5px;
+}
+
+button.pickup:hover {
+    background: url("http://static.eaw1805.com/images/buttons/ButAssignLeaderHover.png") no-repeat;
+    background-size: 36px 36px;
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    float: right;
+    margin-right: 5px;
+}
+
+button.ok {
+    background: url("http://static.eaw1805.com/images/buttons/ButAcceptOn.png") no-repeat;
+    background-size: 36px 36px;
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+}
+
+button.ok:hover {
+    background: url("http://static.eaw1805.com/images/buttons/ButAcceptHover.png") no-repeat;
+    background-size: 36px 36px;
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+}
+
+button.cancel {
+    background: url("http://static.eaw1805.com/images/buttons/ButCancelOn.png") no-repeat;
+    background-size: 36px 36px;
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+}
+
+button.cancel:hover {
+    background: url("http://static.eaw1805.com/images/buttons/ButCancelHover.png") no-repeat;
+    background-size: 36px 36px;
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+}
+
+.settingsCheckbox {
+    float: right;
+    margin-top: 8px;
+    margin-right: 6px;
+}
+
+article section.settings-top-left label.check {
+    width: 13em;
+    text-align: center;
+    float: right;
+    margin-right: 5px;
+}
+
+article section label {
+    float: left;
+    width: 12em;
+    margin-right: 2px;
+    text-align: left;
+    margin-left: 4px;
+    margin-top: 4px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #000000;
+    font-size: 13px;
+    clear: both;
+}
+
+label.transfer-label {
+    width: 10em;
+}
+
+article section.transfer input.customInput {
+    width: 10em;
+    float: right;
+    margin-right: 5px;
+}
+
+article section.transfer input.customInputAdmin {
+    width: 9em;
+    float: right;
+    margin-right: 5px;
+}
+
+article section.transfer label.submit_btn {
+    margin-top: 10px;
+}
+
+article section.connections div.connections {
+    height: 100%;
+    width: 275px;
+}
+
+article section.connections div.connections div.connection-item {
+    clear: both;
+    line-height: 2 !important;
+    margin: 5px 5px 0;
+    height: 26px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-shadow: 1px 1px 0.1px rgba(0, 0, 0, 0.2);
+}
+
+article section.connections div.connections div.connection-item:hover {
+    background-color: #f8f8ff;
+}
+
+article section.connections div.connections div.connection-item span.connection-icon {
+    float: left;
+}
+
+article section.connections div.connections div.connection-item span.connection-provider {
+    float: left;
+    margin-left: 3px;
+}
+
+article section.connections div.connections div.connection-item span.connection-user {
+    float: left;
+    color: rgb(68, 68, 70);
+}
+
+article section.connections div.connections div.connection-item span.connection-control {
+    float: right;
+}
+
+article section.connections img {
+    vertical-align: middle;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    opacity: 1 !important;
+}
+
+article section.connections img.connect {
+    vertical-align: middle;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    opacity: 0.5 !important;
+}
+
+button.conButton {
+    background-color: transparent;
+    background-position: 0pt 0pt;
+    background-size: auto auto;
+    border: none;
+    color: rgb(101, 73, 0);
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-shadow: 1px 1px 0.1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+button.disconButton {
+    background: url("http://static.eaw1805.com/images/buttons/ButCancelOn.png") no-repeat;
+    background-size: 26px 26px;
+    border: none;
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+}
+
+button.disconButton:hover {
+    background: url("http://static.eaw1805.com/images/buttons/ButCancelHover.png") no-repeat;
+    background-size: 26px 26px;
+    border: none;
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+}
+
+button.unWatch {
+    background: url("http://static.eaw1805.com/images/buttons/ButCancelOn.png") no-repeat;
+    background-size: 22px 22px;
+    border: none;
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+}
+
+button.unWatch:hover {
+    background: url("http://static.eaw1805.com/images/buttons/ButCancelHover.png") no-repeat;
+    background-size: 22px 22px;
+    border: none;
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+}
+
+article section.section-followers input.buttons {
+    background-color: transparent;
+    background-position: 0pt 0pt;
+    background-size: auto auto;
+    border: none;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-shadow: 1px 1px 0.1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-size: 11px;
+    line-height: 16pt;
+    font-size: 11px;
+    font-weight: bold;
+    color: #654900;
+    text-decoration: none;
+}
+
+/*================================================================*/
+
+article section.gameInfo h1 {
+    font-size: 40px !important;
+    margin-bottom: 10px !important;
+    opacity: 0.8;
+    font-weight: normal;
+    color: black;
+    margin: 2px !important;
+    margin-bottom: 5px !important;
+}
+
+article section.gameInfo {
+    width: 630px;
+    height: 359px;
+    margin-bottom: 40px;
+}
+
+article section.gameInfo h1 a {
+    font-size: 40px !important;
+    margin-bottom: 0px !important;
+    opacity: 1 !important;
+    font-weight: normal !important;
+    color: black !important;
+    line-height: 90%;
+    margin: 0 !important;
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+}
+
+article section.gameInfo span {
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+}
+
+article section.gameInfo img {
+    vertical-align: middle;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    float: left;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    opacity: 1 !important;
+}
+
+article section.topRight {
+    width: 310px;
+    height: 40px;
+    float: right;
+}
+
+article section.topRight h1 {
+
+}
+
+article section.topRight h1 {
+    font-size: 40px !important;
+    opacity: 0.8;
+    font-weight: normal;
+    color: black;
+    margin: 2px 14pt 14pt !important;
+}
+
+article section.topRight h1 a {
+    font-size: 40px !important;
+    margin-bottom: 0px !important;
+    opacity: 1 !important;
+    font-weight: normal !important;
+    color: black !important;
+    line-height: 90%;
+    margin: 0 !important;
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+}
+
+article div.paging a.previous div#previous {
+    background-image: url('http://static.eaw1805.com/images/panels/barracks/ButLeftOff.png');
+    background-color: transparent !important;
+    background-size: 38px auto !important;
+    background-repeat: no-repeat !important;
+    height: 40px;
+}
+
+article div.paging a.previous div#previous:hover {
+    background: url('http://static.eaw1805.com/images/panels/barracks/ButLeftHover.png');
+    background-color: transparent !important;
+    background-size: 38px auto !important;
+    background-repeat: no-repeat !important;
+    height: 40px;
+}
+
+article div.paging a.next div#next {
+    background: url('http://static.eaw1805.com/images/panels/barracks/ButRightOff.png');
+    background-color: transparent !important;
+    background-size: 38px auto !important;
+    background-repeat: no-repeat !important;
+    height: 40px;
+}
+
+article div.paging a.next div#next:hover {
+    background: url('http://static.eaw1805.com/images/panels/barracks/ButRightHover.png');
+    background-color: transparent !important;
+    background-size: 38px auto !important;
+    background-repeat: no-repeat !important;
+    height: 40px;
+}
+
+/*================================================================*/
+
+article news {
+    border-width: 1px;
+    border-color: #000000;
+    border-style: dashed;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 5px;
+    float: left;
+    clear: none;
+    width: 228px;
+}
+
+news h1 {
+    font-size: 22px !important;
+    margin-bottom: 0px !important;
+    opacity: 0.8 !important;
+    font-weight: normal !important;
+    color: black !important;
+    line-height: 90%;
+    margin: 2px 2px 5px !important;
+    margin-bottom: 5px !important;
+}
+
+.pagehead h1.news, .pageheadMinimal h1.news {
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif !important;
+    padding-top: 15px;
+    padding-left: 5px;
+    position: relative;
+    width: 957px;
+    height: 187px;
+    background: url('http://static.eaw1805.com/images/site/header.png') 0 0 no-repeat;
+    font-size: 68pt;
+    font-weight: normal;
+    line-height: 0.95 !important;
+    color: #444446;
+}
+
+.pagehead h2.news {
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif !important;
+    position: relative;
+    margin-top: -64px;
+    line-height: 0.95;
+    font-size: 18px;
+    width: 500px;
+    margin-left: 333px;
+}
+
+.pageheadMinimal h2.news {
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif !important;
+    position: relative;
+    margin-top: -133px;
+    line-height: 0.95;
+    font-size: 18px;
+    width: 500px;
+    margin-left: 333px;
+}
+
+.pagehead h3.news, .pageheadMinimal h3.news {
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif;
+    position: relative !important;
+    margin-top: -122px !important;
+    line-height: 0.95 !important;
+    font-weight: normal;
+    font-size: 68pt !important;
+    float: left !important;
+    margin-left: 385pt !important;
+    text-align: right;
+    width: 440px !important;
+}
+
+.pagehead h4.news, .pageheadMinimal h4.news {
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif;
+    position: relative !important;
+    margin-top: 11px !important;
+    margin-left: 385pt !important;
+    line-height: 0.95 !important;
+    font-size: 14px !important;
+    float: left !important;
+    width: 439px !important;
+    font-weight: normal;
+    text-align: right;
+}
+
+.pagehead h5.news, .pageheadMinimal h5.news {
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif !important;
+    position: relative;
+    margin-top: -17px;
+    line-height: 0.95;
+    font-size: 18px;
+    width: 500px;
+    margin-left: 575px;
+    text-align: left;
+    color: #444446;
+    text-shadow: 1px 1px 0.1px #7B714B;
+    font-weight: normal;
+    letter-spacing: -1px;
+}
+
+news .flagEntry {
+    vertical-align: middle;
+    margin: 0;
+    padding: 1px;
+    border: 1px solid #333333;
+    width: 36px;
+    height: 24px;
+    margin-left: 4px;
+}
+
+news .messageEntry {
+    position: relative;
+    left: 48px;
+    top: -32px;
+    width: 418px;
+    text-align: justify;
+}
+
+news .messageEntryLong {
+    position: relative;
+    width: 460px;
+    margin-left: 4px;
+    padding-bottom: 4px;
+    text-align: justify;
+}
+
+/*==========================================================================================*/
+
+blockquote.manual {
+    margin: 0px 0 20px;
+    color: #444446;
+    quotes: '\201C' '\201D' '\2018' '\2019';
+    font-style: italic;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-align: center;
+    padding: 0 20px;
+    font-size: 16px;
+    line-height: 22px;
+    text-shadow: 1px 1px 0.1px rgba(0, 0, 0, 0.2);
+}
+
+blockquote.manual:before blockquote.manual:after {
+}
+
+p.manual {
+    color: #444446;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 14px;
+    text-shadow: 1px 1px 0.1px rgba(0, 0, 0, 0.2);
+    margin: 0px 0pt;
+    text-align: justify;
+    padding-bottom: 6px;
+}
+
+h2.manual {
+    padding-top: 18px;
+    padding-bottom: 6px;
+    font-weight: normal;
+}
+
+h3.manual {
+    padding-top: 12px;
+    padding-bottom: 6px;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+ul.manual {
+    margin-left: 60px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    white-space: normal;
+}
+
+ol.manual {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-left: 60px;
+}
+
+li.manual {
+    color: #444446;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 14px;
+    text-shadow: 1px 1px 0.1px rgba(0, 0, 0, 0.2);
+    text-align: justify;
+}
+
+table.manual {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    color: #444446;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 14px;
+    text-shadow: 1px 1px 0.1px rgba(0, 0, 0, 0.2);
+    text-align: justify;
+    border-collapse: collapse;
+    border: 0 solid #dd9e01;
+    white-space: normal !important;
+}
+
+table.manual th {
+    vertical-align: top;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0.1px rgba(0, 0, 0, 0.2);
+    padding: 4px;
+}
+
+table.manual tr {
+    vertical-align: top;
+}
+
+table.manual td {
+    vertical-align: top;
+    text-align: justify;
+    padding: 4px;
+}
+
+td.manual {
+    white-space: nowrap;
+}
+
+.image {
+    position: relative;
+    float: left; /* optional */
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+
+.image .text {
+    position: absolute;
+    top: 0px;
+    left: 3px;
+    font-weight: bold;
+    font-size: 7px;
+    color: #FFFFFF;
+
+}
+
+.image .numBats {
+    position: absolute;
+    top: 0px;
+    left: 3px;
+    font-weight: bold;
+    font-size: 7px;
+    color: #FFFFFF;
+}
+
+.image .avgExp {
+    position: absolute;
+    top: 0px;
+    left: 52px;
+    font-weight: bold;
+    font-size: 7px;
+    color: #FFFFFF;
+}
+
+.image .headcount {
+    position: absolute;
+    top: 53px;
+    left: 3px;
+    font-weight: bold;
+    font-size: 7px;
+    color: #FFFFFF;
+}
+
+.image .nationFlag {
+    position: absolute;
+    left: 55px;
+    top: 60px;
+
+}
+
+.image .nationFlag img {
+    width: 15px;
+}
+
+.numbatsP {
+    color: blue;
+}
+
+.avgExpP {
+    color: #ffffff;
+}
+
+.headcountP {
+    color: #ffffff;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.clearFontMiniTitle {
+    font-family: Georgia serif;
+    font-size: 17px;
+}
+
+ul.help-menu {
+    /*background: url(http://static.eaw1805.com/site/modules/mod_yoo_carousel/styles/list/images/tabs_bg.png) 100% 0 repeat-y;*/
+    width: 205px;
+    padding: 0;
+    margin: auto;
+    list-style: none;
+    height: 600px;
+}
+
+ul.help-menu li {
+    margin: -1px 0 0 20px;
+    padding: 0;
+    float: left;
+    display: block;
+    padding-right: 45px;
+}
+
+ul.help-menu li a {
+    float: left;
+    display: block;
+    padding-right: 45px;
+}
+
+ul.help-menu li a span {
+    /*background: url(http://static.eaw1805.com/site/modules/mod_yoo_carousel/styles/list/images/tab_bg.png) 0 0 repeat-x;*/
+    display: block;
+    float: none;
+    width: 150px;
+}
+
+ul.help-menu li.selected a {
+    background: url(http://static.eaw1805.com/site/modules/mod_yoo_carousel/styles/list/images/tab_bg.png) 100% -30px no-repeat;
+}
+
+ul.help-menu li a span span {
+    padding-left: -100px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 100%;
+    overflow: hidden;
+    margin-left: 5px;
+}
+
+ul.help-menu li.selected a span span {
+    background: url(http://static.eaw1805.com/site/modules/mod_yoo_carousel/styles/list/images/tab_bg.png) 0 -90px repeat-x;
+    margin-left: 5px;
+}
+
+ul.help-menu li.selected a span {
+    background: url(http://static.eaw1805.com/site/modules/mod_yoo_carousel/styles/list/images/tab_bg.png) 0 -60px no-repeat;
+}
+
+.blockUI.blockMsg.blockPage {
+    border: 0 !important;
+    background-color: transparent !important;
+    background: url(http://static.eaw1805.com/images/site/alertParchment.png);
+    width: 390px;
+    height: 200px;
+}
+
+table.tablesorter {
+    width: 855px;
+    position: relative;
+    margin-left: 20px;
+}
+
+table.tablesorter tr {
+    display: block;
+    position: relative;
+    padding: 2px 0;
+    height: 36px;
+    font: 13.34px helvetica, arial, freesans, clean, sans-serif;
+}
+
+table.tablesorter tbody tr {
+    text-align: center;
+    border-radius: 10px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid #8F8F8F;
+    background: rgba(243, 243, 243, 0.3) none repeat-x 0 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+table.tablesorter thead tr {
+    color: #444446;
+    font-family: Georgia, helvetica, arial, freesans, clean, sans-serif;
+    text-shadow: 0.5px 1px 0.1px #7B714B;
+    font-weight: normal;
+    letter-spacing: -1px;
+    font-size: 12pt;
+}
+
+table.tablesorter thead tr .header {
+    background-image: url('http://static.eaw1805.com/images/site/bg.gif');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    cursor: pointer;
+    padding-left: 0px;
+    margin-left: -1px;
+    border-top: 1px solid transparent;
+}
+
+table.tablesorter thead tr .headerSortUp {
+    background-image: url('http://static.eaw1805.com/images/site/asc.gif');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    cursor: pointer;
+    padding-left: 0px;
+    margin-left: -1px;
+    border-top: 1px solid transparent;
+}
+
+table.tablesorter thead tr .headerSortDown {
+    background-image: url('http://static.eaw1805.com/images/site/desc.gif');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    cursor: pointer;
+    padding-left: 0px;
+    margin-left: -1px;
+    border-top: 1px solid transparent;
+}
+
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+    background-color: rgba(243, 243, 243, 0.3);
+    border-radius: 10px;
+    border-top: 1px solid white;
+}
+
+table.tablesorter span.positions {
+    display: block;
+    float: left;
+    font-size: 7pt;
+    font-weight: bold;
+    padding-left: 4px;
+    padding-bottom: 5px;
+    text-align: center !important;
+    color: rgb(82, 82, 82);
+}
+
+input.paypal-20-input {
+    background-color: transparent !important;
+    float: right !important;
+    width: 65px !important;
+    height: 100px !important;
+    background-image: url("http://static.eaw1805.com/images/site/paypal/20-credits.png") !important;
+    background-size: auto 100px !important;
+    background-repeat: no-repeat !important;
+    display: inline-block !important;
+    padding: 0 !important;
+    position: relative !important;
+    top: 0 !important;
+    margin: 0;
+    text-shadow: 1px 1px 0 #fff;
+    white-space: nowrap;
+    border: 0 !important;
+    border-bottom-color: transparent !important;
+    overflow: visible;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0, startColorstr = '#ff9e01', endColorstr = '#fdffcd');
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+input.paypal-20-input:hover {
+    background-color: transparent !important;
+    background-image: url("http://static.eaw1805.com/images/site/paypal/20-credits-hover.png") !important;
+    background-size: auto 100px !important;
+    background-repeat: no-repeat !important;
+}
+
+input.paypal-30-input {
+    background-color: transparent !important;
+    float: right !important;
+    width: 65px !important;
+    height: 100px !important;
+    background-image: url("http://static.eaw1805.com/images/site/paypal/30-credits.png") !important;
+    background-size: auto 100px !important;
+    background-repeat: no-repeat !important;
+    display: inline-block !important;
+    padding: 0 !important;
+    position: relative !important;
+    top: 0 !important;
+    margin: 0;
+    text-shadow: 1px 1px 0 #fff;
+    white-space: nowrap;
+    border: 0 !important;
+    border-bottom-color: transparent !important;
+    overflow: visible;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0, startColorstr = '#ff9e01', endColorstr = '#fdffcd');
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+input.paypal-30-input:hover {
+    background-color: transparent !important;
+    background-image: url("http://static.eaw1805.com/images/site/paypal/30-credits-hover.png") !important;
+    background-size: auto 100px !important;
+    background-repeat: no-repeat !important;
+}
+
+input.paypal-50-input {
+    background-color: transparent !important;
+    float: right !important;
+    width: 65px !important;
+    height: 100px !important;
+    background-image: url("http://static.eaw1805.com/images/site/paypal/50-credits.png") !important;
+    background-size: auto 100px !important;
+    background-repeat: no-repeat !important;
+    display: inline-block !important;
+    padding: 0 !important;
+    position: relative !important;
+    top: 0 !important;
+    margin: 0;
+    text-shadow: 1px 1px 0 #fff;
+    white-space: nowrap;
+    border: 0 !important;
+    border-bottom-color: transparent !important;
+    overflow: visible;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0, startColorstr = '#ff9e01', endColorstr = '#fdffcd');
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+input.paypal-50-input:hover {
+    background-color: transparent !important;
+    background-image: url("http://static.eaw1805.com/images/site/paypal/50-credits-hover.png") !important;
+    background-size: auto 100px !important;
+    background-repeat: no-repeat !important;
+}
+
+input.paypal-100-input {
+    background-color: transparent !important;
+    float: right !important;
+    width: 65px !important;
+    height: 100px !important;
+    background-image: url("http://static.eaw1805.com/images/site/paypal/100-credits.png") !important;
+    background-size: auto 100px !important;
+    background-repeat: no-repeat !important;
+    display: inline-block !important;
+    padding: 0 !important;
+    position: relative !important;
+    top: 0 !important;
+    margin: 0;
+    text-shadow: 1px 1px 0 #fff;
+    white-space: nowrap;
+    border: 0 !important;
+    border-bottom-color: transparent !important;
+    overflow: visible;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0, startColorstr = '#ff9e01', endColorstr = '#fdffcd');
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+input.paypal-100-input:hover {
+    background-color: transparent !important;
+    background-image: url("http://static.eaw1805.com/images/site/paypal/100-credits-hover.png") !important;
+    background-size: auto 100px !important;
+    background-repeat: no-repeat !important;
+}

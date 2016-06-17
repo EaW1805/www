@@ -1,0 +1,90 @@
+.tradeUnit {
+    background-color: rgba(123, 112, 1, 0.4);
+    border: ridge 4px;
+}
+
+.tradeUnit:Hover {
+    background-color: rgba(154, 112, 1, 0.8);
+    border: ridge 4px;
+}
+
+.tradeUnitSel {
+    background-color: rgba(154, 112, 1, 0.8);
+    border: ridge 4px;
+}
+
+.tradeUnitSelected {
+    background-image: url("http://static.eaw1805.com/images/panels/trade/selPanel.png");
+}
+
+.miniInfoPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/miniInfPanel.png");
+}
+
+.infoPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/infPanel.png");
+
+}
+
+.cargoUnitsPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/cargoUnitsPanel.png");
+
+}
+
+.brigadeMiniInfoPanel {
+    background-image: url("http://static.eaw1805.com/images/infopanels/brigadeMini.png");
+}
+
+.generalMiniInfoPanel {
+    background-image: url("http://static.eaw1805.com/images/infopanels/generalMini.png");
+}
+
+.infoPanelHolder {
+    background-image: url("http://static.eaw1805.com/images/infopanels/infoPanelHolder.png");
+}
+
+.pageBar {
+    background-image: url("http://static.eaw1805.com/images/panels/formFederations/pagesBar.png");
+}
+
+.shipMiniInfoPanel {
+    background-image: url("http://static.eaw1805.com/images/infopanels/shipMini.png");
+}
+
+.battalionMiniInfoPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/formFederations/BattalionHolder.png");
+}
+
+.ArmyTypeInfoPanel {
+    background-image: url("http://static.eaw1805.com/images/infopanels/ArmyTypeInfoPanel.png");
+}
+
+.ArmyTypeInfoPanel2 {
+    background-image: url("http://static.eaw1805.com/images/infopanels/ArmyTypeInfoPanel2.png");
+}
+
+.ToolTip245x90 {
+    background-image: url("http://static.eaw1805.com/images/tooltips/tooltip245x90.png")
+}
+
+.ToolTip245x75 {
+    background-image: url("http://static.eaw1805.com/images/tooltips/tooltip245x75.png")
+}
+
+.pointsInfoPanel {
+    background-image: url("http://static.eaw1805.com/images/infopanels/pointsInfoPanel.png");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+
+.infoPanelSelected {
+    background-image: url("http://static.eaw1805.com/images/infopanels/selected.png")
+}
+
+.brigadeMiniInfoPanelFieldBattle {
+    background-image: url("http://static.eaw1805.com/images/infopanels/brigadeMiniInfoPanel.png")
+}
+
+.brigadeLogInfoPanel {
+    background-image: url("http://static.eaw1805.com/images/infopanels/brigadeLogInfoPanel.png")
+}

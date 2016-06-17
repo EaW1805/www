@@ -48,7 +48,6 @@ public class FacebookImporter {
             LOGGER.debug("locationname? " + facebook.userOperations().getUserProfile().getLocation().getName());
         }
         LOGGER.debug("userid? " + facebook.userOperations().getUserProfile().getId());
-        LOGGER.debug("username? " + facebook.userOperations().getUserProfile().getUsername());
         LOGGER.debug("username? " + facebook.userOperations().getUserProfile().getName());
         LOGGER.debug("timezone? " + facebook.userOperations().getUserProfile().getTimezone());
 

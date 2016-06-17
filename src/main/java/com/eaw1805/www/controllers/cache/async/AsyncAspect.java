@@ -28,7 +28,7 @@ public class AsyncAspect {
 
     public AsyncAspect() {
         LOGGER.debug("AsyncAspect initialized");
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("/empire/webapp/resources/empire-servlet-mini.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("/com.eaw1805.www.resources/empire-servlet-mini.xml");
 
         asyncService = (AsyncService) ctx.getBean("asyncService");
     }

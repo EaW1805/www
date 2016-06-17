@@ -1,26 +1,13 @@
 package com.eaw1805.www.controllers.site;
 
-import com.gargoylesoftware.htmlunit.BrowserVersion;
-import com.gargoylesoftware.htmlunit.HttpMethod;
-import com.gargoylesoftware.htmlunit.TextPage;
-import com.gargoylesoftware.htmlunit.WebClient;
-import com.gargoylesoftware.htmlunit.WebRequestSettings;
+import com.eaw1805.data.HibernateUtil;
+import com.eaw1805.data.cache.Cachable;
+import com.gargoylesoftware.htmlunit.*;
 import com.gargoylesoftware.htmlunit.html.DomElement;
 import com.gargoylesoftware.htmlunit.html.HtmlElement;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
-import com.eaw1805.data.HibernateUtil;
-import com.eaw1805.data.cache.Cachable;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpException;
-import org.apache.http.HttpHost;
-import org.apache.http.HttpRequest;
-import org.apache.http.HttpRequestInterceptor;
-import org.apache.http.HttpResponse;
-import org.apache.http.auth.AuthScheme;
-import org.apache.http.auth.AuthScope;
-import org.apache.http.auth.AuthState;
-import org.apache.http.auth.Credentials;
-import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.*;
+import org.apache.http.auth.*;
 import org.apache.http.client.CredentialsProvider;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.protocol.ClientContext;
@@ -29,7 +16,8 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.ExecutionContext;
 import org.apache.http.protocol.HttpContext;
-import org.apache.logging.log4j.LogManager; import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.net.URL;
@@ -120,7 +108,7 @@ public class ArticleManager {
      * Default Constructor.
      */
     public ArticleManager() {
-        webClient = new WebClient(BrowserVersion.FIREFOX_3);
+        webClient = new WebClient(BrowserVersion.FIREFOX_17);
 //        webClient.setJavaScriptEnabled(true);
     }
 
@@ -145,7 +133,7 @@ public class ArticleManager {
 
         LOGGER.info("Posting request to RECAPTCHA [" + url.toString() + "]");
         try {
-            final WebRequestSettings webreq = new WebRequestSettings(new URL(url.toString()), HttpMethod.POST);
+            final WebRequest webreq = new WebRequest(new URL(url.toString()), HttpMethod.POST);
             final TextPage page = webClient.getPage(webreq);
 
             webClient.closeAllWindows();

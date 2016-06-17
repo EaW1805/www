@@ -1,5 +1,6 @@
 package com.eaw1805.www.controllers.remote;
 
+import com.eaw1805.core.EmailManager;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.eaw1805.algorithms.DistanceCalculator;
 import com.eaw1805.algorithms.MovementShortestPath;
@@ -276,7 +277,7 @@ public class EmpireRpcServiceImpl
 //        refData.put("user", thisUser);
 //        refData.put("engine", new EngineProcess());
 //        refData.put("unreadMessagesCount", 0);
-//        refData.put("userNewAchievements", new ArrayList<empire.data.model.Achievement>());
+//        refData.put("userNewAchievements", new ArrayList<com.eaw1805.data.model.Achievement>());
 
         LOGGER.info("[" + thisUser.getUsername() + "/" + thisUser.getRemoteAddress() + "] Cache game=" + gameIdStr + "/turn=" + thisGame.getTurn() + "/nation=" + thisNation.getName());
         return null;
@@ -2518,7 +2519,7 @@ public class EmpireRpcServiceImpl
                     messageManager.add(msg);
 
                     // send notification via mail
-                    sendMessageNotification(msg);
+                    sendEmailNotification(msg);
 
                     break;
 
@@ -2707,6 +2708,17 @@ public class EmpireRpcServiceImpl
             }
         }
         return out;
+    }
+
+    /**
+     * Send Email Notification to the receiver of the message.
+     *
+     * @param message the input message.
+     */
+    @EawAsync
+    private void sendEmailNotification(final Message message) {
+        // Send out mail
+        EmailManager.getInstance().sendMessageNotification(message);
     }
 
     /**

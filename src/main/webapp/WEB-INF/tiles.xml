@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+    <definition name="baseLayout" template="/WEB-INF/jsp/tiles/baseLayout.jsp">
+        <put-attribute name="title" value="Template"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/tiles/header.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/jsp/tiles/menu.jsp"/>
+        <put-attribute name="submenu" value="/WEB-INF/jsp/tiles/menu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/tiles/body.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/jsp/tiles/footer.jsp"/>
+    </definition>
+
+    <definition name="clearLayout" template="/WEB-INF/jsp/tiles/clearLayout.jsp">
+        <put-attribute name="title" value="Template"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/tiles/header.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/jsp/tiles/menu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/tiles/body.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/jsp/tiles/clearFooter.jsp"/>
+    </definition>
+
+    <definition name="emptyLayout" template="/WEB-INF/jsp/tiles/emptyLayout.jsp">
+        <put-attribute name="title" value="Template"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/tiles/header.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/jsp/tiles/menu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/tiles/body.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/jsp/tiles/clearFooter.jsp"/>
+    </definition>
+
+    <definition name="emptyLayoutNoLogin" template="/WEB-INF/jsp/tiles/emptyLayoutNoLogin.jsp">
+        <put-attribute name="title" value="Template"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/tiles/header.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/jsp/tiles/menu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/tiles/body.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/jsp/tiles/clearFooter.jsp"/>
+    </definition>
+
+    <definition name="baseLayoutSimple" template="/WEB-INF/jsp/tiles/baseLayoutSimple.jsp">
+        <put-attribute name="title" value="Template"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/tiles/header.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/jsp/tiles/menu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/tiles/body.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/jsp/tiles/footer.jsp"/>
+    </definition>
+
+    <definition name="gameLayout" template="/WEB-INF/jsp/tiles/baseLayout.jsp">
+        <put-attribute name="title" value="Template"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/headerGame.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/jsp/tiles/menu.jsp"/>
+        <put-attribute name="submenu" value="/WEB-INF/jsp/tiles/menu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/tiles/body.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/jsp/tiles/footer.jsp"/>
+    </definition>
+
+    <definition name="nationLayout" template="/WEB-INF/jsp/tiles/baseLayout.jsp">
+        <put-attribute name="title" value="Template"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/headerNation.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/jsp/tiles/menu.jsp"/>
+        <put-attribute name="submenu" value="/WEB-INF/jsp/tiles/menu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/tiles/body.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/jsp/tiles/footer.jsp"/>
+    </definition>
+
+    <definition name="minimalLayout" template="/WEB-INF/jsp/tiles/minimalLayout.jsp">
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/headerNation.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/tiles/body.jsp"/>
+    </definition>
+
+    <definition name="index" extends="baseLayout">
+        <put-attribute name="title" value="Home"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/index.jsp"/>
+    </definition>
+
+    <definition name="features" extends="baseLayout">
+        <put-attribute name="title" value="Features"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/features.jsp"/>
+    </definition>
+
+    <definition name="dummycss" template="/WEB-INF/jsp/dummycss.jsp"/>
+
+    <definition name="games" extends="baseLayout">
+        <put-attribute name="title" value="Games"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/games.jsp"/>
+    </definition>
+
+    <definition name="help" extends="baseLayout">
+        <put-attribute name="title" value="Help"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/help.jsp"/>
+    </definition>
+
+    <definition name="about" extends="baseLayout">
+        <put-attribute name="title" value="About"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/about.jsp"/>
+    </definition>
+
+    <definition name="news" extends="baseLayout">
+        <put-attribute name="title" value="News"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/news.jsp"/>
+    </definition>
+
+    <definition name="contact" extends="baseLayout">
+        <put-attribute name="title" value="Contact &amp; Support"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/contact.jsp"/>
+    </definition>
+
+    <definition name="contact/sent" extends="baseLayout">
+        <put-attribute name="title" value="Contact &amp; Support"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/contact-sent.jsp"/>
+    </definition>
+
+    <definition name="hof" extends="clearLayout">
+        <put-attribute name="title" value="Hall of Fame"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/hof.jsp"/>
+    </definition>
+
+    <definition name="helpIndex" extends="baseLayout">
+        <put-attribute name="title" value="Help"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/helpIndex.jsp"/>
+    </definition>
+
+    <definition name="handbook" extends="baseLayout">
+        <put-attribute name="title" value="Player's Handbook"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/handbook.jsp"/>
+    </definition>
+
+    <definition name="joinGame" extends="emptyLayout">
+        <put-attribute name="title" value="Join Game"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/joinGame.jsp"/>
+    </definition>
+
+    <definition name="joinGame-list" extends="baseLayout">
+        <put-attribute name="title" value="Join Game"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/joinGame.jsp"/>
+    </definition>
+
+    <definition name="login" extends="emptyLayoutNoLogin">
+        <put-attribute name="title" value="Login"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user/login.jsp"/>
+    </definition>
+
+    <definition name="signup" extends="emptyLayoutNoLogin">
+        <put-attribute name="title" value="Signup"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user/signup.jsp"/>
+    </definition>
+
+    <definition name="welcome" template="/WEB-INF/jsp/user/welcome.jsp">
+        <put-attribute name="title" value="Welcome"/>
+    </definition>
+
+    <definition name="forgotUsername" extends="emptyLayoutNoLogin">
+        <put-attribute name="title" value="Forgot my password"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user/forgotUsername.jsp"/>
+    </definition>
+
+    <definition name="forgotPassword" extends="emptyLayoutNoLogin">
+        <put-attribute name="title" value="Forgot my password"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user/forgotPassword.jsp"/>
+    </definition>
+
+    <definition name="sentUsername" extends="emptyLayoutNoLogin">
+        <put-attribute name="title" value="Username sent via e-mail"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user/sentUsername.jsp"/>
+    </definition>
+
+    <definition name="sentPassword" extends="emptyLayoutNoLogin">
+        <put-attribute name="title" value="New Password sent via e-mail"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user/sentPassword.jsp"/>
+    </definition>
+
+    <definition name="terms" extends="baseLayout">
+        <put-attribute name="title" value="Terms of Service"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/terms.jsp"/>
+    </definition>
+
+    <definition name="privacy" extends="baseLayout">
+        <put-attribute name="title" value="Privacy Statement"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/privacy.jsp"/>
+    </definition>
+
+    <definition name="user/user" extends="baseLayout">
+        <put-attribute name="title" value="Home"/>
+        <put-attribute name="description" value="User profile"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user/user.jsp"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/user/tiles/headerUser.jsp"/>
+    </definition>
+
+    <definition name="user/newUser" extends="baseLayout">
+        <put-attribute name="title" value="Home"/>
+        <put-attribute name="description" value="User profile"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user/newUser.jsp"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/user/tiles/headerUser.jsp"/>
+    </definition>
+
+    <definition name="user/profileUser" extends="baseLayout">
+        <put-attribute name="title" value="Home"/>
+        <put-attribute name="description" value="User profile"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user/profileUser.jsp"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/user/tiles/headerUser.jsp"/>
+    </definition>
+
+    <definition name="user/payment" extends="baseLayout">
+        <put-attribute name="title" value="Payment"/>
+        <put-attribute name="description" value="Your private messages"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/user/tiles/headerUser.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user/payment.jsp"/>
+    </definition>
+
+    <definition name="user/inbox" extends="baseLayout">
+        <put-attribute name="title" value="Inbox"/>
+        <put-attribute name="description" value="Your private messages"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/user/tiles/inboxHeaderUser.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user/inbox.jsp"/>
+    </definition>
+
+    <definition name="user/inbox/view" extends="baseLayout">
+        <put-attribute name="title" value="Inbox"/>
+        <put-attribute name="description" value="Your private messages"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/user/tiles/headerUser.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user/inbox/view.jsp"/>
+    </definition>
+
+    <definition name="user/settings" extends="baseLayout">
+        <put-attribute name="title" value="Settings"/>
+        <put-attribute name="description" value="Profile settings"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/user/tiles/headerUser.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user/settings.jsp"/>
+    </definition>
+
+    <definition name="user/followers" extends="baseLayout">
+        <put-attribute name="title" value="Player Followers"/>
+        <put-attribute name="description" value="Players you follow"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/user/tiles/headerUser.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user/followers.jsp"/>
+    </definition>
+
+    <definition name="users/list" extends="baseLayout">
+        <put-attribute name="title" value="All Players"/>
+        <put-attribute name="description" value="Registered Players"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/admin/listAllPlayersHeader.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/list.jsp"/>
+    </definition>
+
+    <definition name="user/honour" extends="baseLayout">
+        <put-attribute name="title" value="Honour"/>
+        <put-attribute name="description" value="Honour achieved"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/user/tiles/headerUser.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user/honour.jsp"/>
+    </definition>
+
+    <definition name="user/honourUser" extends="baseLayout">
+        <put-attribute name="title" value="Honour"/>
+        <put-attribute name="description" value="Honour achieved"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/user/tiles/headerUser.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user/honour.jsp"/>
+    </definition>
+
+    <definition name="receipt" extends="emptyLayoutNoLogin">
+        <put-attribute name="title" value="Request Receipt"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user/receipt.jsp"/>
+    </definition>
+
+    <definition name="receipt/sent" extends="baseLayout">
+        <put-attribute name="title" value="Request Receipt Sent"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user/receipt-sent.jsp"/>
+    </definition>
+
+    <definition name="completeLogin" template="/WEB-INF/jsp/user/completeLogin.jsp"/>
+
+    <definition name="scenario/list" extends="baseLayout">
+        <put-attribute name="title" value="Game Scenarios"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/scenario/list.jsp"/>
+    </definition>
+
+    <definition name="scenario/info" extends="baseLayout">
+        <put-attribute name="title" value="Scenario Information"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/scenario/info.jsp"/>
+    </definition>
+
+    <definition name="scenario/nation" extends="baseLayout">
+        <put-attribute name="title" value="Scenario/Nation Information"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/scenario/nation.jsp"/>
+    </definition>
+
+    <definition name="tactical/battle" extends="baseLayout">
+        <put-attribute name="title" value="Tactical Battle Engine"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/tactical/battle.jsp"/>
+    </definition>
+
+    <definition name="tactical/armylist" extends="baseLayout">
+        <put-attribute name="title" value="Tactical Battle Engine"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/tactical/armylist.jsp"/>
+    </definition>
+
+    <definition name="tactical/result" extends="baseLayout">
+        <put-attribute name="title" value="Tactical Battle Engine"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/tactical/result.jsp"/>
+    </definition>
+
+    <definition name="tactical/resultMinimal" extends="minimalLayout">
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/tactical/result.jsp?fixForClient=1"/>
+    </definition>
+
+    <definition name="naval/battle" extends="baseLayout">
+        <put-attribute name="title" value="Naval Battle Engine"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/naval/battle.jsp"/>
+    </definition>
+
+    <definition name="naval/fleetlist" extends="baseLayout">
+        <put-attribute name="title" value="Naval Battle Engine"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/naval/fleetlist.jsp"/>
+    </definition>
+
+    <definition name="naval/result" extends="baseLayout">
+        <put-attribute name="title" value="Naval Battle Engine"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/naval/result.jsp"/>
+    </definition>
+
+    <definition name="naval/resultMinimal" extends="minimalLayout">
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/naval/result.jsp?fixForClient=1"/>
+    </definition>
+
+    <definition name="game/edit" extends="baseLayout">
+        <put-attribute name="title" value="Nation Information"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/edit.jsp"/>
+    </definition>
+
+    <definition name="game/editNation" extends="baseLayout">
+        <put-attribute name="title" value="Edit Game Nation"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/editNation.jsp"/>
+    </definition>
+
+    <definition name="game/forms/editVPs" extends="baseLayout">
+        <put-attribute name="title" value="Edit Nation VPs"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/forms/editVPs.jsp"/>
+    </definition>
+
+    <definition name="game/info" extends="gameLayout">
+        <put-attribute name="title" value="Game Information"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/info.jsp"/>
+    </definition>
+
+    <definition name="game/timeline" template="/WEB-INF/jsp/game/timeline.jsp">
+    </definition>
+
+    <definition name="playLayout" template="/WEB-INF/jsp/game/play.jsp">
+        <put-attribute name="title" value="Game"/>
+    </definition>
+
+    <definition name="game/play" extends="playLayout"/>
+
+    <definition name="playFieldBattleLayout" template="/WEB-INF/jsp/game/playFieldBattle.jsp">
+        <put-attribute name="title" value="Field Battle"/>
+    </definition>
+
+    <definition name="game/playFieldBattle" extends="playFieldBattleLayout"/>
+
+    <definition name="processingLayout" template="/WEB-INF/jsp/game/processing.jsp">
+        <put-attribute name="title" value="Processing"/>
+    </definition>
+
+    <definition name="game/processing" extends="processingLayout">
+    </definition>
+
+    <definition name="game/newsletter" extends="nationLayout">
+        <put-attribute name="title" value="Nation Information"/>
+        <put-attribute name="menu" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/newsletter.jsp"/>
+    </definition>
+
+
+    <definition name="game/newsletterMinimal" extends="minimalLayout">
+        <put-attribute name="body" value="/WEB-INF/jsp/game/newsletter.jsp?fixForClient=1"/>
+    </definition>
+
+    <definition name="game/statistics" extends="nationLayout">
+        <put-attribute name="title" value="Statistics"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/statistics.jsp"/>
+    </definition>
+
+    <definition name="game/statisticsMinimal" extends="minimalLayout">
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/statistics.jsp?fixForClient=1"/>
+    </definition>
+
+    <definition name="game/army" extends="nationLayout">
+        <put-attribute name="title" value="Armed Forces"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/army.jsp"/>
+        <put-attribute name="submenu" value="/WEB-INF/jsp/game/tiles/reportsMenu.jsp?menu=army"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+    </definition>
+
+    <definition name="game/armyMinimal" extends="minimalLayout">
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/army.jsp?fixForClient=1"/>
+    </definition>
+
+    <definition name="game/navy" extends="nationLayout">
+        <put-attribute name="title" value="Naval Forces"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/navy.jsp"/>
+        <put-attribute name="submenu" value="/WEB-INF/jsp/game/tiles/reportsMenu.jsp?menu=navy"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+    </definition>
+
+    <definition name="game/navyMinimal" extends="minimalLayout">
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/navy.jsp?fixForClient=1"/>
+    </definition>
+
+    <definition name="game/barracks" extends="nationLayout">
+        <put-attribute name="title" value="Barracks"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/barracks.jsp"/>
+        <put-attribute name="submenu" value="/WEB-INF/jsp/game/tiles/reportsMenu.jsp?menu=barracks"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+    </definition>
+
+    <definition name="game/barracksMinimal" extends="minimalLayout">
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/barracks.jsp?fixForClient=1"/>
+    </definition>
+
+    <definition name="game/economy" extends="nationLayout">
+        <put-attribute name="title" value="Economy"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/economy.jsp"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="submenu" value="/WEB-INF/jsp/game/tiles/reportsMenu.jsp?menu=economy"/>
+    </definition>
+
+    <definition name="game/economyMinimal" extends="minimalLayout">
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/economy.jsp?fixForClient=1"/>
+    </definition>
+
+    <!--<definition name="game/ship" extends="nationLayout">-->
+    <!--<put-attribute name="title" value="Economy"/>-->
+    <!--<put-attribute name="body" value="/WEB-INF/jsp/game/ship.jsp"/>-->
+    <!--<put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>-->
+    <!--<put-attribute name="submenu" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>-->
+    <!--</definition>-->
+
+    <definition name="game/baggagetrain" extends="nationLayout">
+        <put-attribute name="title" value="Economy"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/baggagetrain.jsp"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="submenu" value="/WEB-INF/jsp/game/tiles/reportsMenu.jsp?menu=btrain"/>
+    </definition>
+
+    <definition name="game/production" extends="nationLayout">
+        <put-attribute name="title" value="Production"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/production.jsp"/>
+        <put-attribute name="submenu" value="/WEB-INF/jsp/game/tiles/reportsMenu.jsp?menu=production"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+    </definition>
+
+    <definition name="game/productionMinimal" extends="minimalLayout">
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/production.jsp?fixForClient=1"/>
+    </definition>
+
+    <definition name="game/trade" extends="nationLayout">
+        <put-attribute name="title" value="Trade Cities"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/trade.jsp"/>
+        <put-attribute name="submenu" value="/WEB-INF/jsp/game/tiles/reportsMenu.jsp?menu=trade"/>
+    </definition>
+
+    <definition name="game/baggage" extends="nationLayout">
+        <put-attribute name="title" value="Baggage Trains"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/baggage.jsp"/>
+        <put-attribute name="submenu" value="/WEB-INF/jsp/game/tiles/reportsMenu.jsp?menu=trains"/>
+    </definition>
+
+    <definition name="game/overview" extends="nationLayout">
+        <put-attribute name="title" value="Turn Overview"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/overview.jsp"/>
+        <put-attribute name="submenu" value="/WEB-INF/jsp/game/tiles/reportsMenu.jsp?menu=overview"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+    </definition>
+
+    <definition name="game/overviewMinimal" extends="minimalLayout">
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/overview.jsp?fixForClient=1"/>
+    </definition>
+
+    <definition name="game/reports" extends="nationLayout">
+        <put-attribute name="title" value="Turn Overvie"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/reports.jsp"/>
+        <put-attribute name="submenu" value="/WEB-INF/jsp/game/tiles/reportsMenu.jsp?menu=reports"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+    </definition>
+
+    <definition name="game/battles" extends="nationLayout">
+        <put-attribute name="title" value="Battles"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/battles.jsp"/>
+        <put-attribute name="submenu" value="/WEB-INF/jsp/game/tiles/reportsMenu.jsp?menu=battles"/>
+    </definition>
+
+    <definition name="game/battlesMinimal" extends="minimalLayout">
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/battles.jsp?fixForClient=1"/>
+    </definition>
+
+    <definition name="game/battlereport" extends="baseLayout">
+        <put-attribute name="title" value="Battle Report"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/tactical/result.jsp"/>
+        <!-- <put-attribute name="menu" value="/WEB-INF/jsp/game/tiles/menuNationReports.jsp?page=battles"/> -->
+    </definition>
+
+    <definition name="game/battlereportMinimal" extends="minimalLayout">
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/tactical/result.jsp?fixForClient=1"/>
+    </definition>
+
+    <definition name="game/navalreport" extends="baseLayout">
+        <put-attribute name="title" value="Naval Battle Report"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/naval/result.jsp"/>
+        <!-- <put-attribute name="menu" value="/WEB-INF/jsp/game/tiles/menuNationReports.jsp?page=battles"/> -->
+    </definition>
+
+    <definition name="game/orders" extends="nationLayout">
+        <put-attribute name="title" value="Nation Information"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/orders.jsp"/>
+        <put-attribute name="submenu" value="/WEB-INF/jsp/game/tiles/reportsMenu.jsp?menu=orders"/>
+    </definition>
+
+    <definition name="game/ordersMinimal" extends="minimalLayout">
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/orders.jsp?fixForClient=1"/>
+    </definition>
+
+    <definition name="fieldbattle/create" extends="baseLayout">
+        <put-attribute name="title" value="Create fieldbattle"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/field/create.jsp"/>
+    </definition>
+
+
+    <definition name="fieldbattle/list" extends="baseLayout">
+        <put-attribute name="title" value="List fieldbattles"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/field/list.jsp"/>
+    </definition>
+
+    <definition name="user/userGameResult" extends="baseLayout">
+        <put-attribute name="title" value="View custom game result"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user/userGameResult.jsp"/>
+    </definition>
+
+
+    <definition name="connect/twitterConnect" template="/WEB-INF/jsp/connect/twitterConnect.jsp"/>
+    <definition name="connect/twitterConnected" template="/WEB-INF/jsp/connect/twitterConnected.jsp"/>
+    <definition name="connect/facebookConnect" template="/WEB-INF/jsp/connect/facebookConnect.jsp"/>
+    <definition name="connect/facebookConnected" template="/WEB-INF/jsp/connect/facebookConnected.jsp"/>
+    <definition name="user/status" template="/WEB-INF/jsp/connect/statusConnect.jsp"/>
+
+
+    <definition name="paypalResponse" extends="baseLayoutSimple">
+        <put-attribute name="title" value="Paypal Status"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/paypalResponse.jsp"/>
+    </definition>
+
+    <definition name="user/questionnaire/questionnaireForm" extends="emptyLayout">
+        <put-attribute name="title" value="Questionnaire"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user/questionnaire/questionnaireForm.jsp"/>
+    </definition>
+
+    <definition name="user/questionnaire/submitted" extends="emptyLayout">
+        <put-attribute name="title" value="Questionnaire"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user/questionnaire/submitted.jsp"/>
+    </definition>
+
+    <definition name="testWebSockets" extends="minimalLayout">
+        <put-attribute name="header" value="/WEB-INF/jsp/game/tiles/emptyMenu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/testWebSockets.jsp"/>
+    </definition>
+
+    <definition name="internalException" template="/WEB-INF/jsp/exception/internalException.jsp"/>
+
+    <definition name="error" template="/WEB-INF/jsp/exception/error.jsp"/>
+
+    <definition name="activeUsers" template="/WEB-INF/jsp/activeUsers.jsp"/>
+
+    <definition name="admin/statistics" extends="baseLayout">
+        <put-attribute name="title" value="Admin Statistics"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/statistics.jsp"/>
+    </definition>
+
+    <definition name="admin/questionnaire" extends="baseLayout">
+        <put-attribute name="title" value="Admin Questionnaire Statistics"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/questionnaire.jsp"/>
+    </definition>
+
+
+    <definition name="game/createCustom" extends="baseLayout">
+        <put-attribute name="title" value="Create Custom Game"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/game/createCustom.jsp"/>
+    </definition>
+
+
+    <definition name="scenario/editor/list" extends="baseLayout">
+        <put-attribute name="title" value="Custom Scenarios List"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/scenario/editor/list.jsp"/>
+    </definition>
+
+
+    <definition name="user/achievements" template="/WEB-INF/jsp/user/achievements.jsp"/>
+
+</tiles-definitions>

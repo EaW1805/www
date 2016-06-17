@@ -10,7 +10,6 @@ import com.eaw1805.data.model.map.Barrack;
 import com.eaw1805.data.model.map.Sector;
 import com.eaw1805.www.controllers.ExtendedController;
 import com.eaw1805.www.controllers.exception.InvalidPageException;
-import com.eaw1805.www.controllers.naval.ShowInfo;
 import com.eaw1805.www.hibernate.ScenarioContextHolder;
 import org.apache.logging.log4j.LogManager; import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
@@ -37,6 +36,11 @@ public class ShowNavalReport
      * a log4j logger to print messages.
      */
     private static final Logger LOGGER = LogManager.getLogger(ShowNavalReport.class);
+
+    /**
+     * A constant string array for the weather types.
+     */
+    public static final String[] ALL_WEATHERS = {"Clear", "Rain", "Storm"};
 
     @RequestMapping(method = RequestMethod.GET, value = "/report/scenario/{scenarioId}/game/{gameId}/nation/{nationId}/naval/{battleId}")
     protected ModelAndView handle(@PathVariable final String scenarioId,
@@ -191,7 +195,7 @@ public class ShowNavalReport
         }
 
         // Retrieve weather type
-        final String weather = ShowInfo.ALL_WEATHERS[thisReport.getWeather()];
+        final String weather = ALL_WEATHERS[thisReport.getWeather()];
 
         // Retrieve round statistics
         List<RoundStat> stats;

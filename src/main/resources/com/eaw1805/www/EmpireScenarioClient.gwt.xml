@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+    <!-- Inherit the core Web Toolkit stuff.                        -->
+    <inherits name='com.google.gwt.user.User'/>
+    <inherits name='com.google.gwt.json.JSON'/>
+    <inherits name='com.eaw1805.dto'/>
+    <inherits name='org.vaadin.gwtgraphics.GWTGraphics'/>
+    <inherits name='com.allen_sauer.gwt.dnd.gwt-dnd'/>
+    <!-- Inherit sound support -->
+    <inherits name='com.allen_sauer.gwt.voices.gwt-voices'/>
+    <!-- Inherit the default GWT style sheet.  You can change       -->
+    <!-- the theme of your GWT application by uncommenting          -->
+    <!-- any one of the following lines.                            -->
+    <inherits name='com.google.gwt.user.theme.standard.Standard'/>
+    <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+    <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
+
+    <inherits name='org.adamtacy.GWTEffects'></inherits>
+
+    <!-- Specify the paths for translatable code                    -->
+    <source path='scenario'/>
+    <source path='fieldbattle'/>
+    <!--<source path='fieldbattle/asyncs'/>-->
+    <!--<source path='fieldbattle/stores'/>-->
+    <source path='client'/>
+    <!--<source path='client/asyncs'/>-->
+    <!--<source path='client/controls'/>-->
+    <!--<source path='client/panels'/>-->
+    <source path='shared'/>
+    <source path='shared/stores'/>
+    <!--<source path='shared/orders'/>-->
+    <!--<source path='shared/orders/army'/>-->
+    <!--<source path='shared/orders/economy'/>-->
+    <!--<source path='shared/orders/movement'/>-->
+    <!--<source path='shared/orders/navy'/>-->
+
+    <stylesheet src="style/EmpireWebClient.css"/>
+    <stylesheet src="style/CustomWidgetStyles.css"/>
+    <stylesheet src="style/ArmyRelated.css"/>
+    <stylesheet src="style/EconomyRelated.css"/>
+    <stylesheet src="style/Layout.css"/>
+    <stylesheet src="style/panels.css"/>
+    <stylesheet src="style/InfoPanels.css"/>
+
+    <!-- Specify the app entry point class.                         -->
+    <entry-point class='com.eaw1805.www.scenario.EmpireScenarioClient'/>
+
+    <!-- RPC service servlet declarations                             -->
+    <servlet path="/scenario.rpc" class="com.eaw1805.www.controllers.remote.scenario.EmpireScenarioRpcServiceImpl"/>
+
+    <!-- <public path="."/>-->
+    <!--<set-property name="user.agent" value="gecko1_8"/>-->
+    <!--<set-property name="user.agent" value="safari" />-->
+</module>

@@ -31,13 +31,14 @@ import java.util.Map;
 
 /**
  * @author tsakygr
- *         This singleton provides us with the data
- *         that are needed throughout the game.
- *         <p/>
- *         Here we are going to save the state of the game
- *         in order to free the Cookies and in general the
- *         session variables so that the player can play
- *         with multiple nation simultaneously
+ *   This singleton provides us with the data
+ *   that are needed throughout the game.
+ *   <p>
+ *   Here we are going to save the state of the game
+ *   in order to free the Cookies and in general the
+ *   session variables so that the player can play
+ *   with multiple nation simultaneously
+ *   </p>
  */
 public final class GameStore {
 

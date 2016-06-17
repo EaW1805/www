@@ -1,0 +1,41 @@
+@font-face {
+    font-family: empireFont;
+    src: url("http://static.eaw1805.com/style/empireFont.otf");
+}
+
+@font-face {
+    font-family: empireClearFont;
+    src: url("http://static.eaw1805.com/style/VivaldiItalic.ttf");
+}
+
+.economyPanel {
+    background-image: url("http://static.eaw1805.com/images/layout/ResourcesPanel.png");
+    font-family: empireClearFont;
+    font-size: 13px;
+}
+
+.minimapPanel {
+    background-image: url("http://static.eaw1805.com/images/layout/MapPanel.png");
+    font-family: empireClearFont;
+    font-size: 10px;
+}
+
+.optionsPanel {
+    background-image: url("http://static.eaw1805.com/images/layout/LowerPanelRight.png");
+}
+
+.sectorPanel {
+    background-image: url("http://static.eaw1805.com/images/layout/LowerPanelLeft.png");
+}
+
+.unitsPanel {
+    background-image: url("http://static.eaw1805.com/images/layout/LowerPanelCenter.png");
+}
+
+.freezeLayout {
+    background-color: #808080;
+}
+
+.highLightAnim {
+    background-color: #ff0000;
+}

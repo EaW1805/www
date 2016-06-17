@@ -1,0 +1,441 @@
+.blackPanel {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.relationsPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/relations/relations.png");
+    background-repeat: no-repeat;
+}
+
+.buildPrSitesPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/proSites/prSites.png");
+    background-repeat: no-repeat;
+}
+
+.barracksPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/barracks/barracks.png");
+    background-repeat: no-repeat;
+}
+
+.barracksPanel2 {
+    background-image: url("http://static.eaw1805.com/images/panels/barracks/barracks2.png");
+    background-repeat: no-repeat;
+}
+
+.barracksPanel3 {
+    background-image: url("http://static.eaw1805.com/images/panels/barracks/barracksTT.png");
+    background-repeat: no-repeat;
+}
+
+.barracksPanel4 {
+    background-image: url("http://static.eaw1805.com/images/panels/barracks/barracksTT2.jpg");
+    background-repeat: no-repeat;
+}
+
+.newletterPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/newsletter/newsletter.png");
+    background-repeat: no-repeat;
+}
+
+.settingsPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/settings/settings.png");
+    background-repeat: no-repeat;
+}
+
+.ordersPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/orders/orders.png");
+    background-repeat: no-repeat;
+}
+
+.savePanel {
+    background-image: url("http://static.eaw1805.com/images/panels/settings/settings.png");
+    background-repeat: no-repeat;
+}
+
+.tradePanel {
+    background-image: url("http://static.eaw1805.com/images/panels/trade/trade.png");
+    background-repeat: no-repeat;
+}
+
+.startTradeTab {
+    background-image: url("http://static.eaw1805.com/images/panels/trade/tradeStart.png");
+    background-repeat: no-repeat;
+}
+
+.doTradeTab {
+    background-image: url("http://static.eaw1805.com/images/panels/trade/tradeDo.png");
+    background-repeat: no-repeat;
+}
+
+.exchPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/trade/transPanel.png");
+    background-repeat: no-repeat;
+}
+
+.tradeCitiesPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/trade/tradeCity.png");
+    background-repeat: no-repeat;
+}
+
+.taxationPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/barracks/barracks.png");
+    background-repeat: no-repeat;
+}
+
+.deployTroopsPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/boarding.png");
+    background-repeat: no-repeat;
+}
+
+.doDeployView {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/boardStart.png");
+    background-repeat: no-repeat;
+}
+
+.handOverPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/barracks/barracks.png");
+    background-repeat: no-repeat;
+}
+
+.miniInfoPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/miniInfPanel.png");
+    background-repeat: no-repeat;
+}
+
+.disembarkView {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/disembark.png");
+    background-repeat: no-repeat;
+}
+
+.westPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/ButLoadUnloadWestOff.png");
+    background-repeat: no-repeat;
+}
+
+.eastPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/ButLoadUnloadEastOff.png");
+    background-repeat: no-repeat;
+}
+
+.northPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/ButLoadUnloadNorthOff.png");
+    background-repeat: no-repeat;
+}
+
+.southPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/ButLoadUnloadSouthOff.png");
+    background-repeat: no-repeat;
+}
+
+.tilePanel {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/ButLoadUnloadTileOff.png");
+    background-repeat: no-repeat;
+}
+
+.westPanel:Hover {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/ButLoadUnloadWestHover.png");
+    background-repeat: no-repeat;
+}
+
+.eastPanel:Hover {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/ButLoadUnloadEastHover.png");
+    background-repeat: no-repeat;
+}
+
+.northPanel:Hover {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/ButLoadUnloadNorthHover.png");
+    background-repeat: no-repeat;
+}
+
+.southPanel:Hover {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/ButLoadUnloadSouthHover.png");
+    background-repeat: no-repeat;
+}
+
+.tilePanel:Hover {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/ButLoadUnloadTileHover.png");
+    background-repeat: no-repeat;
+}
+
+.westPanelDisabled {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/ButLoadUnloadWestOff-Gray.png");
+    background-repeat: no-repeat;
+}
+
+.eastPanelDisabled {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/ButLoadUnloadEastOff-Gray.png");
+    background-repeat: no-repeat;
+}
+
+.northPanelDisabled {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/ButLoadUnloadNorthOff-Gray.png");
+    background-repeat: no-repeat;
+}
+
+.southPanelDisabled {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/ButLoadUnloadSouthOff-Gray.png");
+    background-repeat: no-repeat;
+}
+
+.tilePanelDisabled {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/ButLoadUnloadTileOff-Gray.png");
+    background-repeat: no-repeat;
+}
+
+.coordUnitsPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/boarding/disCoordPanel.png");
+    background-repeat: no-repeat;
+}
+
+.buildShipsView {
+    background-image: url("http://static.eaw1805.com/images/panels/buildShips/buildShips.png");
+    background-repeat: no-repeat;
+}
+
+.giveMoneyView {
+    background-image: url("http://static.eaw1805.com/images/panels/giveMoney/giveMoney.png");
+    background-repeat: no-repeat;
+}
+
+.addBattalionsView {
+    background-image: url("http://static.eaw1805.com/images/panels/addBattalions/addBattalions.png");
+    background-repeat: no-repeat;
+}
+
+.formFederationsView {
+    background-image: url("http://static.eaw1805.com/images/panels/formFederations/formFederations.png");
+    background-repeat: no-repeat;
+}
+
+.mergeBattalionsView {
+    background-image: url("http://static.eaw1805.com/images/panels/formFederations/mergeBattalions.png");
+    background-repeat: no-repeat;
+}
+
+.verticalListPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/formFederations/verticalList.png");
+    background-repeat: no-repeat;
+}
+
+.horizontalListPanel {
+    background-image: url("http://static.eaw1805.com/images/panels/formFederations/horizontalList.png");
+    background-repeat: no-repeat;
+}
+
+.selectorPopup {
+    background-image: url("http://static.eaw1805.com/images/panels/selectorPopups/selector.png");
+    background-repeat: no-repeat;
+}
+
+.bigDoubleSelector {
+    background-image: url("http://static.eaw1805.com/images/panels/selectorPopups/bigSelector.png");
+    background-repeat: no-repeat;
+}
+
+.smallDoubleSelector {
+    background-image: url("http://static.eaw1805.com/images/panels/selectorPopups/battalionDualSelector.png");
+    background-repeat: no-repeat;
+}
+
+.ordersDoubleSelector {
+    background-image: url("http://static.eaw1805.com/images/panels/selectorPopups/ordersDualSelector.png");
+    background-repeat: no-repeat;
+}
+
+.buildBrigadePanel {
+    background-repeat: no-repeat;
+    background-image: url("http://static.eaw1805.com/images/panels/buildBrigade/buildBrigade.png");
+}
+
+.popUpPanel {
+    background-repeat: no-repeat;
+    background-image: url("http://static.eaw1805.com/images/panels/warningPanel/popupPanel.png");
+    background-size: 100% 100%;
+}
+
+.orderInfoPanel {
+    background-image: url("http://static.eaw1805.com/images/infopanels/orderInfoPanel.png");
+    background-repeat: no-repeat;
+}
+
+.orderSidePanel {
+    background-image: url("http://static.eaw1805.com/images/panels/selectorPopups/ordersSidePanel.png");
+    background-repeat: no-repeat;
+}
+
+.costInfoMini {
+    background-image: url("http://static.eaw1805.com/images/infopanels/costInfoMini.png");
+    background-repeat: no-repeat;
+}
+
+.loginPanel {
+    overflow: auto;
+    padding-bottom: 210px;
+    background: url('http://static.eaw1805.com/images/site/background-hand2hand.jpg') center top no-repeat;
+    background-size: 120%;
+}
+
+.paperHead {
+    background: url('http://static.eaw1805.com/images/site/parchment-header.png') 0 0 no-repeat;
+}
+
+.paperFooter {
+    background: url('http://static.eaw1805.com/images/site/parchment-footer.png') 0 0 no-repeat;
+}
+
+.paperBody {
+
+    background: url('http://static.eaw1805.com/images/site/parchment-body.png') 0 0 repeat-y;
+}
+
+.battleContainer {
+    padding-left: 66px;
+    padding-top: 147px;
+}
+
+.chatPanel {
+    background: url("http://static.eaw1805.com/images/panels/selectorPopups/chatPanel.png");
+}
+
+.dropDown320x420 {
+    background: url("http://static.eaw1805.com/images/panels/selectorPopups/dropDown320x420.png");
+}
+
+.optionDefault320x30 {
+    background: url("http://static.eaw1805.com/images/infopanels/options/option320x30.png");
+}
+
+.optionHover320x30 {
+    background: url("http://static.eaw1805.com/images/infopanels/options/hover320x30.png");
+}
+
+.optionSelected320x30 {
+    background: url("http://static.eaw1805.com/images/infopanels/options/selected320x30.png");
+}
+
+.allSelector {
+    background: url("http://static.eaw1805.com/images/panels/selectorPopups/allSelector.png");
+}
+
+.costInfoX111 {
+    background: url("http://static.eaw1805.com/images/layout/spend-111.png");
+}
+
+.costInfoX80 {
+    background: url("http://static.eaw1805.com/images/layout/spend-80.png");
+}
+
+.costInfoX60 {
+    background: url("http://static.eaw1805.com/images/layout/spend-60.png");
+}
+
+.costInfoX40 {
+    background: url("http://static.eaw1805.com/images/layout/spend-40.png");
+}
+
+.costLowWarning {
+    background-color: red;
+}
+
+.costLowRounded {
+    border-radius: 20px 20px 20px 20px;
+}
+
+.tutorialInfoPanel {
+    background: url("http://static.eaw1805.com/images/site/TutorialParchment.png");
+    background-size: 100% 100%;
+}
+
+.psCounterPanel {
+    background: url("http://static.eaw1805.com/images/panels/tutorial/psCounter.png");
+}
+
+.fieldArmySelector {
+    background: url("http://static.eaw1805.com/images/field/panels/armySelector/armySelector.png");
+    background-size: 100% 100%;
+}
+
+.fieldBrigadesActionsPanel {
+    background: url("http://static.eaw1805.com/images/field/panels/armySelector/brigadesActionPanel.png");
+}
+
+.selectorOption {
+    background: url("http://static.eaw1805.com/images/panels/selectorPopups/selectorOptions.png");
+    background-size: 100% 100%;
+}
+
+.brigadeOrderInfoPanel {
+    background: url("http://static.eaw1805.com/images/field/panels/brigadeOrderPanel.png");
+    background-size: 100% 100%;
+}
+
+
+.minimapFieldBattlePanel {
+    background: url("http://static.eaw1805.com/images/field/panels/minimap/panel.png");
+}
+
+.titleFieldBattlePanel {
+    background: url("http://static.eaw1805.com/images/field/panels/titlePanel.png");
+}
+
+.nationTitleFieldBattlePanel {
+    background: url("http://static.eaw1805.com/images/field/panels/nationpanels.png");
+}
+
+.commanderFieldBattlePanel {
+    background: url("http://static.eaw1805.com/images/field/panels/nationpanels.png");
+    background-size: 100% 100%;
+}
+
+.brigadeBarPanel {
+    background: url("http://static.eaw1805.com/images/field/panels/armySelector/brigadeSelectorContainer.png");
+}
+
+.brigadeInfoContainer {
+    background: url("http://static.eaw1805.com/images/field/panels/armySelector/brigadeInfoContainer.png");
+}
+
+.brigadeLogPanel {
+    background: url("http://static.eaw1805.com/images/field/panels/log/brigadeLogPanel.png");
+}
+
+.playbackPanel {
+    background: url("http://static.eaw1805.com/images/field/panels/playback/playbackPanel.png");
+}
+
+.battleLogPanel {
+    background: url("http://static.eaw1805.com/images/field/panels/log/fullLogPanel.png");
+}
+
+.singleBattleLogPanel {
+    background: url("http://static.eaw1805.com/images/field/panels/log/singleLogInfoPanel.png");
+}
+.battleLogTitlePanel {
+    background: url("http://static.eaw1805.com/images/field/panels/log/logTitleInfoPanel.png");
+}
+.battleOrderPanelBig {
+    background: url("http://static.eaw1805.com/images/field/panels/order/orderInfoPanelBig.png");
+}
+.battleOrderPanel {
+    background: url("http://static.eaw1805.com/images/field/panels/order/orderInfoPanel.png");
+}
+
+.battleResultVictory {
+    background: url("http://static.eaw1805.com/images/field/panels/result/BattleResultsVictoryNoFrame.png");
+}
+
+.battleResultDefeat {
+    background: url("http://static.eaw1805.com/images/field/panels/result/BattleResultsDefeatNoFrame.png");
+}
+
+.battleResultDraw {
+    background: url("http://static.eaw1805.com/images/field/panels/result/BattleResultsDrawNoFrame.png");
+}
+
+.tipPanel {
+    background-repeat: no-repeat;
+    background: url("http://static.eaw1805.com/images/site/TutorialParchment.png");
+    background-size: 100% 100%;
+    padding: 13px;
+
+}

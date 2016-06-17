@@ -1,0 +1,299 @@
+#EuropeMapContainer {
+    float: left;
+    margin: 0 0 0 0;
+    padding-top: 0px;
+    height: 883px;
+    width: 940px;
+}
+
+.EuropeMap {
+    float: left;
+    width: 940px;
+    height: 883px;
+    overflow: hidden;
+}
+
+.EuropeMapPrev {
+    background: url(http://static.eaw1805.com/images/site/slider/left.png) no-repeat left center;
+    width: 50px;
+    height: 883px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+}
+
+.EuropeMapNext {
+    background: url(http://static.eaw1805.com/images/site/slider/right.png) no-repeat right center;
+    width: 50px;
+    height: 883px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-decoration: none;
+}
+
+.EuropeMapDescription {
+    padding: 5px;
+    font-family: Tahoma, Arial, Helvetica;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 1px 3px #000000;
+}
+
+#EuropeMapNavigation {
+    margin: 0;
+    padding: 10px 0 0 0;
+    height: 16px;
+    text-align: center;
+    overflow-y: hidden;
+}
+
+#EuropeMapNavigation a:link, #EuropeMapNavigation a:active, #EuropeMapNavigation a:visited, #EuropeMapNavigation a:hover {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    text-decoration: none;
+}
+
+#EuropeMapNavigation a img {
+    border: none;
+    width: 16px;
+    height: 16px;
+    background: url(http://static.eaw1805.com/images/site/slider/bullet.png) no-repeat center center;
+}
+
+#EuropeMapNavigation a.active img {
+    background: url(http://static.eaw1805.com/images/site/slider/bullet_active.png) no-repeat center center;
+}
+
+#AfricaMapContainer {
+    float: left;
+    margin: 0 0 0 0;
+    padding-top: 0px;
+    height: 225px;
+    width: 300px;
+}
+
+.AfricaMap {
+    float: left;
+    width: 300px;
+    height: 225px;
+    overflow: hidden;
+}
+
+.AfricaMapPrev {
+    background: url(http://static.eaw1805.com/images/site/slider/left.png) no-repeat left center;
+    width: 50px;
+    height: 225px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+}
+
+.AfricaMapNext {
+    background: url(http://static.eaw1805.com/images/site/slider/right.png) no-repeat right center;
+    width: 50px;
+    height: 225px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-decoration: none;
+}
+
+.AfricaMapDescription {
+    padding: 5px;
+    font-family: Tahoma, Arial, Helvetica;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 1px 3px #000000;
+}
+
+#AfricaMapNavigation {
+    margin: 0;
+    padding: 10px 0 0 0;
+    height: 16px;
+    text-align: center;
+    overflow-y: hidden;
+}
+
+#AfricaMapNavigation a:link, #AfricaMapNavigation a:active, #AfricaMapNavigation a:visited, #AfricaMapNavigation a:hover {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    text-decoration: none;
+}
+
+#AfricaMapNavigation a img {
+    border: none;
+    width: 16px;
+    height: 16px;
+    background: url(http://static.eaw1805.com/images/site/slider/bullet.png) no-repeat center center;
+}
+
+#AfricaMapNavigation a.active img {
+    background: url(http://static.eaw1805.com/images/site/slider/bullet_active.png) no-repeat center center;
+}
+
+#CaribbeanMapContainer {
+    float: left;
+    margin: 0 0 0 0;
+    padding-top: 0px;
+    height: 225px;
+    width: 300px;
+}
+
+.CaribbeanMap {
+    float: left;
+    width: 300px;
+    height: 225px;
+    overflow: hidden;
+}
+
+.CaribbeanMapPrev {
+    background: url(http://static.eaw1805.com/images/site/slider/left.png) no-repeat left center;
+    width: 50px;
+    height: 225px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+}
+
+.CaribbeanMapNext {
+    background: url(http://static.eaw1805.com/images/site/slider/right.png) no-repeat right center;
+    width: 50px;
+    height: 225px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-decoration: none;
+}
+
+.CaribbeanMapDescription {
+    padding: 5px;
+    font-family: Tahoma, Arial, Helvetica;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 1px 3px #000000;
+}
+
+#CaribbeanMapNavigation {
+    margin: 0;
+    padding: 10px 0 0 0;
+    height: 16px;
+    text-align: center;
+    overflow-y: hidden;
+}
+
+#CaribbeanMapNavigation a:link, #CaribbeanMapNavigation a:active, #CaribbeanMapNavigation a:visited, #CaribbeanMapNavigation a:hover {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    text-decoration: none;
+}
+
+#CaribbeanMapNavigation a img {
+    border: none;
+    width: 16px;
+    height: 16px;
+    background: url(http://static.eaw1805.com/images/site/slider/bullet.png) no-repeat center center;
+}
+
+#CaribbeanMapNavigation a.active img {
+    background: url(http://static.eaw1805.com/images/site/slider/bullet_active.png) no-repeat center center;
+}
+
+#IndiesMapContainer {
+    float: left;
+    margin: 0 0 0 0;
+    padding-top: 0px;
+    height: 225px;
+    width: 300px;
+}
+
+.IndiesMap {
+    float: left;
+    width: 300px;
+    height: 225px;
+    overflow: hidden;
+}
+
+.IndiesMapPrev {
+    background: url(http://static.eaw1805.com/images/site/slider/left.png) no-repeat left center;
+    width: 50px;
+    height: 225px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+}
+
+.IndiesMapNext {
+    background: url(http://static.eaw1805.com/images/site/slider/right.png) no-repeat right center;
+    width: 50px;
+    height: 225px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-decoration: none;
+}
+
+.IndiesMapDescription {
+    padding: 5px;
+    font-family: Tahoma, Arial, Helvetica;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 1px 3px #000000;
+}
+
+#IndiesMapNavigation {
+    margin: 0;
+    padding: 10px 0 0 0;
+    height: 16px;
+    text-align: center;
+    overflow-y: hidden;
+}
+
+#IndiesMapNavigation a:link, #IndiesMapNavigation a:active, #IndiesMapNavigation a:visited, #IndiesMapNavigation a:hover {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    text-decoration: none;
+}
+
+#IndiesMapNavigation a img {
+    border: none;
+    width: 16px;
+    height: 16px;
+    background: url(http://static.eaw1805.com/images/site/slider/bullet.png) no-repeat center center;
+}
+
+#IndiesMapNavigation a.active img {
+    background: url(http://static.eaw1805.com/images/site/slider/bullet_active.png) no-repeat center center;
+}
