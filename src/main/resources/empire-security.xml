@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-4.1.xsd">
+
+    <http use-expressions="true"
+          auto-config="true">
+
+        <remember-me key="eaw1805"/>
+
+        <!--always-use-default-winner='false'-->
+
+        <form-login login-page='/login'
+                    always-use-default-target="true"
+                    default-target-url="/games"
+                    authentication-failure-url="/login?login_error=true"
+                    authentication-success-handler-ref="authenticationSuccessHandler"/>
+
+        <logout logout-url="/logout"
+                invalidate-session="true"
+                logout-success-url="/home"
+                delete-cookies="JSESSIONID"/>
+
+        <session-management>
+            <concurrency-control max-sessions="1" expired-url="/login"/>
+        </session-management>
+
+        <!-- Admin Controllers -->
+        <intercept-url pattern="/adminTransfer" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/newsNoCache" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/game/*/edit" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/users/list" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/user/*/paymentHistory" access="isAuthenticated()" requires-channel="any"/>
+
+        <!-- Public Controllers -->
+        <intercept-url pattern="/home" access="permitAll"/>
+        <intercept-url pattern="/hallOfFame" access="permitAll" requires-channel="any"/>
+        <intercept-url pattern="/features" access="permitAll" requires-channel="any"/>
+        <intercept-url pattern="/contact" access="permitAll" requires-channel="any"/>
+        <intercept-url pattern="/activeUsers" access="permitAll" requires-channel="any"/>
+        <intercept-url pattern="/achievements/retrieve" access="permitAll" requires-channel="any"/>
+
+        <intercept-url pattern="/login" access="permitAll"/>
+        <intercept-url pattern="/signup" access="permitAll" requires-channel="any"/>
+        <intercept-url pattern="/forgot_username" access="permitAll"/>
+        <intercept-url pattern="/forgot_password" access="permitAll"/>
+        <intercept-url pattern="/sent_username" access="permitAll"/>
+        <intercept-url pattern="/sent_password" access="permitAll"/>
+        <intercept-url pattern="/cache/evict/*" access="permitAll" requires-channel="any"/>
+
+        <!-- Help Related -->
+        <intercept-url pattern="/handbook" access="permitAll" requires-channel="any"/>
+        <intercept-url pattern="/help/*" access="permitAll" requires-channel="any"/>
+
+        <!-- Article off-loading content from CMS -->
+        <intercept-url pattern="/about" access="permitAll" requires-channel="any"/>
+        <intercept-url pattern="/terms" access="permitAll" requires-channel="any"/>
+        <intercept-url pattern="/privacy" access="permitAll" requires-channel="any"/>
+        <intercept-url pattern="/news" access="permitAll" requires-channel="any"/>
+
+        <!-- Scenario Related (also off-loading content from CMS) -->
+        <intercept-url pattern="/scenario/list" access="permitAll" requires-channel="any"/>
+        <intercept-url pattern="/scenario/*/info" access="permitAll" requires-channel="any"/>
+        <intercept-url pattern="/scenario/*/nation/*" access="permitAll" requires-channel="any"/>
+
+        <!-- Private Controllers -->
+        <intercept-url pattern="/completeLogin" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/games" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/inbox" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/inbox/**" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/settings" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/honour" access="isAuthenticated()" requires-channel="any"/>
+
+        <intercept-url pattern="/user/**" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/solo/**" access="isAuthenticated()" requires-channel="any"/>
+
+        <intercept-url pattern="/tactical/**" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/naval/**" access="isAuthenticated()" requires-channel="any"/>
+
+        <!-- Social/Paypal Controllers -->
+        <intercept-url pattern="/connect" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/connect/*" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/social/*" access="isAuthenticated()" requires-channel="any"/>
+
+        <intercept-url pattern="/paypal" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/paypal/**" access="isAuthenticated()" requires-channel="any"/>
+
+        <intercept-url pattern="/paypalResponse/*" access="isAuthenticated()" requires-channel="any"/>
+
+        <intercept-url pattern="/receipt/**" access="isAuthenticated()" requires-channel="any"/>
+
+        <!-- Games Related (public) -->
+        <intercept-url pattern="/listgames" access="permitAll" requires-channel="any"/>
+        <intercept-url pattern="/game/*/info" access="permitAll" requires-channel="any"/>
+        <intercept-url pattern="/joingame" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/joingame/*" access="isAuthenticated()" requires-channel="any"/>
+
+        <!-- Games Related (private) -->
+        <intercept-url pattern="/game/*/toggleWatch/*" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/game/*/pickup/*" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/game/*/drop/*" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/game/createCustom" access="isAuthenticated()" requires-channel="any"/>
+
+        <intercept-url pattern="/game/*/nation/**" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/report/**" access="isAuthenticated()" requires-channel="any"/>
+
+        <!-- GWT Related -->
+        <intercept-url pattern="/play/**" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/fieldBattle/**" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/**/empire.rpc" access="isAuthenticated()" requires-channel="any"/>
+
+        <!-- Admin Controllers -->
+        <intercept-url pattern="/admin/statistics" access="isAuthenticated()" requires-channel="any"/>
+        <intercept-url pattern="/cache/**" access="isAuthenticated()" requires-channel="any"/>
+
+    </http>
+
+    <beans:bean id="encoder" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder"/>
+
+    <authentication-manager>
+        <authentication-provider>
+            <password-encoder ref="encoder" hash="md5" base64="false"/>
+
+            <jdbc-user-service id="jdbcUserService"
+                               data-source-ref="dataSourceMain"
+                               users-by-username-query="SELECT username, user_password as password, 1 AS enabled, fullname, user_email as email, user_email_hash as emailEncoded, location FROM USERS WHERE (user_type = 0 OR user_type = 3) AND username = ?"
+                               authorities-by-username-query="SELECT username, 'ROLE_USER' as privilege FROM USERS WHERE username = ?"/>
+        </authentication-provider>
+    </authentication-manager>
+
+</beans:beans>
+

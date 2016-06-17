@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+
+    <!-- Generic -->
+    <bean id="user" class="com.eaw1805.data.model.User"/>
+
+    <bean id="game" class="com.eaw1805.data.model.Game"/>
+
+    <bean id="gameSettings" class="com.eaw1805.data.model.GameSettings"/>
+
+    <bean id="engineProcess" class="com.eaw1805.data.model.EngineProcess"/>
+
+    <bean id="paymentHistory" class="com.eaw1805.data.model.PaymentHistory">
+        <property name="user" ref="user"/>
+        <property name="agent" ref="user"/>
+    </bean>
+
+    <bean id="message" class="com.eaw1805.data.model.Message">
+        <property name="sender" ref="user"/>
+        <property name="receiver" ref="user"/>
+    </bean>
+
+    <bean id="profile" class="com.eaw1805.data.model.Profile">
+        <property name="user" ref="user"/>
+    </bean>
+
+    <bean id="userGame" class="com.eaw1805.data.model.UserGame">
+        <property name="game" ref="game"/>
+        <property name="nation" ref="nation"/>
+    </bean>
+
+    <bean id="nation" class="com.eaw1805.data.model.Nation"/>
+
+    <bean id="nationsRelation" class="com.eaw1805.data.model.NationsRelation">
+        <property name="game" ref="game"/>
+        <property name="nation" ref="nation"/>
+        <property name="target" ref="nation"/>
+    </bean>
+
+    <bean id="playerOrder" class="com.eaw1805.data.model.PlayerOrder">
+        <property name="game" ref="game"/>
+        <property name="nation" ref="nation"/>
+    </bean>
+
+    <bean id="report" class="com.eaw1805.data.model.Report">
+        <property name="game" ref="game"/>
+        <property name="nation" ref="nation"/>
+    </bean>
+
+    <bean id="watchGame" class="com.eaw1805.data.model.WatchGame">
+        <property name="game" ref="game"/>
+    </bean>
+
+    <bean id="follow" class="com.eaw1805.data.model.Follow">
+        <property name="follower" ref="user"/>
+        <property name="leader" ref="user"/>
+    </bean>
+
+    <!-- Economy Related -->
+
+    <bean id="good" class="com.eaw1805.data.model.economy.Good"/>
+
+    <bean id="tradeCity" class="com.eaw1805.data.model.economy.TradeCity">
+    </bean>
+
+    <bean id="warehouse" class="com.eaw1805.data.model.economy.Warehouse">
+        <property name="game" ref="game"/>
+        <property name="nation" ref="nation"/>
+        <property name="region" ref="region"/>
+    </bean>
+
+    <bean id="baggageTrain" class="com.eaw1805.data.model.economy.BaggageTrain">
+        <property name="nation" ref="nation"/>
+    </bean>
+
+    <!-- Army Related -->
+
+    <bean id="army" class="com.eaw1805.data.model.army.Army">
+        <property name="nation" ref="nation"/>
+        <property name="commander" ref="commander"/>
+        <property name="corps" ref="corp"/>
+    </bean>
+
+    <bean id="armyType" class="com.eaw1805.data.model.army.ArmyType">
+        <property name="nation" ref="nation"/>
+    </bean>
+
+    <bean id="battalion" class="com.eaw1805.data.model.army.Battalion">
+        <property name="type" ref="armyType"/>
+    </bean>
+
+    <bean id="brigade" class="com.eaw1805.data.model.army.Brigade">
+        <property name="nation" ref="nation"/>
+    </bean>
+
+    <bean id="commander" class="com.eaw1805.data.model.army.Commander">
+        <property name="nation" ref="nation"/>
+        <property name="rank" ref="rank"/>
+    </bean>
+
+    <bean id="commanderName" class="com.eaw1805.data.model.army.CommanderName">
+        <property name="nation" ref="nation"/>
+    </bean>
+
+    <bean id="corp" class="com.eaw1805.data.model.army.Corp">
+        <property name="nation" ref="nation"/>
+        <property name="commander" ref="commander"/>
+        <property name="brigades" ref="brigade"/>
+    </bean>
+
+    <bean id="rank" class="com.eaw1805.data.model.army.Rank"/>
+
+    <bean id="spy" class="com.eaw1805.data.model.army.Spy">
+        <property name="nation" ref="nation"/>
+    </bean>
+
+    <bean id="tacticalBattleReport" class="com.eaw1805.data.model.battles.TacticalBattleReport">
+        <property name="comm1" ref="commander"/>
+        <property name="comm2" ref="commander"/>
+    </bean>
+
+    <bean id="battleData" class="com.eaw1805.www.commands.BattleData"/>
+
+    <!-- Fleet Related -->
+
+    <bean id="fleet" class="com.eaw1805.data.model.fleet.Fleet">
+        <property name="nation" ref="nation"/>
+    </bean>
+
+    <bean id="shipType" class="com.eaw1805.data.model.fleet.ShipType"/>
+
+    <bean id="ship" class="com.eaw1805.data.model.fleet.Ship">
+        <property name="nation" ref="nation"/>
+        <property name="type" ref="shipType"/>
+    </bean>
+
+    <bean id="shipClassStat" class="com.eaw1805.battles.naval.result.ShipClassStat"/>
+
+    <bean id="shipPair" class="com.eaw1805.battles.naval.result.ShipPair"/>
+
+    <bean id="navalBattleReport" class="com.eaw1805.data.model.battles.NavalBattleReport"/>
+
+
+    <!-- Map Related -->
+
+    <bean id="region" class="com.eaw1805.data.model.map.Region"/>
+
+    <bean id="barrack" class="com.eaw1805.data.model.map.Barrack">
+        <property name="nation" ref="nation"/>
+    </bean>
+
+    <bean id="naturalResource" class="com.eaw1805.data.model.map.NaturalResource"/>
+
+    <bean id="productionSite" class="com.eaw1805.data.model.map.ProductionSite"/>
+
+    <bean id="sector" class="com.eaw1805.data.model.map.Sector">
+        <property name="nation" ref="nation"/>
+        <property name="naturalResource" ref="naturalResource"/>
+        <property name="productionSite" ref="productionSite"/>
+        <property name="terrain" ref="terrain"/>
+    </bean>
+
+    <bean id="terrain" class="com.eaw1805.data.model.map.Terrain"/>
+
+    <bean id="roundStat" class="com.eaw1805.battles.naval.result.RoundStat"/>
+
+    <bean id="roundStatistics" class="com.eaw1805.battles.tactical.result.RoundStatistics"/>
+
+
+    <!--command objects -->
+
+    <bean id="battleCommand" class="com.eaw1805.www.commands.BattleCommand">
+        <property name="terrainType" ref="terrain"/>
+        <property name="region" ref="region"/>
+        <property name="nation1" ref="nation"/>
+        <property name="nation2" ref="nation"/>
+        <property name="rank1" ref="rank"/>
+        <property name="rank2" ref="rank"/>
+    </bean>
+
+    <bean id="nationCommand" class="com.eaw1805.www.commands.NationCommand"/>
+
+    <bean id="transferCommand" class="com.eaw1805.www.commands.TransferCommand"/>
+
+    <bean id="adminTransferCommand" class="com.eaw1805.www.commands.AdminTransferCommand"/>
+
+    <bean id="paypalCommand" class="com.eaw1805.www.commands.PaypalCommand"/>
+
+</beans>

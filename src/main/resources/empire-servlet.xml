@@ -1,0 +1,944 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
+       http://www.springframework.org/schema/aop
+          http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+          http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context-4.1.xsd
+          http://www.springframework.org/schema/task
+          http://www.springframework.org/schema/task/spring-task-4.1.xsd">
+
+<aop:autoproxy/>
+
+    <context:component-scan base-package="com.eaw1805.www.controllers.cache.async"/>
+    <context:annotation-config/>
+    <task:annotation-driven/>
+    <mvc:annotation-driven/>
+    <mvc:interceptors>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+            <property name="paramName" value="siteLanguage"/>
+        </bean>
+    </mvc:interceptors>
+
+    <mvc:resources mapping="/com.eaw1805.www.EmpireWebClient/style/*" location="/com.eaw1805.www.EmpireWebClient/style/"/>
+    <mvc:resources mapping="/com.eaw1805.www.EmpireWebClient/gwt/**" location="/com.eaw1805.www.EmpireWebClient/gwt/"/>
+    <mvc:resources mapping="/com.eaw1805.www.EmpireWebClient/*.html" location="/com.eaw1805.www.EmpireWebClient/"/>
+    <mvc:resources mapping="/com.eaw1805.www.EmpireWebClient/*.js" location="/com.eaw1805.www.EmpireWebClient/"/>
+    <mvc:resources mapping="/com.eaw1805.www.EmpireWebClient/*.png" location="/com.eaw1805.www.EmpireWebClient/"/>
+    <mvc:resources mapping="/com.eaw1805.www.EmpireWebClient/*.swf" location="/com.eaw1805.www.EmpireWebClient/"/>
+    <mvc:resources mapping="/com.eaw1805.www.EmpireWebClient/*.gif" location="/com.eaw1805.www.EmpireWebClient/"/>
+
+    <mvc:resources mapping="/com.eaw1805.www.EmpireFieldBattleClient/style/*"
+                   location="/com.eaw1805.www.EmpireFieldBattleClient/style/"/>
+    <mvc:resources mapping="/com.eaw1805.www.EmpireFieldBattleClient/gwt/**"
+                   location="/com.eaw1805.www.EmpireFieldBattleClient/gwt/"/>
+    <mvc:resources mapping="/com.eaw1805.www.EmpireFieldBattleClient/*.html"
+                   location="/com.eaw1805.www.EmpireFieldBattleClient/"/>
+    <mvc:resources mapping="/com.eaw1805.www.EmpireFieldBattleClient/*.js"
+                   location="/com.eaw1805.www.EmpireFieldBattleClient/"/>
+    <mvc:resources mapping="/com.eaw1805.www.EmpireFieldBattleClient/*.png"
+                   location="/com.eaw1805.www.EmpireFieldBattleClient/"/>
+    <mvc:resources mapping="/com.eaw1805.www.EmpireFieldBattleClient/*.swf"
+                   location="/com.eaw1805.www.EmpireFieldBattleClient/"/>
+    <mvc:resources mapping="/com.eaw1805.www.EmpireFieldBattleClient/*.gif"
+                   location="/com.eaw1805.www.EmpireFieldBattleClient/"/>
+
+    <mvc:resources mapping="/com.eaw1805.www.EmpireScenarioClient/style/*"
+                   location="/com.eaw1805.www.EmpireScenarioClient/style/"/>
+    <mvc:resources mapping="/com.eaw1805.www.EmpireScenarioClient/gwt/**"
+                   location="/com.eaw1805.www.EmpireScenarioClient/gwt/"/>
+    <mvc:resources mapping="/com.eaw1805.www.EmpireScenarioClient/*.html"
+                   location="/com.eaw1805.www.EmpireScenarioClient/"/>
+    <mvc:resources mapping="/com.eaw1805.www.EmpireScenarioClient/*.js" location="/com.eaw1805.www.EmpireScenarioClient/"/>
+    <mvc:resources mapping="/com.eaw1805.www.EmpireScenarioClient/*.png" location="/com.eaw1805.www.EmpireScenarioClient/"/>
+    <mvc:resources mapping="/com.eaw1805.www.EmpireScenarioClient/*.swf" location="/com.eaw1805.www.EmpireScenarioClient/"/>
+    <mvc:resources mapping="/com.eaw1805.www.EmpireScenarioClient/*.gif" location="/com.eaw1805.www.EmpireScenarioClient/"/>
+
+    <mvc:resources mapping="/clientworker/*.js" location="/clientworker/"/>
+
+    <mvc:resources mapping="/site/**" location="/site/"/>
+    <mvc:resources mapping="/js/**" location="/js/"/>
+    <mvc:resources mapping="/style/**" location="/style/"/>
+    <mvc:resources mapping="/sitemap.xml" location="/"/>
+    <mvc:resources mapping="/eaw1805.webapp" location="/"/>
+    <mvc:resources mapping="/robots.txt" location="/"/>
+
+    <!--configure redis for localhost and port 63-->
+    <bean id="jedisConnFactory"
+          class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+          p:hostName="127.0.0.1"
+          p:port="6379"
+          p:usePool="true"/>
+
+    <bean id="stringRedisSerializer"
+          class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+
+    <!-- redis template definition -->
+    <bean id="redisTemplate"
+          class="org.springframework.data.redis.core.RedisTemplate"
+          p:connectionFactory-ref="jedisConnFactory"
+          p:keySerializer-ref="stringRedisSerializer"/>
+
+    <bean id="myAspect" class="com.eaw1805.www.controllers.cache.CachingAspect" factory-method="aspectOf"/>
+
+    <!--<context:annotation-config />-->
+    <!--<aop:aspectj-autoproxy/>-->
+
+    <!--<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>-->
+
+    <!--<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>-->
+
+    <!--<context:component-scan base-package="com.eaw1805.www.controllers"/>-->
+
+    <!--===========================================-->
+    <!--social configuration-->
+    <bean id="connectionFactoryLocator"
+          class="org.springframework.social.connect.support.ConnectionFactoryRegistry">
+        <property name="connectionFactories">
+            <list>
+                <bean class="org.springframework.social.twitter.connect.TwitterConnectionFactory">
+                    <constructor-arg value="ox1w2P1s1QP7VjElRT8g"/>
+                    <constructor-arg value="foCznEnOpANOgzYS6n39tt0xeAF8iW26lhOQyfjhA"/>
+                </bean>
+                <!--enable this before deployment and disable if you want to test facebook functionality at development-->
+                <bean class="org.springframework.social.facebook.connect.FacebookConnectionFactory">
+                    <constructor-arg value="105656276218992"/>
+                    <constructor-arg value="ab7dfbbdb41c181a5d2765e6580f0c7b"/>
+                </bean>
+                <!--enable this for development if you want to test facebook functionality and disable before deployment-->
+                <!--<bean class="org.springframework.social.facebook.connect.FacebookConnectionFactory">-->
+                <!--<constructor-arg value="1467405233487625"/>-->
+                <!--<constructor-arg value="7ac6acad352e45af4a964afe563f6337"/>-->
+                <!--</bean>-->
+            </list>
+        </property>
+    </bean>
+
+    <bean id="textEncryptor" class="org.springframework.security.crypto.encrypt.Encryptors"
+          factory-method="noOpText"/>
+
+    <bean id="usersConnectionRepository"
+          class="org.springframework.social.connect.jdbc.JdbcUsersConnectionRepository">
+        <constructor-arg ref="dataSourceMain"/>
+        <constructor-arg ref="connectionFactoryLocator"/>
+        <constructor-arg ref="textEncryptor"/>
+    </bean>
+
+    <bean id="connectionRepository" factory-method="createConnectionRepository"
+          factory-bean="usersConnectionRepository" scope="request">
+        <constructor-arg value="#{request.userPrincipal.name}"/>
+        <aop:scoped-proxy proxy-target-class="false"/>
+    </bean>
+    <!--
+    <bean class="org.springframework.social.connect.web.ConnectController">
+        <constructor-arg index="0" ref="connectionFactoryLocator"/>
+        <constructor-arg index="1" ref="connectionRepository"/>
+        <property name="connectInterceptors">
+            <list>
+                <bean id="twitterInterceptor"/>
+                <bean id="facebookInterceptor"/>
+            </list>
+        </property>
+    </bean>-->
+
+    <bean id="connectController"
+          class="org.springframework.social.connect.web.ConnectController">
+        <constructor-arg index="0" ref="connectionFactoryLocator"/>
+        <constructor-arg index="1" ref="connectionRepository"/>
+        <property name="connectInterceptors">
+            <list>
+                <bean id="twitterInterceptor" class="com.eaw1805.www.controllers.social.FollowAfterConnectInterceptor"/>
+                <bean id="facebookInterceptor" class="com.eaw1805.www.controllers.social.FacebookConnectInterceptor"/>
+            </list>
+        </property>
+        <!--<property name="applicationUrl" value="http://localhost:8080/empire-web/settings"/>-->
+    </bean>
+
+    <bean id="twitterInterceptor" class="com.eaw1805.www.controllers.social.FollowAfterConnectInterceptor">
+        <property name="userManager" ref="userManagerBean"/>
+    </bean>
+
+    <bean id="facebookInterceptor" class="com.eaw1805.www.controllers.social.FacebookConnectInterceptor">
+        <property name="userManager" ref="userManagerBean"/>
+    </bean>
+    <!--end of social configuration-->
+    <!--===========================================-->
+
+
+    <bean id="resourceViewResolver"
+          class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+        <property name="basename" value="com.eaw1805.www.resources/views"/>
+        <property name="order" value="0"/>
+    </bean>
+
+    <bean id="tilesConfigurer"
+          class="org.springframework.web.servlet.view.tiles2.TilesConfigurer"
+          p:definitions="/WEB-INF/tiles.xml"/>
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+        <property name="order" value="1"/>
+        <property name="contentType" value="text/html; charset=UTF-8"/>
+    </bean>
+
+    <bean id="messageSource" class=
+            "org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>classpath:com.eaw1805.www.resources/bundles/messages</value>
+                <value>classpath:com.eaw1805.www.resources/bundles/errors</value>
+                <value>classpath:com.eaw1805.www.resources/bundles/social</value>
+            </list>
+        </property>
+        <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
+
+    <bean id="localeResolver"
+          class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+        <property name="defaultLocale" value="en_US"/>
+    </bean>
+
+    <bean id="localeChangeInterceptor"
+          class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+        <property name="paramName" value="siteLanguage"/>
+    </bean>
+
+    <!--<bean id="simpleUrlMapping"-->
+    <!--class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">-->
+    <!--<property name="interceptors">-->
+    <!--<list>-->
+    <!--<ref bean="localeChangeInterceptor"/>-->
+    <!--</list>-->
+    <!--</property>-->
+    <!--<property name="mappings">-->
+    <!--<value>/**/*=settings</value>-->
+    <!--</property>-->
+    <!--</bean>-->
+
+
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.MethodUrlHandlerMapping">
+        <property name="interceptors">
+            <list>
+                <ref bean="localeChangeInterceptor"/>
+            </list>
+        </property>
+        <property name="mappings">
+            <props>
+                <!-- <prop key="/com.eaw1805.www.EmpireWebClient/*">simpleController</prop> -->
+
+                <!-- Admin Controllers -->
+                <prop key="/adminTransfer">adminTransfer</prop>
+                <prop key="/cache/evict/*">evictCache</prop>
+                <prop key="/scenario/*/game/*/edit">editGameController</prop>
+                <prop key="/scenario/*/game/*/nation/*/edit">editNationController</prop>
+                <prop key="GET /newsNoCache">newsNoCache</prop>
+                <prop key="/users/list">listUsers</prop>
+                <prop key="/user/*/paymentHistory">paymentHistory</prop>
+
+                <!-- Public Controllers -->
+                <prop key="/">home</prop>
+                <prop key="/home">home</prop>
+                <prop key="/hallOfFame">hof</prop>
+                <prop key="GET /features">features</prop>
+                <prop key="/contact">contact</prop>
+                <prop key="GET /contact/sent">contactSent</prop>
+                <prop key="/activeUsers">activeUsers</prop>
+
+                <prop key="GET /login">login</prop>
+                <prop key="/signup">signup</prop>
+                <prop key="GET /welcome">welcome</prop>
+                <prop key="/forgot_password">forgotPassword</prop>
+                <prop key="/forgot_username">forgotUsername</prop>
+                <prop key="GET /sent_password">sentPassword</prop>
+                <prop key="GET /sent_username">sentUsername</prop>
+
+                <!-- Help Related -->
+                <prop key="/handbook">handbook</prop>
+                <prop key="/help">helpIndex</prop>
+                <prop key="/help/*">help</prop>
+
+                <!-- Article off-loading content from CMS -->
+                <prop key="GET /about">about</prop>
+                <prop key="GET /terms">terms</prop>
+                <prop key="GET /privacy">privacy</prop>
+                <prop key="GET /news">news</prop>
+
+                <!-- Scenario Related (also off-loading content from CMS) -->
+                <prop key="/scenario/*/list">scenario</prop>
+                <prop key="/scenario/*/info">scenario</prop>
+                <prop key="/scenario/*/nation/*">nation</prop>
+
+
+                <!-- Private Controllers -->
+                <prop key="/games">userHome</prop>
+                <prop key="/inbox">inbox</prop>
+                <prop key="/inbox/delete/*">deleteMessageController</prop>
+                <prop key="/inbox/private/*/view">viewMessageController</prop>
+                <prop key="/settings">settings</prop>
+                <prop key="/honour">honour</prop>
+
+                <prop key="/user/*">userProfile</prop>
+                <prop key="/user/*/followers">userFollowers</prop>
+                <prop key="/user/*/toggleFollow/*">followUser</prop>
+                <prop key="/user/*/honour">honourUser</prop>
+
+                <prop key="GET /completeLogin">completeLogin</prop>
+                <prop key="/user/paymentHistory">paymentHistory</prop>
+
+                <prop key="/transfer">transferCredit</prop>
+                <prop key="/postMessage">postMessageController</prop>
+
+                <prop key="/connect/*">connectController</prop>
+                <prop key="/connect">connectController</prop>
+                <prop key="/social/*">socialController</prop>
+
+                <prop key="/paypal">paypalExpressCheckoutController</prop>
+                <prop key="/paypal/getExpressCheckout">paypalExpressCheckoutController</prop>
+
+                <prop key="GET /receipt/sent">paymentReceiptSent</prop>
+                <prop key="/receipt/id/*">paymentReceipt</prop>
+
+                <!-- Games Related (public) -->
+                <prop key="/listgames">games</prop>
+                <prop key="/joingame">joinGameController</prop>
+                <prop key="/joingame/*">joinGameController</prop>
+                <prop key="/scenario/*/game/*/info">gameInfo</prop>
+                <prop key="/scenario/*/game/*/timeline">gameTimeline</prop>
+
+                <!-- Games Related (private) -->
+                <prop key="/scenario/*/game/*/toggleWatch/*">followGame</prop>
+                <prop key="/scenario/*/game/*/pickup/*">pickUpPosition</prop>
+                <prop key="/scenario/*/game/*/drop/*">dropPosition</prop>
+
+                <prop key="/report/scenario/*/game/*/nation/*/newsletter">showNewsletter</prop>
+                <prop key="/game/*/nation/*/month/*">showNewsletter</prop>
+                <prop key="/report/scenario/*/game/*/nation/*/overview">showEconomy</prop>
+                <prop key="/report/scenario/*/game/*/nation/*/economy">showEconomy</prop>
+                <prop key="/report/scenario/*/game/*/nation/*/ship/*">showShip</prop>
+                <prop key="/report/scenario/*/game/*/nation/*/baggagetrain/*">showShip</prop>
+                <prop key="/game/*/nation/*/reports/month/*">showReports</prop>
+                <prop key="/report/scenario/*/game/*/nation/*/army">showArmy</prop>
+                <prop key="/report/scenario/*/game/*/nation/*/navy">showNavy</prop>
+                <prop key="/report/scenario/*/game/*/nation/*/economy/production">showProduction</prop>
+
+                <prop key="/report/scenario/*/game/*/nation/*/battles">showBattles</prop>
+                <prop key="/report/scenario/*/game/*/nation/*/battle/*">showBattleReport</prop>
+                <prop key="/report/scenario/*/game/*/nation/*/naval/*">showNavalReport</prop>
+                <prop key="/report/scenario/*/game/*/nation/*/orders/*">showOrders</prop>
+
+                <prop key="/report/scenario/*/game/*/nation/*/orders/remove/*">removeOrders</prop>
+
+                <prop key="/solo/user/*">soloGameStatus</prop>
+
+                <prop key="/game/createCustom">createCustomGame</prop>
+                <prop key="/invitation/scenario/*/game/*/nation/*/accept">acceptInvitation</prop>
+                <prop key="/achievement/*/viewed">achievementViewed</prop>
+
+
+                <!-- GWT Related -->
+                <prop key="/**/empire.rpc">empireController</prop>
+                <prop key="/**/fieldBattle.rpc">fieldBattleController</prop>
+                <prop key="/**/scenario.rpc">scenarioController</prop>
+                <prop key="/play/game/*/nation/*">play</prop>
+                <prop key="/fieldbattle/">fieldbattle</prop>
+                <prop key="/cache/game/*/nation/*">empireRpcServiceImpl</prop>
+                <prop key="GET /play/scenario/*/fieldbattle/*/nation/*">playFieldBattle</prop>
+                <prop key="GET /create/scenario">createScenario</prop>
+                <prop key="GET /processing/scenario/*/game/*/turn/*">processing</prop>
+
+                <prop key="/play/game/*/nation/*/com.eaw1805.www.EmpireWebClient/*">dummycss</prop>
+
+
+                <!-- Dirty -->
+
+                <!--
+                                <prop key="/tactical/battle">showTacticalInfo</prop>
+                                <prop key="/tactical/perform">performTacticalBattle</prop>
+
+                                <prop key="/naval/battle">showNavalInfo</prop>
+                                <prop key="/naval/perform">performNavalBattle</prop>
+-->
+                <!-- Not used
+                                <prop key="/game/*/nation/*/statistics">showStatistics</prop>
+
+                                <prop key="/testSockets">testWebSockets</prop>
+                                <prop key="/saveChatMessage">saveChatMessage</prop>
+
+                                <prop key="/game/*/nation/*/economy/trade">showTrade</prop>
+
+                                <prop key="/game/*/nation/*/barracks">showBarracks</prop>
+
+                                <prop key="/game/*/region/*/nation/*/zoom/*/map.png">drawMapZoom</prop>
+                -->
+                <prop key="/game/*/nation/*/economy/baggagetrains">showBaggage</prop>
+                <prop key="/fieldbattle/create">createFieldbattleController</prop>
+                <prop key="/fieldbattle/list">listFieldbattleController</prop>
+                <prop key="/fieldbattle/run">runFieldBattleController</prop>
+                <prop key="/questionnaire/*">questionnaireController</prop>
+
+                <!--<prop key="/invitation/scenario/*/game/*/nation/*/reject">rejectInvitation</prop>-->
+
+                <!--fix db-->
+                <prop key="/fixResources">fixResources</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="com.eaw1805.www.controllers.exception.InvalidPageException">internalException</prop>
+                <prop key="java.lang.Exception">internalException</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="simpleController" class="com.eaw1805.www.controllers.SimpleController"/>
+
+    <!-- Admin Controllers -->
+
+    <bean name="adminTransfer" class="com.eaw1805.www.controllers.admin.AdminTransferController" parent="transferCredit">
+        <property name="conFactoryLocator" ref="connectionFactoryLocator"/>
+        <property name="conRepository" ref="connectionRepository"/>
+        <property name="pmHistoryManager" ref="paymentHistoryManagerBean"/>
+    </bean>
+
+    <bean name="evictCache" class="com.eaw1805.www.controllers.cache.EvictCacheController">
+        <property name="userManager" ref="userManagerBean"/>
+    </bean>
+
+    <bean id="customDateEditor"
+          class="org.springframework.beans.propertyeditors.CustomDateEditor">
+        <constructor-arg>
+            <bean class="java.text.SimpleDateFormat">
+                <constructor-arg value="dd/MM/yyyy"/>
+                <property name="lenient" value="false"/>
+            </bean>
+        </constructor-arg>
+        <constructor-arg value="true"/>
+    </bean>
+
+    <bean id="editGameController" class="com.eaw1805.www.controllers.game.EditGameController" parent="play">
+        <property name="customDateEditor" ref="customDateEditor"/>
+    </bean>
+
+    <bean id="editNationController" class="com.eaw1805.www.controllers.game.EditNationController" parent="play">
+        <property name="permissionManager" ref="userPermissionsManagerBean"/>
+        <property name="warehouseManager" ref="warehouseManagerBean"/>
+        <property name="goodManager" ref="goodManagerBean"/>
+    </bean>
+
+    <bean id="listUsers" class="com.eaw1805.www.controllers.admin.ListAllUsersController" parent="home"/>
+
+    <!-- Public Controllers -->
+
+    <bean id="home" class="com.eaw1805.www.controllers.HomeController">
+        <!--simplified with autowired annotation-->
+    </bean>
+
+    <bean id="hof" class="com.eaw1805.www.controllers.HoFController" parent="home"/>
+
+    <bean id="features" class="com.eaw1805.www.controllers.GenericController" parent="home">
+        <property name="helpPage" value="introduction"/>
+        <property name="viewName" value="features"/>
+    </bean>
+
+    <bean id="contact" class="com.eaw1805.www.controllers.ContactController" parent="home">
+        <property name="engineProcessManager" ref="engineProcessManagerBean"/>
+    </bean>
+
+    <bean id="contactSent" class="com.eaw1805.www.controllers.GenericController" parent="home">
+        <property name="helpPage" value="introduction"/>
+        <property name="viewName" value="contact/sent"/>
+    </bean>
+
+    <bean id="activeUsers" class="com.eaw1805.www.controllers.site.ActiveUserController" parent="home"/>
+
+    <bean id="login" class="com.eaw1805.www.controllers.GenericController" parent="home">
+        <property name="helpPage" value="introduction"/>
+        <property name="viewName" value="login"/>
+    </bean>
+
+    <bean id="signup" class="com.eaw1805.www.controllers.user.SignupController" parent="play"/>
+
+    <bean id="signupValidator" class="com.eaw1805.www.controllers.validators.SignupValidator">
+        <property name="userManager" ref="userManagerBean"/>
+    </bean>
+
+    <bean id="settingsValidator" class="com.eaw1805.www.controllers.validators.SettingsValidator">
+        <property name="userManager" ref="userManagerBean"/>
+    </bean>
+
+    <bean id="welcome" class="com.eaw1805.www.controllers.GenericController" parent="home">
+        <property name="helpPage" value="introduction"/>
+        <property name="viewName" value="welcome"/>
+    </bean>
+
+    <bean id="forgotPassword" class="com.eaw1805.www.controllers.user.ForgotPasswordController" parent="home"/>
+
+    <bean id="forgotUsername" class="com.eaw1805.www.controllers.user.ForgotUsernameController" parent="home"/>
+
+    <bean id="sentPassword" class="com.eaw1805.www.controllers.GenericController" parent="home">
+        <property name="helpPage" value="introduction"/>
+        <property name="viewName" value="sentPassword"/>
+    </bean>
+
+    <bean id="sentUsername" class="com.eaw1805.www.controllers.GenericController" parent="home">
+        <property name="helpPage" value="introduction"/>
+        <property name="viewName" value="sentUsername"/>
+    </bean>
+
+    <!-- Help Related -->
+
+    <bean id="handbook" class="com.eaw1805.www.controllers.HandbookController" parent="home"/>
+
+    <bean id="help" class="com.eaw1805.www.controllers.HelpController" parent="home"/>
+
+    <bean id="helpIndex" class="com.eaw1805.www.controllers.HelpIndexController" parent="home"/>
+
+
+    <!-- Article off-loading content from CMS -->
+
+    <bean id="about" class="com.eaw1805.www.controllers.site.SingleArticleController" parent="home">
+        <property name="helpPage" value="introduction"/>
+        <property name="viewName" value="about"/>
+        <property name="articleId" value="20"/>
+    </bean>
+
+
+    <bean id="terms" class="com.eaw1805.www.controllers.site.SingleArticleController" parent="home">
+        <property name="helpPage" value="introduction"/>
+        <property name="viewName" value="terms"/>
+        <property name="articleId" value="205"/>
+    </bean>
+
+    <bean id="privacy" class="com.eaw1805.www.controllers.site.SingleArticleController" parent="home">
+        <property name="helpPage" value="introduction"/>
+        <property name="viewName" value="privacy"/>
+        <property name="articleId" value="204"/>
+    </bean>
+
+    <bean id="news" class="com.eaw1805.www.controllers.NewsController" parent="home">
+        <property name="helpPage" value="introduction"/>
+        <property name="viewName" value="news"/>
+    </bean>
+
+    <bean id="newsNoCache" class="com.eaw1805.www.controllers.NewsController" parent="news">
+        <property name="viewName" value="newsNoCache"/>
+    </bean>
+
+    <bean id="deleteUser" class="com.eaw1805.www.controllers.user.DeleteUser" parent="home"/>
+
+    <!-- Scenario Related (also off-loading content from CMS) -->
+
+    <bean id="scenario" class="com.eaw1805.www.controllers.scenario.ScenarioController" parent="play"/>
+
+    <bean class="com.eaw1805.www.controllers.scenario.CreateScenarioFromEditor" parent="home">
+    </bean>
+
+    <bean id="scenarioNation" class="com.eaw1805.www.controllers.scenario.ScenarioNationController" parent="play">
+        <property name="armyTypeManager" ref="armyTypeManagerBean"/>
+        <property name="shipTypeManagerBean" ref="shipTypeManagerBean"/>
+        <property name="commanderNameManagerBean" ref="commanderNameManagerBean"/>
+        <property name="brigadeManagerBean" ref="brigadeManagerBean"/>
+        <property name="shipManagerBean" ref="shipManagerBean"/>
+    </bean>
+
+
+    <!-- Private Controllers -->
+
+    <bean name="userHome" class="com.eaw1805.www.controllers.user.UserHomeController" parent="home">
+        <property name="gameManager" ref="gameManagerBean"/>
+        <property name="nationManager" ref="nationManagerBean"/>
+        <property name="playerOrderManager" ref="playerOrderManagerBean"/>
+        <property name="newsManager" ref="newsManagerBean"/>
+        <property name="reportManager" ref="reportManagerBean"/>
+        <property name="goodManager" ref="goodManagerBean"/>
+        <property name="engineProcessManager" ref="engineProcessManagerBean"/>
+        <property name="profileManager" ref="profileManagerBean"/>
+        <property name="postMessageManager" ref="postMessageManagerBean"/>
+        <!--<property name="postMessageManager" ref="postMessageManagerBean"/>-->
+    </bean>
+
+    <bean name="inbox" class="com.eaw1805.www.controllers.user.InboxController" parent="home">
+        <property name="antisamyManager" ref="antisamyBean"/>
+    </bean>
+
+    <bean name="deleteMessageController" class="com.eaw1805.www.controllers.user.DeleteMessageController" parent="home"/>
+
+    <bean name="viewMessageController" class="com.eaw1805.www.controllers.user.ViewMessageController" parent="home">
+        <property name="antisamyManager" ref="antisamyBean"/>
+    </bean>
+
+    <bean name="settings" class="com.eaw1805.www.controllers.user.SettingsController" parent="home">
+        <property name="conFactoryLocator" ref="connectionFactoryLocator"/>
+        <property name="conRepository" ref="connectionRepository"/>
+        <property name="pmHistoryManager" ref="paymentHistoryManagerBean"/>
+    </bean>
+
+    <bean name="honour" class="com.eaw1805.www.controllers.user.HonourController" parent="home">
+        <property name="profileManager" ref="profileManagerBean"/>
+        <property name="forumPostsManager" ref="forumPostsManagerBean"/>
+    </bean>
+
+    <bean name="honourUser" class="com.eaw1805.www.controllers.user.UserHonourController" parent="honour"/>
+
+    <bean name="userProfile" class="com.eaw1805.www.controllers.user.UserProfileController" parent="home">
+        <property name="nationManager" ref="nationManagerBean"/>
+        <property name="playerOrderManager" ref="playerOrderManagerBean"/>
+        <property name="newsManager" ref="newsManagerBean"/>
+        <property name="reportManager" ref="reportManagerBean"/>
+        <property name="pmHistoryManager" ref="paymentHistoryManagerBean"/>
+        <property name="antisamyManager" ref="antisamyBean"/>
+        <property name="postMessageManager" ref="postMessageManagerBean"/>
+    </bean>
+
+    <bean name="userFollowers" class="com.eaw1805.www.controllers.user.FollowersController" parent="home"/>
+
+    <bean name="followUser" class="com.eaw1805.www.controllers.user.FollowUserController" parent="home"/>
+
+    <bean id="completeLogin" class="com.eaw1805.www.controllers.GenericController" parent="home">
+        <property name="helpPage" value="introduction"/>
+        <property name="viewName" value="completeLogin"/>
+    </bean>
+
+    <bean name="paymentHistory" class="com.eaw1805.www.controllers.user.PaymentHistoryController" parent="home">
+        <property name="pmHistoryManager" ref="paymentHistoryManagerBean"/>
+    </bean>
+
+    <bean name="transferCredit" class="com.eaw1805.www.controllers.user.TransferCreditsController" parent="home">
+        <property name="conFactoryLocator" ref="connectionFactoryLocator"/>
+        <property name="conRepository" ref="connectionRepository"/>
+        <property name="pmHistoryManager" ref="paymentHistoryManagerBean"/>
+    </bean>
+
+
+    <bean name="postMessageController" class="com.eaw1805.www.controllers.user.PostMessageController" parent="home">
+        <!--<property name="postMessageManager" ref="postMessageManagerBean"/>-->
+    </bean>
+
+    <bean name="acceptInvitation" class="com.eaw1805.www.controllers.user.AnswerInvitationController" parent="home">
+        <property name="gameManager" ref="gameManagerBean"/>
+        <property name="nationManmager" ref="nationManagerBean"/>
+        <property name="permissionManager" ref="userPermissionsManagerBean"/>
+    </bean>
+
+    <bean name="achievementViewed" class="com.eaw1805.www.controllers.user.AchievementViewController" parent="home">
+    </bean>
+
+
+    <!--<bean name="rejectInvitation" class="com.eaw1805.www.controllers.user.AnswerInvitationController" parent="home">-->
+    <!--<property name="gameManager" ref="gameManagerBean"/>-->
+    <!--<property name="nationManmager" ref="nationManagerBean"/>-->
+    <!--</bean>-->
+
+    <bean id="socialController" class="com.eaw1805.www.controllers.social.SocialController">
+        <property name="connectionRepository" ref="connectionRepository"/>
+        <property name="userManager" ref="userManagerBean"/>
+        <property name="pmHistoryManager" ref="paymentHistoryManagerBean"/>
+        <property name="newsManager" ref="newsManagerBean"/>
+        <property name="userGameManager" ref="usersGamesManagerBean"/>
+    </bean>
+
+    <bean id="paypalExpressCheckoutController"
+          class="com.eaw1805.www.controllers.payments.PaypalExpressCheckoutController" parent="home">
+        <property name="paypalManager" ref="paypalManagerBean"/>
+        <property name="paypalUserManager" ref="paypalUserBean"/>
+        <property name="paypalTransactionManager" ref="paypalTransactionBean"/>
+        <property name="pmHistoryManager" ref="paymentHistoryManagerBean"/>
+        <property name="profileManager" ref="profileManagerBean"/>
+    </bean>
+
+    <bean id="paypalRecurring" class="com.eaw1805.www.controllers.payments.PaypalRecurringController" parent="home"/>
+
+    <bean id="paypalIPN" class="com.eaw1805.www.controllers.payments.PaypalIPNController" parent="home"/>
+
+    <bean id="paymentReceipt"
+          class="com.eaw1805.www.controllers.payments.RequestReceipt" parent="home">
+        <property name="paypalTransactionManager" ref="paypalTransactionBean"/>
+    </bean>
+
+    <bean id="paymentReceiptSent" class="com.eaw1805.www.controllers.GenericController" parent="home">
+        <property name="helpPage" value="introduction"/>
+        <property name="viewName" value="receipt/sent"/>
+    </bean>
+
+
+    <!-- Games Related (public) -->
+
+    <bean name="games" class="com.eaw1805.www.controllers.game.GamesController" parent="home"/>
+
+    <bean id="joinGameController" class="com.eaw1805.www.controllers.game.JoinGameController" parent="play"/>
+
+    <bean id="gameInfo" class="com.eaw1805.www.controllers.game.ShowGameInfo" parent="home">
+        <property name="nationManager" ref="nationManagerBean"/>
+        <property name="gameManagerBean" ref="gameManagerBean"/>
+
+        <property name="engineProcessManager" ref="engineProcessManagerBean"/>
+        <property name="wGManager" ref="watchGameManagerBean"/>
+        <property name="reportManager" ref="reportManagerBean"/>
+        <property name="goodManager" ref="goodManagerBean"/>
+        <property name="tacticalBattleReportManager" ref="tacticalBattleReportManagerBean"/>
+        <property name="navalBattleReportManager" ref="navalBattleReportManagerBean"/>
+        <property name="playerOrderManager" ref="playerOrderManagerBean"/>
+        <property name="newsManager" ref="newsManagerBean"/>
+    </bean>
+
+    <bean id="gameTimeline" class="com.eaw1805.www.controllers.game.GameTimeline" parent="home">
+        <property name="gameManagerBean" ref="gameManagerBean"/>
+        <property name="newsManager" ref="newsManagerBean"/>
+    </bean>
+
+    <!-- Games Related (private) -->
+
+    <bean name="followGame" class="com.eaw1805.www.controllers.game.WatchGameController" parent="home">
+        <property name="gameManager" ref="gameManagerBean"/>
+    </bean>
+
+    <bean name="pickUpPosition" class="com.eaw1805.www.controllers.game.PickUpPositionController" parent="play">
+        <property name="permissionManager" ref="userPermissionsManagerBean"/>
+        <property name="profileManager" ref="profileManagerBean"/>
+        <property name="pmHistoryManager" ref="paymentHistoryManagerBean"/>
+        <property name="warehouseManager" ref="warehouseManagerBean"/>
+        <property name="regionManager" ref="regionManagerBean"/>
+    </bean>
+
+    <bean name="dropPosition" class="com.eaw1805.www.controllers.game.DropPositionController" parent="play">
+        <property name="permissionManager" ref="userPermissionsManagerBean"/>
+        <property name="profileManager" ref="profileManagerBean"/>
+        <property name="pmHistoryManager" ref="paymentHistoryManagerBean"/>
+    </bean>
+
+    <bean id="showNewsletter" class="com.eaw1805.www.controllers.game.news.ShowNewsletter" parent="play">
+        <property name="newsManager" ref="newsManagerBean"/>
+        <property name="reportManager" ref="reportManagerBean"/>
+        <property name="regionManager" ref="regionManagerBean"/>
+        <property name="shipManagerBean" ref="shipManagerBean"/>
+    </bean>
+
+    <bean id="showReports" class="com.eaw1805.www.controllers.game.reports.ShowReports" parent="play">
+        <property name="goodManager" ref="goodManagerBean"/>
+        <property name="ordersManager" ref="playerOrderManagerBean"/>
+        <property name="regionManager" ref="regionManagerBean"/>
+        <property name="reportManager" ref="reportManagerBean"/>
+    </bean>
+
+    <bean id="showEconomy" class="com.eaw1805.www.controllers.game.economy.ShowEconomy" parent="showOrders">
+        <property name="regionManager" ref="regionManagerBean"/>
+        <property name="reportManager" ref="reportManagerBean"/>
+    </bean>
+
+    <bean id="fixResources" class="com.eaw1805.www.controllers.game.economy.FixResources" parent="showOrders">
+        <property name="regionManager" ref="regionManagerBean"/>
+        <property name="reportManager" ref="reportManagerBean"/>
+    </bean>
+
+    <bean id="showShip" class="com.eaw1805.www.controllers.game.economy.ShowTradeUnitEconomy" parent="showOrders">
+        <property name="shipManager" ref="shipManagerBean"/>
+        <property name="bTrainManager" ref="baggageTrainManagerBean"/>
+    </bean>
+
+    <bean id="showArmy" class="com.eaw1805.www.controllers.game.army.ShowArmy" parent="play">
+        <property name="armyManager" ref="armyManagerBean"/>
+        <property name="battalionManager" ref="battalionManagerBean"/>
+        <property name="commanderManager" ref="commanderManagerBean"/>
+        <property name="corpManager" ref="corpManagerBean"/>
+        <property name="brigadeManager" ref="brigadeManagerBean"/>
+    </bean>
+
+    <bean id="showNavy" class="com.eaw1805.www.controllers.game.army.ShowNavy" parent="play">
+        <property name="shipManager" ref="shipManagerBean"/>
+        <property name="fleetManager" ref="fleetManagerBean"/>
+        <property name="ordersManager" ref="playerOrderManagerBean"/>
+        <property name="brigadeManager" ref="brigadeManagerBean"/>
+        <property name="spyManager" ref="spyManagerBean"/>
+        <property name="commanderManager" ref="commanderManagerBean"/>
+        <property name="shipTypeManager" ref="shipTypeManagerBean"/>
+    </bean>
+
+    <bean id="showProduction" class="com.eaw1805.www.controllers.game.economy.ShowProduction" parent="play">
+        <property name="goodManager" ref="goodManagerBean"/>
+        <property name="regionManager" ref="regionManagerBean"/>
+        <property name="productionSiteManager" ref="productionSiteManagerBean"/>
+        <property name="sectorManager" ref="sectorManagerBean"/>
+        <property name="warehouseManager" ref="warehouseManagerBean"/>
+        <property name="orderManager" ref="playerOrderManagerBean"/>
+        <property name="reportManager" ref="reportManagerBean"/>
+    </bean>
+
+    <bean id="showBattles" class="com.eaw1805.www.controllers.game.reports.ShowBattles" parent="play">
+        <property name="navalBattleReportManager" ref="navalBattleReportManagerBean"/>
+        <property name="tacticalBattleReportManager" ref="tacticalBattleReportManagerBean"/>
+    </bean>
+
+    <bean id="showBattleReport" class="com.eaw1805.www.controllers.game.reports.ShowBattleReport" parent="play">
+        <property name="tacticalBattleReportManager" ref="tacticalBattleReportManagerBean"/>
+        <property name="sectorManager" ref="sectorManagerBean"/>
+        <property name="tradeCityManager" ref="tradeCityManagerBean"/>
+        <property name="barrackManager" ref="barrackManagerBean"/>
+        <property name="relationManager" ref="relationsManagerBean"/>
+    </bean>
+
+    <bean id="showNavalReport" class="com.eaw1805.www.controllers.game.reports.ShowNavalReport" parent="play">
+        <property name="navalBattleReportManager" ref="navalBattleReportManagerBean"/>
+        <property name="sectorManager" ref="sectorManagerBean"/>
+        <property name="tradeCityManager" ref="tradeCityManagerBean"/>
+        <property name="barrackManager" ref="barrackManagerBean"/>
+        <property name="relationManager" ref="relationsManagerBean"/>
+    </bean>
+
+    <bean id="showOrders" class="com.eaw1805.www.controllers.game.reports.ShowOrders" parent="play">
+        <property name="armyManager" ref="armyManagerBean"/>
+        <property name="baggageTrainManager" ref="baggageTrainManagerBean"/>
+        <property name="barrackManager" ref="barrackManagerBean"/>
+        <property name="commanderManager" ref="commanderManagerBean"/>
+        <property name="corpManager" ref="corpManagerBean"/>
+        <property name="fleetManager" ref="fleetManagerBean"/>
+        <property name="goodManager" ref="goodManagerBean"/>
+        <property name="productionSiteManager" ref="productionSiteManagerBean"/>
+        <property name="spyManager" ref="spyManagerBean"/>
+        <property name="sectorManager" ref="sectorManagerBean"/>
+        <property name="warehouseManager" ref="warehouseManagerBean"/>
+        <property name="newsManager" ref="newsManagerBean"/>
+        <property name="tradeCityManager" ref="tradeCityManagerBean"/>
+        <property name="battalionManager" ref="battalionManagerBean"/>
+        <property name="ordersManager" ref="playerOrderManagerBean"/>
+        <property name="shipManager" ref="shipManagerBean"/>
+        <property name="brigadeManager" ref="brigadeManagerBean"/>
+    </bean>
+
+    <bean id="removeOrders" class="com.eaw1805.www.controllers.game.reports.RemoveOrders" parent="play">
+        <property name="newsManager" ref="newsManagerBean"/>
+    </bean>
+
+    <bean id="soloGameStatus" class="com.eaw1805.www.controllers.game.helper.SoloGameStatusController" parent="play"/>
+
+
+    <!-- GWT Related -->
+
+    <!-- GwtRpcController wraps our service in order to decode the incoming -->
+    <!-- request then delegates processing of the call to the POJO service -->
+    <!-- and then encodes the return value forwarding the response. -->
+    <bean id="empireController" class="com.eaw1805.www.controllers.remote.GwtRpcController">
+        <property name="remoteService" ref="empireRpcServiceImpl"/>
+    </bean>
+
+    <bean id="empireRpcServiceImpl" class="com.eaw1805.www.controllers.remote.EmpireRpcServiceImpl">
+    </bean>
+
+    <bean id="fieldBattleController" class="com.eaw1805.www.controllers.remote.GwtRpcController">
+        <property name="remoteService" ref="empireFieldBattleRpcServiceImpl"/>
+    </bean>
+
+
+    <bean id="empireFieldBattleRpcServiceImpl"
+          class="com.eaw1805.www.controllers.remote.fieldbattle.EmpireFieldBattleRpcServiceImpl">
+    </bean>
+
+    <bean id="scenarioController" class="com.eaw1805.www.controllers.remote.GwtRpcController">
+        <property name="remoteService" ref="empireScenarioRpcServiceImpl"/>
+    </bean>
+
+    <bean id="empireScenarioRpcServiceImpl"
+          class="com.eaw1805.www.controllers.remote.scenario.EmpireScenarioRpcServiceImpl">
+
+    </bean>
+
+    <bean id="play" class="com.eaw1805.www.controllers.game.Play" parent="home">
+        <property name="gameManager" ref="gameManagerBean"/>
+        <property name="nationManager" ref="nationManagerBean"/>
+    </bean>
+
+    <bean id="processing" class="com.eaw1805.www.controllers.game.Processing" parent="home">
+        <property name="gameManager" ref="gameManagerBean"/>
+    </bean>
+
+
+    <bean id="createScenario" class="com.eaw1805.www.controllers.game.ScenarioCreator" parent="home">
+        <property name="gameManager" ref="gameManagerBean"/>
+        <property name="nationManager" ref="nationManagerBean"/>
+    </bean>
+
+    <bean id="fieldbattle" class="com.eaw1805.www.controllers.game.Fieldbattle" parent="home"></bean>
+    <bean id="fieldbattle2" class="com.eaw1805.www.controllers.game.Fieldbattle2" parent="home"></bean>
+
+
+    <bean id="editVPs" class="com.eaw1805.www.controllers.game.forms.EditVP" parent="home"></bean>
+
+    <bean id="playFieldBattle" class="com.eaw1805.www.controllers.game.PlayFieldBattle" parent="home">
+        <property name="gameManager" ref="gameManagerBean"/>
+        <property name="nationManager" ref="nationManagerBean"/>
+        <property name="sectorManager" ref="sectorManagerBean"/>
+        <property name="userFieldManager" ref="userFieldBattleManagerBean"/>
+        <property name="fieldBattleManager" ref="fieldBattleReportManagerBean"/>
+    </bean>
+
+    <bean id="dummycss" class="com.eaw1805.www.controllers.GenericController" parent="home">
+        <property name="helpPage" value="introduction"/>
+        <property name="viewName" value="dummycss"/>
+    </bean>
+
+    <bean id="showBaggage" class="com.eaw1805.www.controllers.game.economy.ShowBaggage" parent="showOrders">
+        <property name="baggageTrainManager" ref="baggageTrainManagerBean"/>
+        <property name="goodManager" ref="goodManagerBean"/>
+    </bean>
+
+    <bean id="createFieldbattleController" class="com.eaw1805.www.controllers.field.CreateFieldbattleController"
+          parent="home">
+        <property name="gameManager" ref="gameManagerBean"/>
+        <property name="nationManager" ref="nationManagerBean"/>
+
+    </bean>
+
+    <bean id="createCustomGame" class="com.eaw1805.www.controllers.game.CreateCustomGame"
+          parent="home">
+        <property name="gameManager" ref="gameManagerBean"/>
+        <property name="nationManager" ref="nationManagerBean"/>
+        <property name="paymentHistoryManager" ref="paymentHistoryManagerBean"/>
+        <property name="forumManager" ref="forumManagerBean"/>
+        <property name="permissionManager" ref="userPermissionsManagerBean"/>
+    </bean>
+
+    <bean id="listFieldbattleController" class="com.eaw1805.www.controllers.field.ListFieldbattlesController"
+          parent="home">
+        <property name="gameManager" ref="gameManagerBean"/>
+        <property name="nationManager" ref="nationManagerBean"/>
+        <property name="fieldBattleManager" ref="fieldBattleReportManagerBean"/>
+        <property name="fieldMapManager" ref="fieldBattleMapManagerBean"/>
+        <property name="sectorManager" ref="sectorManagerBean"/>
+    </bean>
+
+    <bean id="runFieldBattleController" class="com.eaw1805.www.controllers.field.RunFieldBattleController" parent="home">
+        <property name="gameManager" ref="gameManagerBean"/>
+        <property name="nationManager" ref="nationManagerBean"/>
+        <property name="fieldBattleManager" ref="fieldBattleReportManagerBean"/>
+    </bean>
+
+    <bean id="questionnaireController" class="com.eaw1805.www.controllers.user.QuestionnairePage" parent="home">
+    </bean>
+
+
+    <!-- Admin -->
+
+    <bean name="adminStatistics" class="com.eaw1805.www.controllers.admin.SiteStatistics" parent="home">
+        <property name="engineProcessManager" ref="engineProcessManagerBean"/>
+        <property name="pmHistoryManager" ref="paymentHistoryManagerBean"/>
+    </bean>
+
+    <bean name="questionnaireStatistics" class="com.eaw1805.www.controllers.admin.QuestionnaireStatistics" parent="home">
+    </bean>
+
+
+</beans>

@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+
+    <bean id="dataSourceMain"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://gamekeeper.cloudapp.net:3306/empire?useUnicode=true&amp;characterEncoding=UTF-8"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+    </bean>
+
+
+    <bean id="dataSourceScenario"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://gamekeeper.cloudapp.net:3306/empire-scenario?useUnicode=true&amp;characterEncoding=UTF-8"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+    </bean>
+
+    <bean id="dataSourceFieldbattle"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://gamekeeper.cloudapp.net:3306/empire-fieldbattle?useUnicode=true&amp;characterEncoding=UTF-8"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+    </bean>
+
+    <bean id="dataSourceS3"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://gamekeeper.cloudapp.net:3306/empire-s3?useUnicode=true&amp;characterEncoding=UTF-8"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+    </bean>
+
+    <bean id="dataSourceS2"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://gamekeeper.cloudapp.net:3306/empire-s2?useUnicode=true&amp;characterEncoding=UTF-8"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+    </bean>
+
+    <bean id="dataSourceS1"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://gamekeeper.cloudapp.net:3306/empire-s1?useUnicode=true&amp;characterEncoding=UTF-8"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+    </bean>
+
+    <bean id="dataSourceFree"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://gamekeeper.cloudapp.net:3306/empire-free?useUnicode=true&amp;characterEncoding=UTF-8"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+    </bean>
+
+    <bean id="dataSource" class="com.eaw1805.www.hibernate.ScenarioRoutingDataSource">
+        <property name="targetDataSources">
+            <map key-type="java.lang.Integer">
+                <entry key="3" value-ref="dataSourceS3"/>
+                <entry key="2" value-ref="dataSourceS2"/>
+                <entry key="1" value-ref="dataSourceS1"/>
+                <entry key="-1" value-ref="dataSourceFree"/>
+                <entry key="-2" value-ref="dataSourceScenario"/>
+                <entry key="-3" value-ref="dataSourceFieldbattle"/>
+            </map>
+        </property>
+        <property name="defaultTargetDataSource" ref="dataSourceS1"/>
+    </bean>
+
+
+    <bean id="log4jInitialization"
+          class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <property name="targetClass"
+                  value="org.springframework.util.Log4jConfigurer"/>
+        <property name="targetMethod" value="initLogging"/>
+        <property name="arguments">
+            <list>
+                <value>classpath:log4j.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="sessionFactoryMain"
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSourceMain"/>
+        <property name="mappingResources">
+            <list>
+                <value>com/eaw1805/data/model/EngineProcess.hbm.xml</value>
+                <value>com/eaw1805/data/model/User.hbm.xml</value>
+                <value>com/eaw1805/data/model/Profile.hbm.xml</value>
+                <value>com/eaw1805/data/model/Follow.hbm.xml</value>
+                <value>com/eaw1805/data/model/Message.hbm.xml</value>
+                <value>com/eaw1805/data/model/PaymentHistory.hbm.xml</value>
+
+                <!--for achievements-->
+                <value>com/eaw1805/data/model/Achievement.hbm.xml</value>
+
+                <!--for chat messages-->
+                <value>com/eaw1805/data/model/ChatMessage.hbm.xml</value>
+
+                <!--for paypal-->
+                <value>com/eaw1805/data/model/paypal/PaypalUserProfile.hbm.xml</value>
+                <value>com/eaw1805/data/model/paypal/PaypalTransaction.hbm.xml</value>
+
+                <!--for forum permissions-->
+                <value>com/eaw1805/data/model/forum/UserPermissions.hbm.xml</value>
+                <value>com/eaw1805/data/model/forum/ForumPost.hbm.xml</value>
+                <value>com/eaw1805/data/model/forum/ForumSessions.hbm.xml</value>
+                <value>com/eaw1805/data/model/forum/Forum.hbm.xml</value>
+
+                <value>com/eaw1805/data/model/ActiveUser.hbm.xml</value>
+                <value>com/eaw1805/data/model/PostMessage.hbm.xml</value>
+
+            </list>
+        </property>
+        <property name="annotatedClasses">
+            <list>
+                <value>com.eaw1805.data.model.Questionnaire</value>
+            </list>
+        </property>
+
+        <property name="hibernateProperties">
+            <props>
+                <prop key="javax.persistence.validation.mode">none</prop>
+
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
+                <prop key="hibernate.connection.characterEncoding">UTF-8</prop>
+                <prop key="hibernate.connection.useUnicode">true</prop>
+                <!--<prop key="current_session_context_class">thread</prop>-->
+                <prop key="log4j.logger.net.sf.hibernate">warn</prop>
+                <prop key="show_sql">false</prop>
+                <prop key="format_sql">false</prop>
+                <!--<prop key="hibernate.hbm2ddl.auto">update</prop>-->
+                <prop key="autoReconnect">true</prop>
+                <prop key="hibernate.cache.use_second_level_cache">false</prop>
+                <prop key="hibernate.cache.use_query_cache">false</prop>
+                <!--<prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>-->
+                <!--<prop key="hibernate.cache.provider_configuration_file_resource_path">-->
+                    <!--/com.eaw1805.www.resources/empire-ehcache2.xml-->
+                <!--</prop>-->
+
+                <!--<prop key="hibernate.generate_statistics">true</prop>-->
+                <!--<prop key="hibernate.cache.use_structured_entries">true</prop>-->
+                <!--<prop key="hibernate.cache.query_cache_factory">org.hibernate.cache.StandardQueryCacheFactory</prop>-->
+                <!--<prop key="hibernate.cache.region.factory_class">net.sf.ehcache.hibernate.EhCacheRegionFactory</prop>-->
+
+                <!--<prop key="hibernate.jdbc.batch_size">0</prop>-->
+            </props>
+        </property>
+    </bean>
+
+    <bean id="sessionFactoryS1"
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mappingResources">
+            <list>
+                <value>com/eaw1805/data/model/Game.hbm.xml</value>
+                <value>com/eaw1805/data/model/GameSettings.hbm.xml</value>
+                <value>com/eaw1805/data/model/WatchGame.hbm.xml</value>
+                <value>com/eaw1805/data/model/UserGame.hbm.xml</value>
+
+                <value>com/eaw1805/data/model/Nation.hbm.xml</value>
+                <value>com/eaw1805/data/model/NationsRelation.hbm.xml</value>
+                <value>com/eaw1805/data/model/News.hbm.xml</value>
+                <value>com/eaw1805/data/model/PlayerOrder.hbm.xml</value>
+                <value>com/eaw1805/data/model/Report.hbm.xml</value>
+
+                <!-- Mapping files for map related objects -->
+                <value>com/eaw1805/data/model/map/Barrack.hbm.xml</value>
+                <value>com/eaw1805/data/model/map/Region.hbm.xml</value>
+                <value>com/eaw1805/data/model/map/Sector.hbm.xml</value>
+                <value>com/eaw1805/data/model/map/Terrain.hbm.xml</value>
+                <value>com/eaw1805/data/model/map/ProductionSite.hbm.xml</value>
+                <value>com/eaw1805/data/model/map/NaturalResource.hbm.xml</value>
+                <value>com/eaw1805/data/model/map/JumpOff.hbm.xml</value>
+
+                <!-- Mapping files for army related objects -->
+                <value>com/eaw1805/data/model/army/Army.hbm.xml</value>
+                <value>com/eaw1805/data/model/army/ArmyType.hbm.xml</value>
+                <value>com/eaw1805/data/model/army/Battalion.hbm.xml</value>
+                <value>com/eaw1805/data/model/army/Brigade.hbm.xml</value>
+                <value>com/eaw1805/data/model/army/Commander.hbm.xml</value>
+                <value>com/eaw1805/data/model/army/CommanderName.hbm.xml</value>
+                <value>com/eaw1805/data/model/army/Corp.hbm.xml</value>
+                <value>com/eaw1805/data/model/army/Rank.hbm.xml</value>
+                <value>com/eaw1805/data/model/army/Spy.hbm.xml</value>
+                <value>com/eaw1805/data/model/battles/TacticalBattleReport.hbm.xml</value>
+
+                <!-- Mapping files for fleet related objects -->
+                <value>com/eaw1805/data/model/fleet/Fleet.hbm.xml</value>
+                <value>com/eaw1805/data/model/fleet/Ship.hbm.xml</value>
+                <value>com/eaw1805/data/model/fleet/ShipType.hbm.xml</value>
+                <value>com/eaw1805/data/model/battles/NavalBattleReport.hbm.xml</value>
+
+                <!-- Mapping files for economy related objects -->
+                <value>com/eaw1805/data/model/economy/Good.hbm.xml</value>
+                <value>com/eaw1805/data/model/economy/BaggageTrain.hbm.xml</value>
+                <value>com/eaw1805/data/model/economy/TradeCity.hbm.xml</value>
+                <value>com/eaw1805/data/model/economy/Warehouse.hbm.xml</value>
+
+                <!-- Field Battle related -->
+                <value>com/eaw1805/data/model/battles/FieldBattleReport.hbm.xml</value>
+                <value>com/eaw1805/data/model/battles/field/FieldBattleMap.hbm.xml</value>
+                <value>com/eaw1805/data/model/battles/field/FieldBattleSector.hbm.xml</value>
+                <value>com/eaw1805/data/model/battles/field/FieldBattleTerrain.hbm.xml</value>
+                <value>com/eaw1805/data/model/battles/field/FieldBattleMapExtraFeature.hbm.xml</value>
+                <value>com/eaw1805/data/model/battles/field/Order.hbm.xml</value>
+                <value>com/eaw1805/data/model/battles/field/UserFieldBattle.hbm.xml</value>
+
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
+                <prop key="hibernate.connection.characterEncoding">UTF-8</prop>
+                <prop key="hibernate.connection.useUnicode">true</prop>
+                <!--<prop key="current_session_context_class">thread</prop>-->
+                <prop key="log4j.logger.net.sf.hibernate">warn</prop>
+                <prop key="show_sql">false</prop>
+                <prop key="format_sql">false</prop>
+                <!--<prop key="hibernate.hbm2ddl.auto">update</prop>-->
+                <prop key="autoReconnect">true</prop>
+                <prop key="hibernate.cache.use_second_level_cache">false</prop>
+                <prop key="hibernate.cache.use_query_cache">false</prop>
+                <!--<prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>-->
+                <!--<prop key="hibernate.cache.provider_configuration_file_resource_path">-->
+                    <!--/com.eaw1805.www.resources/empire-ehcache.xml-->
+                <!--</prop>-->
+                <!--<prop key="hibernate.cache.provider_configuration_file_resource_path">empire-ehcache2.xml</prop>-->
+                <!--<prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>-->
+                <!--<prop key="hibernate.cache.provider_configuration_file_resource_path">empire-ehcache2.xml</prop>-->
+                <!-- <prop key="hibernate.cache.provider_configuration_file_resource_path">com.eaw1805.data.xml</prop> -->
+                <!--<prop key="hibernate.generate_statistics">true</prop>-->
+                <!--<prop key="hibernate.cache.use_structured_entries">true</prop>-->
+                <!--<prop key="hibernate.cache.query_cache_factory">org.hibernate.cache.StandardQueryCacheFactory</prop>-->
+                <!--<prop key="hibernate.cache.region.factory_class">net.sf.ehcache.hibernate.EhCacheRegionFactory</prop>-->
+
+                <!--<prop key="hibernate.jdbc.batch_size">0</prop>-->
+            </props>
+        </property>
+    </bean>
+
+    <bean id="hibernateInterceptorMain"
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactoryMain"/>
+    </bean>
+
+    <bean id="hibernateInterceptorS1"
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactoryS1"/>
+    </bean>
+
+    <bean id="transactionManagerMain"
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactoryMain"/>
+    </bean>
+
+    <bean id="transactionManagerS1"
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactoryS1"/>
+    </bean>
+
+    <bean id="proxyTemplateMain"
+          class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+          abstract="true">
+        <property name="transactionManager" ref="transactionManagerMain"/>
+        <property name="transactionAttributes">
+            <props>
+                <prop key="get*">PROPAGATION_SUPPORTS,readOnly</prop>
+                <prop key="list*">PROPAGATION_SUPPORTS,readOnly</prop>
+                <prop key="add*">PROPAGATION_REQUIRED</prop>
+                <prop key="update*">PROPAGATION_REQUIRED</prop>
+                <prop key="delete*">PROPAGATION_REQUIRED</prop>
+                <prop key="*">PROPAGATION_REQUIRED</prop>
+            </props>
+        </property>
+        <property name="preInterceptors">
+            <list>
+                <ref bean="hibernateInterceptorMain"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="proxyTemplateS1"
+          class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+          abstract="true">
+        <property name="transactionManager" ref="transactionManagerS1"/>
+        <property name="transactionAttributes">
+            <props>
+                <prop key="get*">PROPAGATION_REQUIRES_NEW ,readOnly</prop>
+                <prop key="list*">PROPAGATION_REQUIRES_NEW ,readOnly</prop>
+                <prop key="add*">PROPAGATION_REQUIRES_NEW</prop>
+                <prop key="update*">PROPAGATION_REQUIRES_NEW</prop>
+                <prop key="delete*">PROPAGATION_REQUIRES_NEW</prop>
+                <prop key="*">PROPAGATION_REQUIRES_NEW,readOnly</prop>
+            </props>
+        </property>
+        <property name="preInterceptors">
+            <list>
+                <ref bean="hibernateInterceptorS1"/>
+            </list>
+        </property>
+    </bean>
+
+    <!-- Generic -->
+
+    <bean id="abstractManagerMain"
+          class="com.eaw1805.data.managers.AbstractManager"
+          abstract="true">
+        <property name="sessionFactory" ref="sessionFactoryMain"/>
+    </bean>
+
+    <bean id="abstractManagerS1"
+          class="com.eaw1805.data.managers.AbstractManager"
+          abstract="true">
+        <property name="sessionFactory" ref="sessionFactoryS1"/>
+    </bean>
+
+    <bean id="userManagerBean" parent="proxyTemplateMain">
+        <property name="target" ref="userManagerTarget"/>
+    </bean>
+
+    <bean id="userManagerTarget"
+          class="com.eaw1805.data.managers.UserManager"
+          parent="abstractManagerMain"
+          factory-method="getInstance"/>
+
+    <bean id="profileManagerBean" parent="proxyTemplateMain">
+        <property name="target" ref="profileManagerTarget"/>
+    </bean>
+
+    <bean id="profileManagerTarget"
+          class="com.eaw1805.data.managers.ProfileManager"
+          parent="abstractManagerMain"
+          factory-method="getInstance"/>
+
+    <bean id="paymentHistoryManagerBean" parent="proxyTemplateMain">
+        <property name="target" ref="paymentHistoryManagerTarget"/>
+    </bean>
+
+    <bean id="paymentHistoryManagerTarget"
+          class="com.eaw1805.data.managers.PaymentHistoryManager"
+          parent="abstractManagerMain"
+          factory-method="getInstance"/>
+
+    <bean id="engineProcessManagerBean" parent="proxyTemplateMain">
+        <property name="target" ref="engineProcessManagerTarget"/>
+    </bean>
+
+    <bean id="engineProcessManagerTarget"
+          class="com.eaw1805.data.managers.EngineProcessManager"
+          parent="abstractManagerMain"
+          factory-method="getInstance"/>
+
+    <bean id="messageManagerBean" parent="proxyTemplateMain">
+        <property name="target" ref="messageManagerTarget"/>
+    </bean>
+
+    <bean id="messageManagerTarget"
+          class="com.eaw1805.data.managers.MessageManager"
+          parent="abstractManagerMain"
+          factory-method="getInstance"/>
+
+    <bean id="chatMessageManagerBean" parent="proxyTemplateMain">
+        <property name="target" ref="chatMessageManagerTarget"/>
+    </bean>
+
+    <bean id="chatMessageManagerTarget"
+          class="com.eaw1805.data.managers.ChatMessageManager"
+          parent="abstractManagerMain"
+          factory-method="getInstance"/>
+
+    <bean id="followManagerBean" parent="proxyTemplateMain">
+        <property name="target" ref="followManagerTarget"/>
+    </bean>
+
+    <bean id="followManagerTarget"
+          class="com.eaw1805.data.managers.FollowManager"
+          parent="abstractManagerMain"
+          factory-method="getInstance"/>
+
+    <!--Achievements Related-->
+    <bean id="achievementManagerBean" parent="proxyTemplateMain">
+        <property name="target" ref="achievementManagerTarget"/>
+    </bean>
+
+    <bean id="achievementManagerTarget"
+          class="com.eaw1805.data.managers.AchievementManager"
+          parent="abstractManagerMain"
+          factory-method="getInstance"/>
+
+    <!--Forum Related-->
+    <bean id="userPermissionsManagerBean" parent="proxyTemplateMain">
+        <property name="target" ref="usersPermissionsManagerTarget"/>
+    </bean>
+
+    <bean id="usersPermissionsManagerTarget"
+          class="com.eaw1805.data.managers.forum.UserPermissionManager"
+          parent="abstractManagerMain"
+          factory-method="getInstance"/>
+
+    <bean id="paypalManagerBean"
+          class="com.eaw1805.www.controllers.payments.PaypalManager"
+          factory-method="getInstance">
+    </bean>
+
+    <bean id="paypalUserBean" parent="proxyTemplateMain">
+        <property name="target" ref="paypalUserTarget"/>
+    </bean>
+
+    <bean id="paypalUserTarget"
+          class="com.eaw1805.data.managers.paypal.PaypalUserManager"
+          parent="abstractManagerMain"
+          factory-method="getInstance"/>
+
+    <bean id="paypalTransactionBean" parent="proxyTemplateMain">
+        <property name="target" ref="paypalTransactionTarget"/>
+    </bean>
+
+    <bean id="paypalTransactionTarget"
+          class="com.eaw1805.data.managers.paypal.PaypalTransactionManager"
+          parent="abstractManagerMain"
+          factory-method="getInstance"/>
+
+    <bean id="forumPostsManagerBean" parent="proxyTemplateMain">
+        <property name="target" ref="forumPostsTarget"/>
+    </bean>
+
+    <bean id="forumPostsTarget"
+          class="com.eaw1805.data.managers.forum.ForumPostManager"
+          parent="abstractManagerMain"
+          factory-method="getInstance"/>
+
+    <bean id="forumManagerBean" parent="proxyTemplateMain">
+        <property name="target" ref="forumTarget"/>
+    </bean>
+
+    <bean id="forumTarget"
+          class="com.eaw1805.data.managers.forum.ForumManager"
+          parent="abstractManagerMain"
+          factory-method="getInstance"/>
+
+
+    <bean id="forumSessionsManagerBean" parent="proxyTemplateMain">
+        <property name="target" ref="forumSessionsTarget"/>
+    </bean>
+
+    <bean id="forumSessionsTarget"
+          class="com.eaw1805.data.managers.forum.ForumSessionManager"
+          parent="abstractManagerMain"
+          factory-method="getInstance"/>
+
+    <bean id="activeUserManagerBean" parent="proxyTemplateMain">
+        <property name="target" ref="activeUserManagerTarget"/>
+    </bean>
+
+    <bean id="activeUserManagerTarget"
+          class="com.eaw1805.data.managers.ActiveUserManager"
+          parent="abstractManagerMain"
+          factory-method="getInstance"/>
+
+    <bean id="postMessageManagerBean" parent="proxyTemplateMain">
+        <property name="target" ref="postMessageManagerTarget"/>
+    </bean>
+
+    <bean id="postMessageManagerTarget"
+          class="com.eaw1805.data.managers.PostMessageManager"
+          parent="abstractManagerMain"
+          factory-method="getInstance"/>
+
+    <bean id="questionnaireManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="questionnaireManagerTarget"/>
+    </bean>
+
+    <bean id="questionnaireManagerTarget"
+          class="com.eaw1805.data.managers.QuestionnaireManager"
+          parent="abstractManagerMain"
+          factory-method="getInstance"/>
+
+    <!-- Scenario Specific -->
+
+    <bean id="gameManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="gameManagerTarget"/>
+    </bean>
+
+    <bean id="gameManagerTarget"
+          class="com.eaw1805.data.managers.GameManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="usersGamesManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="usersGamesManagerTarget"/>
+    </bean>
+
+    <bean id="usersGamesManagerTarget"
+          class="com.eaw1805.data.managers.UserGameManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="gameSettingsManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="gameSettingsManagerTarget"/>
+    </bean>
+
+    <bean id="gameSettingsManagerTarget"
+          class="com.eaw1805.data.managers.GameSettingsManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="watchGameManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="watchGameManagerTarget"/>
+    </bean>
+
+    <bean id="watchGameManagerTarget"
+          class="com.eaw1805.data.managers.WatchGameManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+
+    <bean id="nationManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="nationManagerTarget"/>
+    </bean>
+
+    <bean id="nationManagerTarget"
+          class="com.eaw1805.data.managers.NationManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="newsManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="newsManagerTarget"/>
+    </bean>
+
+    <bean id="newsManagerTarget"
+          class="com.eaw1805.data.managers.NewsManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="fieldBattleOrderManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="fieldBattleOrderManagerTarget"/>
+    </bean>
+
+    <bean id="fieldBattleOrderManagerTarget"
+          class="com.eaw1805.data.managers.field.FieldBattleOrderManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="playerOrderManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="playerOrderManagerTarget"/>
+    </bean>
+
+    <bean id="playerOrderManagerTarget"
+          class="com.eaw1805.data.managers.PlayerOrderManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="relationsManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="relationsManagerTarget"/>
+    </bean>
+
+    <bean id="relationsManagerTarget"
+          class="com.eaw1805.data.managers.RelationsManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="reportManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="reportManagerTarget"/>
+    </bean>
+
+    <bean id="reportManagerTarget"
+          class="com.eaw1805.data.managers.ReportManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+
+    <!-- Army Related -->
+
+    <bean id="armyManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="armyManagerTarget"/>
+    </bean>
+
+    <bean id="armyManagerTarget"
+          class="com.eaw1805.data.managers.army.ArmyManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="armyTypeManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="armyTypeManagerTarget"/>
+    </bean>
+
+    <bean id="armyTypeManagerTarget"
+          class="com.eaw1805.data.managers.army.ArmyTypeManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="brigadeManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="brigadeManagerTarget"/>
+    </bean>
+
+    <bean id="brigadeManagerTarget"
+          class="com.eaw1805.data.managers.army.BrigadeManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="battalionManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="battalionManagerTarget"/>
+    </bean>
+
+    <bean id="battalionManagerTarget"
+          class="com.eaw1805.data.managers.army.BattalionManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="rankManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="rankManagerTarget"/>
+    </bean>
+
+    <bean id="rankManagerTarget"
+          class="com.eaw1805.data.managers.army.RankManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="commanderManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="commanderManagerTarget"/>
+    </bean>
+
+    <bean id="commanderManagerTarget"
+          class="com.eaw1805.data.managers.army.CommanderManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="fieldBattleReportManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="fieldBattleReportManagerTarget"/>
+    </bean>
+
+    <bean id="fieldBattleReportManagerTarget"
+          class="com.eaw1805.data.managers.battles.FieldBattleReportManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="fieldBattleMapManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="fieldBattleMapManagerTarget"/>
+    </bean>
+
+    <bean id="fieldBattleMapManagerTarget"
+          class="com.eaw1805.data.managers.field.FieldBattleMapManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+
+    <bean id="commanderNameManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="commanderNameManagerTarget"/>
+    </bean>
+
+    <bean id="commanderNameManagerTarget"
+          class="com.eaw1805.data.managers.army.CommanderNameManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="corpManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="corpManagerTarget"/>
+    </bean>
+
+    <bean id="corpManagerTarget"
+          class="com.eaw1805.data.managers.army.CorpManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="spyManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="spyManagerTarget"/>
+    </bean>
+
+    <bean id="spyManagerTarget"
+          class="com.eaw1805.data.managers.army.SpyManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="tacticalBattleReportManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="tacticalBattleReportManagerTarget"/>
+    </bean>
+
+    <bean id="tacticalBattleReportManagerTarget"
+          class="com.eaw1805.data.managers.battles.TacticalBattleReportManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+
+    <!-- Fleet Related -->
+
+    <bean id="shipTypeManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="shipTypeManagerTarget"/>
+    </bean>
+
+    <bean id="shipTypeManagerTarget"
+          class="com.eaw1805.data.managers.fleet.ShipTypeManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="shipManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="shipManagerTarget"/>
+    </bean>
+
+    <bean id="shipManagerTarget"
+          class="com.eaw1805.data.managers.fleet.ShipManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="fleetManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="fleetManagerTarget"/>
+    </bean>
+
+    <bean id="fleetManagerTarget"
+          class="com.eaw1805.data.managers.fleet.FleetManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="navalBattleReportManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="navalBattleReportManagerTarget"/>
+    </bean>
+
+    <bean id="navalBattleReportManagerTarget"
+          class="com.eaw1805.data.managers.battles.NavalBattleReportManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+
+    <!-- Map Related -->
+
+    <bean id="terrainManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="terrainManagerTarget"/>
+    </bean>
+
+    <bean id="terrainManagerTarget"
+          class="com.eaw1805.data.managers.map.TerrainManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="regionManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="regionManagerTarget"/>
+    </bean>
+
+    <bean id="regionManagerTarget"
+          class="com.eaw1805.data.managers.map.RegionManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="naturalResourceManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="naturalResourceManagerTarget"/>
+    </bean>
+
+    <bean id="naturalResourceManagerTarget"
+          class="com.eaw1805.data.managers.map.NaturalResourceManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="productionSiteManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="productionSiteManagerTarget"/>
+    </bean>
+
+    <bean id="productionSiteManagerTarget"
+          class="com.eaw1805.data.managers.map.ProductionSiteManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="sectorManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="sectorManagerTarget"/>
+    </bean>
+
+    <bean id="sectorManagerTarget"
+          class="com.eaw1805.data.managers.map.SectorManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="barrackManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="barrackManagerTarget"/>
+    </bean>
+
+    <bean id="barrackManagerTarget"
+          class="com.eaw1805.data.managers.map.BarrackManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="jumpOffManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="jumpOffManagerTarget"/>
+    </bean>
+
+    <bean id="jumpOffManagerTarget"
+          class="com.eaw1805.data.managers.map.JumpOffManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+    <!-- Economy Related -->
+
+    <bean id="warehouseManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="warehouseManagerTarget"/>
+    </bean>
+
+    <bean id="warehouseManagerTarget"
+          class="com.eaw1805.data.managers.economy.WarehouseManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="goodManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="goodManagerTarget"/>
+    </bean>
+
+    <bean id="goodManagerTarget"
+          class="com.eaw1805.data.managers.economy.GoodManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="baggageTrainManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="baggageTrainManagerTarget"/>
+    </bean>
+
+    <bean id="baggageTrainManagerTarget"
+          class="com.eaw1805.data.managers.economy.BaggageTrainManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+    <bean id="tradeCityManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="tradeCityManagerTarget"/>
+    </bean>
+
+    <bean id="tradeCityManagerTarget"
+          class="com.eaw1805.data.managers.economy.TradeCityManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+
+    <bean id="userFieldBattleManagerBean" parent="proxyTemplateS1">
+        <property name="target" ref="userFieldBattleManagerTarget"/>
+    </bean>
+
+    <bean id="userFieldBattleManagerTarget"
+          class="com.eaw1805.data.managers.field.UserFieldBattleManager"
+          parent="abstractManagerS1"
+          factory-method="getInstance"/>
+
+
+
+    <!-- OTHER -->
+
+
+    <bean id="articleManagerBean"
+          class="com.eaw1805.www.controllers.site.ArticleManager"
+          factory-method="getInstance">
+    </bean>
+
+    <bean id="cachingManagerBean"
+          class="com.eaw1805.data.managers.cache.CachingManager"
+          factory-method="getInstance">
+    </bean>
+
+    <bean id="gameHelperBean"
+          class="com.eaw1805.www.controllers.cache.helper.GameHelperBean"
+          factory-method="getInstance">
+        <property name="userManager" ref="userManagerBean"/>
+        <property name="profileManager" ref="profileManagerBean"/>
+        <property name="userGameManager" ref="usersGamesManagerBean"/>
+        <property name="gameManager" ref="gameManagerBean"/>
+        <property name="nationManager" ref="nationManagerBean"/>
+        <property name="reportManager" ref="reportManagerBean"/>
+        <property name="playerOrderManager" ref="playerOrderManagerBean"/>
+        <property name="forumPostsManager" ref="forumPostsManagerBean"/>
+        <property name="newsManager" ref="newsManagerBean"/>
+        <property name="achievementManager" ref="achievementManagerBean"/>
+    </bean>
+
+    <bean id="antisamyBean"
+          class="com.eaw1805.www.controllers.antisamy.AntisamyManager"
+          factory-method="getInstance">
+    </bean>
+
+    <!--
+        <bean id="myAspect"
+              class="com.eaw1805.www.controllers.cache.CachingAspect"
+              factory-method="getInstance"/>
+    -->
+
+    <bean id="authenticationSuccessHandler" class="com.eaw1805.www.controllers.site.SuccessfulLoginListener">
+        <property name="activeUsersManager" ref="activeUserManagerBean"/>
+        <property name="userManager" ref="userManagerBean"/>
+        <property name="forumSessionsManager" ref="forumSessionsManagerBean"/>
+    </bean>
+
+</beans>
