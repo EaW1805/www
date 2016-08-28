@@ -923,7 +923,7 @@
             },
             yAxis: {
                 title: {
-                    text: 'Ships'
+                    text: 'Money'
                 }
             },
             tooltip: {
